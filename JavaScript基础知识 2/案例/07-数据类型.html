@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        JS中基本数据类型有哪些？
+        number、string、boolean、null、undefined
+        */
+        //number:数字类型的(整数和小数)
+        var num1 = 10;
+        console.log(typeof num1);
+        var num2 = 8.888;
+        console.log(typeof (num2));
+
+        // string:字符串类型(一般都是用单引号或者双引号)
+        var str = "小明";
+        console.log(typeof str);
+        // boolean:布尔类型(只有两种情况：true(真),false(假))
+        var flag = true;
+        console.log(typeof flag);
+
+        // null:空数据类型
+        var nll = null;
+        console.log(typeof nll);//Object---历史遗留的问题 10天开发js
+        // console.log(Object.prototype.toString.call(nll)); 了解。后面原型会详细讲解
+        // undefined:未定义（什么情况下是undefined? 声明了一个变量没有赋值，结果就是undefined）
+        var age;
+        console.log(age);
+        // 如果获取这个变量的数据类型是什么呢？使用typeof 来获取
+        /* 
+        typeof 使用语法
+        1、typeof 变量名---推荐大家使用的方法
+        2、typeof (变量)
+        */
+    </script>
+</body>
+</html>

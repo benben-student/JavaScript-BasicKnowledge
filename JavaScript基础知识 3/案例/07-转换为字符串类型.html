@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //其他类型转换为字符串类型的 有两种方法
+        // 1.toString();  语法必须记住来
+        var num = 10;
+        console.log(num);
+        console.log(num.toString());
+        console.log(typeof num.toString());
+
+        // 面试官来了： null和undefined是不能用toString()
+        // var nll = null;
+        // console.log(nll.toString());
+
+        // var bb;
+        // console.log(bb);
+        // console.log(bb.toString());
+
+        // 2.String()
+        console.log("==================");
+        var number = 20;
+        console.log(number);
+        console.log(String(number));
+
+        var nll = null;
+        console.log(nll);
+        console.log(String(nll));
+        var bb;
+        console.log(bb);
+        console.log(String(bb));
+
+        // .toString()和String()区别: toString()是不能转换null和undefined的,而String()可以转换null和undefined
+    </script>
+</body>
+</html>

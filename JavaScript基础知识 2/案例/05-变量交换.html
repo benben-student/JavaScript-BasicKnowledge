@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量交换的第一个思想：使用第三方变量进行交换
+        var num1 = 10;
+        var num2 = 20;
+        // 把num1 这个变量的值取出来放到temp变量里面
+        var temp = num1;
+        // 把num2 这个变量的值取出来放到num1中
+        num1 = num2;
+        // 把temp变量的值取出来放到num2中
+        num2 = temp;
+
+        console.log(num1,num2);//结果:20 10
+
+        // 这个一定要多加练习--为了后面冒泡的思想做铺垫的--这个思想后面会大量使用
+    </script>
+</body>
+</html>

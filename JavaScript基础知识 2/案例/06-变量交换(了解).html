@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量交换的第二个思想：一般用于数字的交换
+        var num1 = 10;
+        var num2 = 20;
+        //把num1的变量的值和num2的变量的值 取出来相加--重新复制给num1
+        num1 = num1 + num2;//30 
+        // num1变量的值和num2变量的值取出来，相减的结果赋值给num2
+        num2 = num1 - num2;//10
+        // num1变量的值和num2变量的值取出来，相减赋值给num1
+        num1 = num1 - num2;//20
+        console.log(num1,num2);
+       
+    </script>
+</body>
+</html>

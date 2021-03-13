@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串拼接 +
+        var num1 = 10;
+        var num2 = 20;
+        console.log(num1 + num2);
+        var str1 = "大家今天继续";
+        var str2 = "棒棒哒";
+        console.log(str1 + str2);
+
+        // 一个是数字一个是字符串
+        var number1 = 250;
+        var number2 = "250";
+        console.log(number1 + number2);
+
+        // 程序猿 1024
+        var num3 = "10";
+        var num4 = 24;
+        console.log(num3 + num4);
+
+        /* 
+        总结：详细
+        + 如果两边都是数字，则进行相加，做算数运算相加了
+        + 如果两边都是字符串,则进行拼接
+        规律：字符相连,数值相加 (必须两边同时为数字才会相加，只要有一个是字符串就相连了)
+        */
+
+        // 面试题
+        console.log("===============");
+        var age1 = 10;
+        var age2 = "5";
+
+        console.log(age1 - age2);//隐式转换(电脑学雷锋做好事不留名)把我们字符串直接转换为数字了
+        console.log(age1 * age2);//隐式转换(电脑学雷锋做好事不留名)把我们字符串直接转换为数字了
+        console.log(age1 / age2);//隐式转换(电脑学雷锋做好事不留名)把我们字符串直接转换为数字了
+        console.log(10 % 3);//隐式转换(电脑学雷锋做好事不留名)把我们字符串直接转换为数字了
+
+        /* 
+        % --取余（也有人叫做取模）
+        总结:+ - * / % 除了加号 + 会进行拼接，其他都可以进行隐式转换
+        */
+
+    </script>
+</body>
+</html>

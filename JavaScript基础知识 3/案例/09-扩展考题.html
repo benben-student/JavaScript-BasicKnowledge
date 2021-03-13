@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 规律: 字符类型加上正或者负号会自动转换成数值类型,如果字符串中存在非数字字符，则返回NaN
+        var str = "18";
+        console.log(+str);
+        console.log(-str);
+
+        // 考题
+        var str1 = "18abc";
+        console.log(+str1);
+        console.log(-str1);
+
+        // 继续优秀
+        console.log("==========");
+        console.log(str - 0);
+        console.log(str1 - 0);
+        console.log(str1 + 0);//进行拼接了
+    </script>
+</body>
+</html>

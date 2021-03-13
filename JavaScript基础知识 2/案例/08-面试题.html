@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 面试题1：
+        var num;
+        console.log(num);//undefined 
+        console.log(num + 10);//NaN --not a number 不是一个数字
+        //总结：如果一个undefined和一个数字进行计算,结果是一个NaN  not a number 不是一个数字
+
+        // MMD 么么哒
+
+        // 面试题2:不要用小数去验证小数，不要拿小数相加
+        var x = 0.1;// = 赋值  == 判断  ( === 全等--更严格--了解 )
+        var y = 0.2;
+        var sum = x + y;
+        console.log(sum);
+        console.log(sum == 0.3);
+
+        // 面试题3:不要用NaN验证是否是不是NaN
+        var age;
+        console.log(age + 10 == NaN);//false，不是一个数字和不是一个数字当然是不相等
+        console.log("你好"=="我好");
+
+        // 给力啊继续扩展
+        // 如何验证这个NaN  isNaN() 是不是,不是一个数字 (大白话翻译：判断不是一个数字吗?)
+        // 总结:isNaN做判断用的 判断是不是,不是一个数字
+        var number;
+        console.log(isNaN(number));//true
+        console.log(isNaN(10));//false
+
+        /* 
+        大总结：
+        数字类型 number类型
+        无论是整数还是小数都是数字类型
+        不要用小数来验证小数 
+        不要使用NaN判断是不是NaN
+        isNaN 是不是,不是一个数字----应用场景 判断是否是数字的--后面会用到还会详细讲解的
+        */
+    </script>
+</body>
+</html>

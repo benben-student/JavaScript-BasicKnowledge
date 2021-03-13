@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parseInt()转换为整数
+        console.log(parseInt("10"));//10
+        console.log(parseInt("10abcdefghijklmn"));//10
+        console.log(parseInt("g10abcdefghijklmn"));//NaN
+        console.log(parseInt("1sasdfsdfsdfsad"));//1
+        console.log(parseInt("10.98"));//10
+        console.log(parseInt("10.98sadfsdfsadfsadf"));//10
+        // 总结:parseInt()从左往右依次进行转换,如果遇到字母立马停止转换,把之前转换好的返回
+
+        console.log("==============");
+        // parseFloat()--转换为小数---浮点数 
+        console.log(parseFloat("10"));//10
+        console.log(parseFloat("10abcdefghijklmn"));//10
+        console.log(parseFloat("g10abcdefghijklmn"));//NaN
+        console.log(parseFloat("1sasdfsdfsdfsad"));//1
+        console.log(parseFloat("10.98"));//10.98
+        console.log(parseFloat("10.98sadfsdfsadfsadf"));//10.98
+        // 总结:parseFloat()从左往右依次进行转换,如果遇到字母立马停止转换,把之前转换好的返回
+
+        /* 
+        parseInt()---只转换整数
+        parseFloat()---可以转换小数了
+        不管你是parseInt()还是parseFloat() 只要遇到字母立马停止转换
+        */
+
+        // Number()
+        console.log("==================");
+        console.log(Number("10"));//10
+        console.log(Number("10abcdefghijklmn"));//NaN
+        console.log(Number("g10abcdefghijklmn"));//NaN
+        console.log(Number("1sasdfsdfsdfsad"));//NaN
+        console.log(Number("10.98"));//10.98
+        console.log(Number("10.98sadfsdfsadfsadf"));//NaN
+        // 总结：Number()也是转换数字的，只要遇到字母都返回NaN
+    </script>
+</body>
+</html>
