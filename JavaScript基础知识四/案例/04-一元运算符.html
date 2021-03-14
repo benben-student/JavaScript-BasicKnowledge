@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* *****重点
+        我们的一元运算符: ++前置、++后置 和 --前置、--后置
+        ++前置和++后置(++在前面叫做++前置，++在后面就叫做++后置--举个例子 ++num、  num++)
+        --前置和--后置(--在前面叫做--前置，--在后面就叫做--后置--举个例子 --num、  num--)
+        */
+      //++前置
+    //   var num = 10;
+    //   ++num; //++前置 等价于 num = num + 1;   加鸡腿 ++num
+    //   console.log(num);
+
+    // ++后置
+    // var  num = 10;
+    // num++;//++后置 等价于 num = num + 1 
+    // console.log(num);
+
+    // 扩展  ++后置
+    // var num = 10;
+    // var sum = num ++ + 10; //10 + 10
+    // console.log(sum);//20
+    // console.log(num);
+    // 总结：++后置是：先运算,后自加
+
+    // 扩展  ++前置
+    // var num = 10;
+    // var sum = ++num  + 10; //11 + 10
+    // console.log(sum);//
+    // console.log(num);
+    // 总结：++前置是：先自加,后运算
+
+    //--和++同理 是一样的
+    //扩展  ++后置
+    // var num = 10;
+    // var sum = num -- + 10; // 10 + 10
+    // console.log(sum);//20
+    // console.log(num);//9
+    //总结：--后置是：先运算,后自减
+
+    //扩展  --前置
+    var num = 10;
+    var sum = --num  + 10; // 
+    console.log(sum);//19
+    console.log(num);//
+    //总结：--前置是：先自减,后运算
+
+
+
+    </script>
+</body>
+</html>

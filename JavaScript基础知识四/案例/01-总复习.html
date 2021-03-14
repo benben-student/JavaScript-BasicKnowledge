@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、JS的组成部分：
+        1)ECMAScript：是一种语法规范,主要是用来规定JS的语法
+        2)DOM：Doucment Object Model ----文档对象模型 
+        3)BOM: Browser Object Model ---浏览器对象模型
+
+        第二、JS的书写位置
+          1) 行内式 写在标签后面的
+          2) 内嵌式  写在/head上面的 
+          3) 外链式 (注意：外链式一定要单独定义一个js文件 扩展.js)
+          onclick ---点击事件
+          alert("弹出框"); 警示框
+          console.log("打印输出") 
+          注意:外双内单、或者外单内双
+
+        第三、变量：随时随地会发生变化的量
+            作用：存储数据，操作数据
+            变量的声明  var 变量名  var age  驼峰命名法  见名思意
+            变量的定义 声明 + 赋值  var age = 18;   
+            js中每行结束要加分号---规范
+            js中字符串可以使用单引号或者双引号
+
+        第四、js注释：解释说明方便我们阅读代码 
+            1) 单行注释 ctrl + /  
+            2) 多行注释 alt + shift +a   
+
+        第五、js基本数据类型 number、string、boolean、undefined、null
+
+        第六、检测数据类型 typeof
+           1) typeof 变量名----推荐使用第一个写法
+           2) typeof (变量名)
+
+           总结：其他类型通过typeof检测数据类型都能检测出对应的类型，只有一个除外 null 返回object
+           经典案例：变量交换 记住通过中间变量
+
+        第七、详细的分解了数据类型 
+            1)数值型数据number (包含了整数和小数) 88,88.8888
+            2)字符串string   可以使用单引号或者双引号
+            3)布尔类型 boolean 只有两种情况： 要么为true，要么为false
+            4)空类型 null 一定要手动的赋值一个null 栗子 var nul = null
+            5)未定义 undefined 当我们声明了变量，没有赋值，那么结果一定是undefined var age;
+
+        第八、面试题：
+            1) NaN  not a number 不是一个数字 （undefined + 10） = NaN
+            2) 不要拿小数去验证小数  var result = 0.1 + 0.2
+            3) 不要拿NaN去判断和NaN是否相等，NaN和任何值都不相等，包含了他自己
+            4) isNaN() 是不是,不是一个数字，判断这个值或者变量是不是，不是一个数字。如果不是一个数字返回 true，如果是一个数字返回false 作用：判断是否是数字类型的
+
+        第九、字符串和转义字符
+            1)检测字符串的长度 length  ---栗子 变量.length 
+            2)比较常用的转义
+              \'  代表的就是一个单引号        
+              \"  代表的就是一个双引号       
+              \t  代表的是tab键  水平制表位       
+              \n  代表的是换行
+
+        第十、字符串拼接 +
+            + 如果两边都是数字，则进行相加，就是进行算数运算了        
+            + 如果两边都是字符，则进行拼接
+            总结：字符相连,数值相加 
+
+        第十一、隐式转换：+ - * / % (除了+号遇到字符会进行拼接，其他的- * / % 都会进行隐式转换)    
+
+        第十二、其他类型转换为数值型
+             1) parseInt()  ---从左往右依次进行转换，遇到字母立马停止转换，把转换好的返回    
+             2) parseFloat() ---从左往右依次进行转换，遇到字母立马停止转换，把转换好的返回     
+             3) Number()  --- 比较严格，只要遇到字母就返回NaN
+
+         第十三、其他类型转换为字符串
+            1) .toString() 注意：null和undefined是不能转换的        
+            2) String() 他除了可以把其他类型转换为字符串，也可以把null和undefined转换成字符串
+
+         第十四、其他类型转换为布尔 Boolean()
+            面试题：记住了 0、null、undefined 、"" ，NaN
+
+         第十五、辨别类型颜色---小技巧
+           字符串是黑色、数字和布尔是蓝色的、null和undefined是灰色的  
+
+        第十六、运算符：算数运算符
+             + - * / % 取余（取模）               
+         */
+    </script>
+</body>
+</html>
