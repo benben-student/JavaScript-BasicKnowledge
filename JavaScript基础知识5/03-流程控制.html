@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        我们的流程控制：分为顺序结构、分支结构和循环结构
+        第一、顺序结构:就是代码从上到下依次执行(我们前面所有的案例都是顺序结构)
+        第二、分支结构：比较典型的分支结构 if else 如果 那么  有条件判断
+        第三、循环结构：比较典型的 for循环 while 、 do-while
+        */
+        //举个例子 
+        // var num = 18;
+        // console.log(num);
+
+        // 单分支结构的语法---
+        // if(条件/表达式){
+        //     代码块;
+        // }
+        // 代码的执行原理:首先判断表达式或者条件是否成立，如果条件成立则执行大括号里面的代码{}
+        // 需求：如果 8 > 6 就输出8
+        if(8 > 6){//8 > 6 就是一个表达式 ，也叫做条件
+            console.log(8);
+        }
+
+        // 需求2 : 判断一个年龄是否大于18岁，如果大于18岁就是成年了，则提示可以去看电影了
+        // 先定义一个变量，用来存储年龄的
+        var age = 20;
+        // 判断
+        if(age >= 18){
+            console.log("您成年了可以去看电影了，嘿嘿---老师，你好");
+        }
+    </script>
+</body>
+</html>

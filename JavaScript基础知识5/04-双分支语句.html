@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        分支语句之 if - else 两个分支 如果 否则
+        语法格式：
+        if(条件){
+            代码1;
+        }else{
+            代码2;
+        }
+
+        执行原理:
+        首先判断条件是否成立，如果成立了，则执行代码1,否则执行代码2
+        */
+    //案例：邓伟的年龄是否成年了，如果成年了则提示可以去看电影，否则，回去写代码去。
+    // 先定义一个变量来存储年龄
+    // var age = 18;
+    // if(age >= 18){
+    //     console.log("可以去看电影了---肖生克的救赎");
+    // }else{
+    //     console.log("看什么看，回去敲代码去,敲10遍，你的问题都会迎刃而解了");
+    // }
+
+    // 为了提高用户体验，让用户自己输入
+    var age = parseInt(prompt("请输入您的年龄"));//注意这个prompt输出的是一个字符串
+    // console.log(typeof age); 
+    if(age >= 18){
+        console.log("可以去看电影了");
+    }else{
+        console.log("看什么看，回去敲代码去,敲10遍，你的问题都会迎刃而解了");
+    }
+
+    </script>
+</body>
+</html>

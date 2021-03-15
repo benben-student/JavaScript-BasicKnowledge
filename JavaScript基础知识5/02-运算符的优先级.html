@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        优先级按照从高到低
+        1. () 优先级最高
+        2. 一元运算符 ++ -- !
+        3. 算术运算符 先 * / % 后 + -
+        4. 关系运算符(比较大小) > >= < <=
+        5. 相等运算符 == != === !==
+        6. 逻辑运算符 先 && 后 ||
+        7.赋值运算符 = += -= *= /= %=
+        */
+
+        // 练习1：
+    // var result = (4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true);
+    // // fasle || true && true && true
+    // console.log(result);//true
+
+    // 练习2:
+    var num = 10;
+    var result2 = (5 == num / 2 && (2 + 2 * num).toString() === '22');
+    //true && true
+    console.log(result2);//true
+    </script>
+</body>
+</html>

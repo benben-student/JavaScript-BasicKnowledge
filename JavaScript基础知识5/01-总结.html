@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+       运算符：
+       第一、算数运算符 + - * / %(取余)
+       第二、逻辑运算符: 逻辑与 &&  逻辑或 || 逻辑非 !
+       第三、关系运算符（比较运算符） > >= < <= == ===  !=== （== 只判断值不判断类型，=== 不仅判断值还要判断类型）
+       第四、一元运算符 ++ 和 --  自增和自减  *****
+       规律：
+            1) ++前置： 先自加后运算
+            2) ++后置： 先运算后自加
+            减减 -- 和 ++ 同理
+
+       第五、复合运算符（赋值运算符） = += -= *= /= %=
+       */ 
+
+
+    //题目1
+    // var n = 3;
+    // var m = 5;
+    // var num1 = n++ + n++ + ++m + n-- - m++;
+    // //         3 + 4 + 6 + 5 - 6
+    // console.log(num1);//12
+
+
+    //题目2
+    var a = 4;
+    var b = 9;
+    var num2 = a++ - b++ + ++b + a++ + ++b + a++;
+    //         4  - 9 + 11 +  5 + 12 + 6
+    
+    console.log(num2);
+    </script>
+</body>
+</html>

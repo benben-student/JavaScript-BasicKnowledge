@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        回顾：一元运算符 ++ --  二元运算符、三元运算符
+        三元运算符的语法
+        var 变量 = 表达式1 ?  表达式2 : 表达式3;
+        执行原理：
+        首先判断表达式1为true还是为false,如果表达式1为true，则执行表达式2,并把结果返回给前面的变量；
+        如果表达式1为false，则直接执行表达式3，并把结果返回给前面的变量
+        */
+
+        // 求两个数的最大值和最小值
+        // var num1 = 10;
+        // var num2 = 20;
+        // if(num1 > num2){
+        //     console.log(num1);
+        // }else{
+        //     console.log(num2);
+        // }
+        
+
+        // 加薪写法
+        var num1 = 10;
+        var num2 = 20;
+        var max = num1 > num2 ? num1 : num2;
+        console.log(max);
+
+        // 显示成年和未成年
+        var age = 18;
+         var result = age >= 18 ? "成年了" :"未成年";
+         console.log(result);
+
+        //  总结： if-else能做到的效果，三元运算符都可以做到
+    </script>
+</body>
+</html>
