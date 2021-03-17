@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        循环:就是不停的做一件事情。---生活中的循环典型去操场跑步，循环一定要有结束的条件(死循环)
+        while循环 语法
+        while(循环条件){
+            循环体;
+            结束条件; *****  一定不要忘了加结束条件
+        }
+        */
+
+        //输出0-9
+        // var i = 0;// 初始化
+        // while(i <= 9){
+        //     console.log(i);
+        //     i++;//一定要记得加结束条件，计数器
+        // }
+
+        /* 
+        核心思想，var i = 0, 只执行一次，判断条件，条件成立就输出循环体，循环体执行完之后进行累加，累加完之后直接判断条件是否成立。成立，则继续执行循环体,再累加...到最后条件不成立了直接跳出整个循环。
+        */
+            //输出10次，哈哈，沐沐好可爱
+            //定义一个变量
+            var i = 0;
+            while(i < 10){
+                console.log("哈哈，沐沐好可爱"+(i+1));
+                i++;//条件，计数器
+            }
+            
+    </script>
+</body>
+</html>

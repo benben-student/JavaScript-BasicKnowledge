@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 问：default 是否可以省略---可以的
+        var num = "10"
+        switch(num){
+            case 10:
+                console.log("数字的10");
+            break;
+            case "10":
+                console.log("字符串的10");
+            break;    
+        }
+
+        // 考点---分支语句已经全面了--总结
+        console.log(10 === "10");//false
+        console.log("10" === "10");//true
+
+        /* 
+        大总结:
+        1.但分支语句 if
+        2.双分支语句 if - else
+        3.多分支语句 if else if else if... else{}
+        4.多分支语句 switch-case break
+       
+        总结：一般判断某个范围推荐大家使用 if else if
+            一般判断某个具体的值推荐使用 switch-case
+        */
+    </script>
+</body>
+</html>

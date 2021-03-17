@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求：1-100之间的所有的和
+        var sum = 0;
+        for(var i = 1; i <= 100; i++){
+            sum += i;
+        }
+        console.log("1-100的和:" + sum);
+
+        // 求：1-100之间的所有的偶数和
+        var sum = 0;
+        for(var i = 1; i <= 100; i++){
+            // 判断
+            if(i % 2 == 0){//偶数
+                sum += i;
+            }
+        }
+        console.log("1-100之间的所有的偶数和"+sum);
+
+        // 求：1-100之间的所有的奇数和
+        var sum = 0;
+        for(var i = 1; i <= 100; i++){
+            // 判断
+            if(i % 2 != 0){//奇数
+                sum += i;
+            }
+        }
+        console.log("1-100之间的所有的奇数和"+sum);
+
+        // 求：1-100之间所有整数和的平局值
+        var sum = 0;
+        for(var i = 1; i <= 100; i++){
+            sum += i;
+        }
+        console.log("1-100的平局值:"+ (sum/100));
+
+    </script>
+</body>
+</html>

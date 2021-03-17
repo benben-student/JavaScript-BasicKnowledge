@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        语法格式
+        switch(表达式){
+            case "值1":
+                代码1;
+            break;
+            case "值2":
+                代码2;
+            break;   
+            case "值3":
+                代码3;
+            break; 
+            ...
+            default:
+                代码6;      
+        }
+
+        执行原理：
+        首先判断表达式的值，如果表达式的值和值1相同，则执行代码1，代码继续往下运行当遇到break，后面代码就不在执行了;
+        如果表达式的值和值1不相同，则继续和值2进行比较，如果表达式和值2相同，则执行代码2，代码继续往下执行党遇到break，代码代码不在执行;
+        ...
+        如果表达式的值和上面的值都不相同，则执行执行default里面的代码
+         */
+
+
+    //      需求：用switch实现 获取一个人的成绩的级别，
+    //     *如果是A级则显示90到100分之间
+    //    * 如果是B级则显示80到90分之间
+    //    * 如果是C级则显示70到80分之间
+    //    * 如果是D级则显示60到70分之间
+    //    * 否则显示0到59之间
+    var jiBie = "A";//记得switch特点，给我一个具体的值
+    switch(jiBie){
+        case "A":
+            console.log("90到100分之间");
+        break;
+        case "B":
+            console.log("80到90分之间");
+        break; 
+        case "C":
+            console.log("70到80分之间");
+        break; 
+        case "D":
+            console.log("60到70分之间");
+        break; 
+        default:
+            console.log("0到59之间");
+    }
+    </script>
+</body>
+</html>

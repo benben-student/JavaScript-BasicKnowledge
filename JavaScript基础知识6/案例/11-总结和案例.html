@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //例子:问用户:您觉得我帅吗?提示用户请输入y/n ,如果n就一直问,我帅不帅,如果用户输入的y,则结束,并提示用户,您真有眼光
+        do{
+            var result = prompt("您觉得我帅吗?提示用户请输入y/n");
+        }while(result !=  "y");
+        console.log("您真有眼光");
+
+        /* 
+        总结：do-while 语句至少执行一次循环体,while是先判断条件的，有可能一次循环体都不执行
+        区别：while是先判断条件再执行循环体，而我们的do-while是先执行循环体，再判断条件
+        */
+    </script>
+</body>
+</html>
