@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求1:求数组中所有元素的和
+        var arr1 = [10,20,30,40,50];
+        var sum = 0;//存储和
+        for(var i = 0; i < arr1.length; i++){
+            sum += arr1[i];
+        }
+        console.log("数组中所有元素的和:" + sum);
+
+        // 需求2：求数组中所有元素的平局值
+        var arr2 = [1,2,3,4,5];
+        var sum = 0;//存储和
+        for(var i = 0; i < arr2.length; i++){
+            sum += arr2[i];
+        }
+        console.log("数组中所有元素的平局值:"+ sum/arr2.length);
+
+    </script>
+</body>
+</html>

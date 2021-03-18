@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        数组：可以一次存储很多个数据
+        var arr = [10,20,30,40,50,60]
+         */
+        // 数组里面可不可以存储任意数据类型--可以的
+        var arr = [10,"str",null,undefined,true];
+        console.log(arr);
+        console.log(arr.length);
+        // 数组里面的数据可不可以修改（可以通过下标来修改数组里面的值）,也是可以修改数组长度
+        var arr2 = [5,6];
+        arr2[0] = 10; //修改
+        arr2[1] = 20;
+        arr2[2] = 30;//通过数组的下标可以添加元素也可以修改(有则改,无则加)
+        console.log(arr2);
+        console.log(arr2.length);
+    </script>
+</body>
+</html>

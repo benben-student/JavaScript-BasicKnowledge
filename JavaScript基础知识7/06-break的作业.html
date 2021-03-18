@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 找到100到200之间第一个可以被7整除的数字 
+        // 思路:有循环我们的循环的作用就是从100到200之间的，有判断，找到第一个能被7整除的数字 105
+        for(var i = 100; i <= 200; i++){
+            // 判断
+            if(i % 7 == 0){
+                console.log(i);
+                break;//使用break就是终止循环
+            }
+        }
+    </script>
+</body>
+</html>

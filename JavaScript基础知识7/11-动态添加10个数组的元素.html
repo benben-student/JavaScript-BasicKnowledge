@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 动态添加10个数组元素
+        // 定义一个空数组
+        var arr = [];
+        for(var i =0; i < 10; i++){
+            // console.log(i);
+            arr[i] = "第"+i+"个元素";//就是把那个固定的数字删除 "+变量+"
+            /* 
+            可以通过数组下标来添加数据
+            arr[0] = 0;
+            arr[1] = 1;
+            arr[2] = 2
+            */
+        }
+        console.log(arr);
+        // 正向遍历数组---循环---迭代
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        console.log("===============");
+        // 逆向遍历数组
+        for(var i = arr.length -1; i >= 0; i--){
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+</html>

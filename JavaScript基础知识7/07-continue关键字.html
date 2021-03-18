@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // continue 关键字: 当程序遇到continue之后，跳出当前本次循环，直接执行下一次循环
+        // var i = 0;
+        // while(i < 5){
+        //     console.log(i);
+        //     continue;//加了continue直接出现死循环了
+        //     i++;
+        // }
+
+        // 需求:求100-200之间所有奇数的和（用continue）
+        var sum = 0;
+        var i = 1;
+        while(i <= 10){
+            // 判断
+            if(i % 2 == 0){
+                i++;
+                continue;
+            }
+            sum += i;
+            i++;
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

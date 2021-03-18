@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // break:当程序遇到break，直接跳出当前整个循环，此时这个循环结束，执行循环下面的代码
+        // 考题
+        // while(true){
+        //     console.log("哈哈，你敢直接预览我吗");//这个直接打开典型的死循环
+        //     break;
+        // }
+        // console.log("嘎嘎，我终于跳出循环了");
+
+        // 扩展
+        for(var i = 0; i < 10; i++){
+            while(true){
+                console.log("哈哈，你敢直接预览我吗");
+                break;
+            }
+        }
+        console.log("嘎嘎，我终于跳出循环了");
+    </script>
+</body>
+</html>
