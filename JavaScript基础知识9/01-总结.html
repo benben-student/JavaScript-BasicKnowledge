@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、九九乘法表
+        第二、求最大值和最小值
+        第三、综合：数组总的和，平局值，最大值和最小值
+        第四、分割数组：两个方法，一个在前面一个在后面
+        第五、替换数组中的指定元素---把0删除掉
+        第六、数组反转
+        */
+
+        // 数组反转
+        var arr = [10,20,30,40,50];
+        // 循环的作用就是为了控制交换的次数
+        for(var i = 0; i < arr.length / 2; i++){
+            // 第三方变量入场
+            var temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

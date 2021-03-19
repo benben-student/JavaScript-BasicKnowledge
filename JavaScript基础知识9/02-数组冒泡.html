@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组冒泡：就是按照一定顺序进行排列，要么是从小到大，要么是从大到小
+        var arr = [5,4,3,2,1];//结果： 1 2 3 4 5
+        // 第一层循环：为了控制交换的轮数
+        for(var i = 0; i < arr.length - 1; i++){
+            // 第二层循环控制比较次数
+            for(var j = 0; j < arr.length - 1 - i; j++){
+                // 有判断if
+                if(arr[j] > arr[j+ 1]){
+                    // 第三方变量
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计算两个数字的和
+        // function consoleSum(){//定义函数
+        //     var x = 10;
+        //     var y = 20;
+        //     var sum = x + y;
+        //     console.log(sum);
+        // }
+        // consoleSum();
+
+        // 我们可以优化代码，我们可以让用户自己传递数据，得到结果
+        function consoleSum(x,y){//此时的x,y就是形参---形参就是变量
+            var sum = x + y;
+            console.log(sum);
+        }
+        consoleSum(30,50);//此时这个10和20就是实参---就是实实在在的数值
+
+        /* 
+        形参：就是在函数定义的时候，小括号里面的参数(变量) 就是形参
+        实参：就是在函数调用的时候，小括号里面的参数就是实参---就是实实在在的数值
+        形参的作用：就是用来接收我们的实参，此时x就接收了用户传递的30，y就接收用户传递50
+        */
+    </script>
+</body>
+</html>

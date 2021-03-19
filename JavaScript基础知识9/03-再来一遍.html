@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组冒泡：就是按照一定顺序进行排列，要么是从小到大，要么是从大到小
+        // var arr = [23, 4, 78, 32, 109, 83, 65, 12, 56, 231, 402, 71];//结果：
+        // // 第一层循环控制比较的轮数
+        // for(var i = 0; i < arr.length - 1; i++){
+        //     // 第二层循环控制比较的次数
+        //     for(var j = 0; j < arr.length - 1 - i; j++){
+        //         //有判断
+        //         if(arr[j] > arr[j + 1]){
+        //             // 第三方变量入场
+        //             var temp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+
+        // 从大到小
+        var arr = [23, 4, 78, 32, 109, 83, 65, 12, 56, 231, 402, 71];//结果：
+        // 第一层循环控制比较的轮数
+        for(var i = 0; i < arr.length - 1; i++){
+            // 第二层循环控制比较的次数
+            for(var j = 0; j < arr.length - 1 - i; j++){
+                //有判断
+                if(arr[j] < arr[j + 1]){
+                    // 第三方变量入场
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

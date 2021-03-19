@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用函数来求1-100之间的偶数和
+        function evenSum(){
+            var sum = 0;
+            for(var i = 0; i <= 100; i++){
+                // 判断
+                if(i % 2 == 0){
+                    sum += i;
+                }
+            }
+            console.log("求1-100之间的偶数和:"+sum);
+        }
+
+        // 调用函数
+        evenSum();
+
+        // 用函数来求1-100之间的奇数和 odd
+        function oddSum(){
+            var sum = 0;
+            for(var i = 0; i <= 100; i++){
+                if(i % 2 != 0){//奇数
+                    sum += i;
+                }
+            }
+            console.log("1-100的奇数的和:"+sum);
+        }
+        oddSum();//调用
+    </script>
+</body>
+</html>
