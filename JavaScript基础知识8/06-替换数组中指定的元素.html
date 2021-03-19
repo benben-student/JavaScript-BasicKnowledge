@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求:去掉数组总重复的0,把其他的数据存放到一个新的数组中
+        /* 
+        核心思想:
+        1、遍历数组，获取所有元素
+        2，将非0元素存储到一个新的数组中，并输出
+        */
+       var arr = [10,0,20,0,30,0,50,60,70,80,0,90];
+        // 定义一个空数组，用来存放删除0之后的新的数据
+        var newArr = [];
+        // 循环遍历--为了就是拿到所有元素
+        for(var i = 0; i < arr.length; i++){
+            // 判断
+            if(arr[i] != 0){
+                newArr[newArr.length] = arr[i];
+            }
+            /* 
+            newArr[0] = arr[0];
+            newArr[1] = arr[1];
+            newArr[2] = arr[2];
+            */
+        }
+        console.log(newArr);
+    </script>
+</body>
+</html>

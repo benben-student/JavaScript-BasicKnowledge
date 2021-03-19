@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求：把数组中每个元素用 | 拼接到一起产生一个新的字符串并输出
+        var names = ['孙悟空', '比克大魔王', '天津饭', '克林', '布尔玛'];
+        var str = "";//用来接收拼接之后的字符串
+        // 循环遍历
+        // for(var i = 0; i < names.length - 1; i++){
+        //     // console.log(names[i]);
+        //     str += names[i] + "|";
+        // }
+        // console.log(str+ names[names.length - 1]);
+
+        // 扩展--从前面加
+        for(var i = 1; i < names.length; i++){
+            str += "|" + names[i];
+        }
+        console.log(names[0]+str);
+    </script>
+</body>
+</html>

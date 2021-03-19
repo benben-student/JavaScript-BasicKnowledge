@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 案例：反转数组
+        var arr = [10,20,30,40,50];
+        // 循环的作用就是为了控制交换的次数
+        for(var i = 0; i < arr.length/2; i++){
+            // 第三方变量
+            var temp = arr[i];
+            arr[i] = arr[arr.length - 1  - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        console.log(arr);
+        // 这个必须会也是为了后面项目铺垫--重点学会这个思想
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 最大值：有循环,有判断
+        var arr1 = [1,100,101,5,6,9,18,130,180,200,188];
+        // 假设数组里面第一个数据就是最大值
+        var max = arr1[0];
+        //数组循环---遍历获取到每个数据，一句话就是拿到数组里面的每个元素
+        for(var i = 0; i < arr1.length; i++){
+            //判断
+            if(max < arr1[i]){
+                max = arr1[i];
+            }
+        }
+        console.log("最大值:" + max);
+
+        // 最小值
+        var arr2 = [2,100,101,666,3,1,7,9,88,108,857];
+        // 假设一个最小值
+        var min = arr2[0];
+        // 循环遍历
+        for(var i = 0; i < arr2.length; i++){
+            // 判断
+            if(min > arr2[i]){
+                min = arr2[i];
+            }
+        }
+        console.log("最小值:" + min);
+    </script>
+</body>
+</html>
