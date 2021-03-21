@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求6的数字的阶乘  1*2*3*4*5*6 = 720
+        // var sum = 1;
+        // for(var i = 1; i <= 6; i++){
+        //     sum *= i;
+        // }
+        // console.log(sum);
+
+        // 函数求一个数字的阶乘
+        function jieCheng(num){//num就是形参
+            var sum = 1;
+            for(var i = 1; i <= num; i++){
+                sum *= i;
+            }
+            return sum;
+        }
+
+        var result = jieCheng(6);
+        console.log(result);
+
+    </script>
+</body>
+</html>

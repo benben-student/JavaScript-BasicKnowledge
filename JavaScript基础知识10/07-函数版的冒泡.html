@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function sortArray(arr){
+        //     // 第一层循环控制比较的轮数
+        //     for(var i = 0; i <arr.length - 1; i++){
+        //         // 第二层循环控制比较的次数
+        //         for(var j = 0; j < arr.length - 1 - i; j++){
+        //             // 判断
+        //             if(arr[j] > arr[j + 1]){
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1]= temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // var result = sortArray([10,88,9,15,2,1]);
+        // console.log(result);
+
+        function sortArray(arr){
+            // 第一层循环控制比较的轮数
+            for(var i = 0; i <arr.length - 1; i++){
+                // 第二层循环控制比较的次数
+                for(var j = 0; j < arr.length - 1 - i; j++){
+                    // 判断
+                    if(arr[j] < arr[j + 1]){
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1]= temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var result = sortArray([10,88,9,15,2,1]);
+        console.log(result);
+    </script>
+</body>
+</html>

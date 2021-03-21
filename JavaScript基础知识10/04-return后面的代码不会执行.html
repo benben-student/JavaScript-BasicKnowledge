@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // return 后面的代码都不会执行
+        function getSum(x,y){
+            return x + y;
+            console.log("大家继续加油，明天我们出去嗨皮，好好玩");
+            return 100;
+        }
+        var result = getSum(10,20);
+        console.log(result);
+        // 记住了：return 后面所有的代码都不会再执行了
+    </script>
+</body>
+</html>

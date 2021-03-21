@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、实参和形参个数不一致问题
+        // 第一种情况：实参的个数大于形参
+        // function getSum(x,y){
+        //     return x + y;
+        // }
+        // var result = getSum(10,20,30,40,50,60);
+        // console.log(result);
+
+        /* 
+        第一种情况：如果实参的个数大于形参的个数，那么多余的实参会被丢弃
+        */
+        // 第二种情况：如果实参的个数小于形参
+        function getSum(x,y,z){//x,y,z都是我们的形参 ,没有赋值结果是undefined
+            return x + y + z;//undefined + 数字 = NaN
+        }
+        var result = getSum(10,20);
+        console.log(result);
+
+        // undefined的归类：
+        // 1、变量声明了没有赋值结果是undefined， 举个例子 var age;
+        // 2、函数没有返回值，在调用函数的时候接收了，那么函数默认的返回值是undefined
+        function fun2(x,y){
+            var sum = x + y;
+        }
+        // 调用函数的时候接收了
+        var result2 = fun2(10,20);
+        console.log(result2);
+
+        // 3、函数有返回值return 但是后面没有内容，结果也是undefined
+        function fun3(x,y){
+            var sum = x + y;
+            return;
+        }
+        // 调用函数的时候接收
+        var result3 = fun3(10,30);
+        console.log(result3);
+    </script>
+</body>
+</html>
