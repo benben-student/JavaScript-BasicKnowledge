@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arguments--伪数组（因为有些数组方法，arguments不能用的）
+        /* 
+        求两个数字的和
+        function fun2(x,y){
+            return x + y;
+        }
+        求三个数字的和
+        function fun3(x,y,z){
+            return x + y + z;
+        }
+        求四个数字的和
+        function fun3(x,y,z,k){
+            return x + y + z +k;
+        }
+        求五个数字的和
+        function fun3(x,y,z,k,j){
+            return x + y + z +k + j;
+        }
+
+        // 求N个数字的和---arguments：可以获取到用户传递的数据（工作经验：以后的项目里面我们是不知道用户到底会传递几个参数，或者说想传递几个实参）
+        arguments----就可以随时拿到用户传递的参数
+        //不用再写形参了
+        */
+        function fun(){
+            console.log(arguments.length);
+            // console.log(arguments);//里面的参数我们面向对象会详细讲解
+        }
+        fun(10,20,30,40,50,60,70,80);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数版的斐波那契数列
+        function getFib(num){
+            var num1 = 1;
+            var num2 = 1;
+            var sum = 0;
+            for(var i = 3; i <= num; i++){
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+            }
+            return sum;
+        }
+        // 定义一个变量来接收
+        var result = getFib(12);
+        console.log(result);
+    </script>
+</body>
+</html>

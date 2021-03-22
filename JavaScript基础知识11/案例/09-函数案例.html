@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="publick.js"></script>
+</head>
+<body>
+    <script>
+        //封装一个函数，用户传入年月日，判断这一天是这一年的第几天
+        // 假设：我们输入了是2021-3-22
+        function getDays(year,month,day){//year--年,month--月 --day天
+            // 先定义一个变量来存储天数的
+            var days = day;
+            // 如果用户输入的是1月份,没有必要向后面算天数了,直接返回天数 假设 1月31 
+            if(month == 1){//表示此时是1月
+                return days;//函数里面遇到return 后面代码就不会执行了
+            }
+            /* 
+            如果代码继续往下执行，说明用户输入的一定不是1月份，除了1月之外的任意的其他月份 2、3、、4、5...12月
+            假设用户输入的是2021-3-22;1月+2月+22 天
+            1,3,5,7,8,10,12--都是31天 2月是---28天; 4,6,9,11---是30天
+            */
+            //定义一个数组用来存储月的天数
+            var months = [31,28,31,30,31,30,31,31,30,31,30,31];
+            // 用户输入的不是1月份，就要开始循环数组，把每个月的天数加起来
+            for(var i = 0; i < month - 1; i++){//假设用户输入的是3月15 === 1月 + 2月 + 15天
+                days += months[i];
+                // i < month -1 ; 因为用数组的长度直接跑到12月
+            }
+            // 判断---函数里面是可以调用函数的
+            if(isLeapYear(year) && month > 2){
+                days++;
+            }
+            return days;
+        }
+        var result = getDays(2021,3,22);
+        console.log(result);
+    </script>
+</body>
+</html>
