@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS块级作用域: 一对大括号就看成一个块，如果是块级作用域,那么{}里面定义的变量或者说参数外面是访问不到的。(函数除外，还有一个是我们后面学习的ES6 除外)--ES6有块级作用域。
+        // 总结：JS是没有块级作用域的，ES6是有的
+        {
+            var num = 10;
+        }
+        console.log(num);
+        if(true){
+            var number = 100;
+        }
+        console.log(number);
+        for(var i = 0; i < 10; i++){
+            var age = 18;
+        }
+        console.log(age);
+
+        // 考点：
+        // function fun(){
+        //     var num1 = 30;//局部变量---私有作用域里面的变量，只有函数来说来使用，外面是拿不到的
+        // }
+        // console.log(num1);
+
+        // 了解
+        // {
+        //     let num3 = 30;
+        // }
+        // console.log(num3);
+        //JS中作用域有：全局作用域、函数作用域。没有块作用域的概念。
+    </script>
+</body>
+</html>

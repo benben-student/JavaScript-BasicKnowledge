@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 作用域链：由内往外一层一层去查找，这种查找机制我们叫做作用域链(由局部作用域一层一层往外查找)
+        var num = 10;
+        function fun1(){
+            // var num = 20;
+            function fun2(){
+                // var num = 30;
+                function fun3(){
+                    // var num = 50;
+                    console.log(num);
+                }
+                fun3();
+            }
+            fun2();
+        }
+        fun1();
+
+        // 注意：由内往外去查找
+    </script>
+</body>
+</html>

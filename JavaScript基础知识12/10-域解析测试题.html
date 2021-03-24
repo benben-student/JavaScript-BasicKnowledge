@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <script>
+        //第七题：小心小心小心
+        // var foo = 1;
+
+        // function bar() {
+        //     // 不管条件成立还是不成立都要进行变量提升
+        //     if (!foo) {
+        //         var foo = 10;
+        //     }
+        //     console.log(foo);
+        // }
+        // bar(); //10
+
+        // 伪代码
+
+        // var foo = 1;
+
+        // function bar() {
+        //     // 不管条件成立还是不成立都要进行变量提升
+        //     var foo; //undefined   
+        //     // !undefined = true
+        //     if (!foo) {
+        //         foo = 10;
+        //     }
+        //     console.log(foo);
+        // }
+        // bar(); //
+
+        // 第八题：综合
+        // var n = 13;
+
+        // function fn(n) {
+        //     alert(n); //13
+        //     var n = 14;
+        //     alert(n); //14
+        // }
+        // fn(n);
+        // console.log(n); //13
+
+        // 伪代码
+        var n = 13;
+
+        function fn(n) {//n 形参---形参变量
+            alert(n); //13
+            var n = 14;
+            alert(n); //14  局部的
+        }
+        fn(n);//n是实参
+        console.log(n); //13
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

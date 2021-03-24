@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <script>
+        //第三题：变量和变量同名，解析之后只存在一个当前变量的声明
+        // console.log(a); //undefined 
+        // var a = 123;
+        // console.log(a); //123
+        // var a = 456;
+        // console.log(a); //456
+        
+        //伪代码
+        // var a;
+        // console.log(a); //undefined 
+        // a = 123;
+        // console.log(a); //123
+        //  a = 456;
+        // console.log(a); //456
+
+        //第四题：函数和变量同名，函数声明提升，忽略变量的声明
+        // console.log(a); // 函数体
+        // var a = 123;
+        // console.log(a); //123
+
+        // function a() {}
+        // console.log(a); //123
+
+        // function a() {}
+        // console.log(a); //123
+
+        // 伪代码
+        function a() {}
+        console.log(a); // 函数体
+        var a = 123;
+        console.log(a); //123
+        console.log(a); //123
+        console.log(a); //123
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

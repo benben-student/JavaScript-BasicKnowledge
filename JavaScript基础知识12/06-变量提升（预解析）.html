@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量提升（预解析）--- 当网页一打开，首先浏览器会去读一遍代码，浏览器会把带var 和 function 提前声明。
+        // 第一、如果是带var 浏览器会提前声明 var age; 只声明，不去赋值，默认的结果undefined;
+        // 第二、变量提升，只提升等号左面的，不会提升等号右面的;
+        // 第三、如果是function 会声明加定义 ，会把整个function函数提升到代码前面。
+
+        // console.log(a);//undefined
+        // var a = 123;
+        // console.log(a);//123
+        // console.log(f);//undefined 函数体
+        // f();//函数声明提升
+        // function f(){
+        //     console.log("函数声明提升");
+        // }
+
+        // 伪代码
+        function f(){
+            console.log("函数声明提升");
+        }
+        var a;
+        console.log(a);//undefined
+        a = 123;
+        console.log(a);//123
+        console.log(f);// 函数体
+        f();//函数声明提升
+        
+
+    </script>
+</body>
+</html>

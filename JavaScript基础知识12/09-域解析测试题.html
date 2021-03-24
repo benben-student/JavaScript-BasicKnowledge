@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <script>
+        // 第五题：小心
+        // console.log(a); //undefined
+        //   var a = 12;
+
+        // function fn() {
+        //     console.log(a); //undefined
+        //     var a = 13;
+        // }
+        // fn();
+        // console.log(a); //12 找到我们全局的
+
+        // 伪代码
+        // var a;
+        // console.log(a); //undefined
+        // a = 12;
+        // function fn() {
+        //     var a;
+        //     console.log(a); //undefined
+        //     a = 13;//局部的
+        // }
+        // fn();
+        // console.log(a); //12 找到我们全局的
+        
+
+
+
+        /*第六题：小小心*/
+        console.log(a); // undefined
+        var a = 12;
+
+        function fn() {
+            console.log(a); //12 用了我们全局
+            a = 13;//把全局修改了
+        }
+        fn();
+        console.log(a) // 13
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

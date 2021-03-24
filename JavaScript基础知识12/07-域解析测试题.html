@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <script>
+        // 第一题：
+        // f();
+
+        // function f() {
+        //     console.log("1");
+        // }
+        // f();
+
+        // function f() {
+        //     console.log("2");
+        // }
+        // f();
+
+        // function f() {
+        //     console.log("3");
+       // }
+
+        // 伪代码
+        // function f() {
+        //     console.log("3");
+        // }
+        // f();
+        // f();
+        // f();
+
+       
+
+
+
+        // 第二题：
+        //  console.log(a); // undefined 
+        //  var a = 123;
+        //  console.log(a); //123
+        //  function f1() {
+        //      console.log(a); //undefined
+        //      var a = 456;
+        //      console.log(a); //456
+        //  }
+        //  f1();
+        //  console.log(a); //123
+
+        // 伪代码
+        var a;
+        console.log(a); //undefined 
+         a = 123;
+         console.log(a); //123
+         function f1() {
+            var a;
+             console.log(a); //undefined
+             a = 456;
+             console.log(a); //456
+         }
+         f1();
+         console.log(a); //123 拿到我们的全局的
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
