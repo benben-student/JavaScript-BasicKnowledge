@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        JS内置对象：内置对象(系统自带的)，后面会学习浏览器对象BOM,自定义构造函数对象(new一下就有对象了---面向对象里面详细讲解)
+        内置对象：Math、Date、Array、String...
+        */
+        // Math.random():获取一个 0 到 1 之间的随机数，浮点数（小数）包括0 不包含 1可以用[0,1)
+        // console.log(Math.random());
+
+        // console.log(parseInt(Math.random() * 5));//获取0-5之间的随机整数 包含0不包含5
+        // console.log(parseInt(Math.random() * 5) + 1);//获取1-5之间的随机整数 包含1也包含5
+
+        // console.log(parseInt(Math.random() * 100) + 1);//1-100
+
+        // Math.ceil() 向上取整
+        console.log("===================");
+        console.log(Math.ceil(12.3));//13
+        console.log(Math.ceil(12.9));//13
+        console.log(Math.ceil(12.09));//13
+        console.log(Math.ceil(12.03));//13
+        console.log(Math.ceil(12.93));//13
+
+         // Math.floor() 向下取整
+        console.log("===================");
+        console.log(Math.floor(12.3));//12
+        console.log(Math.floor(12.9));//12
+        console.log(Math.floor(12.09));//12
+        console.log(Math.floor(12.03));//12
+        console.log(Math.floor(12.93));//12
+
+        // Math.pow();  求指数次幂 
+        console.log(Math.pow(2,4));//14
+        //Math.sqrt() 求平方根
+        console.log(Math.sqrt(16));//4
+        console.log("===================");
+        //Math.round() 四舍五入
+        console.log(Math.round(20.95));//21
+        console.log(Math.round(20.02));//20
+        console.log(Math.round(20.49));//20
+
+      // 总结：  Math.random():、Math.max() 和 Math.min   最大值和最小值 最常用
+
+
+    </script>
+</body>
+</html>

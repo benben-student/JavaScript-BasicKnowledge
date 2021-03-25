@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <script>
+        //淘宝面试题
+        // console.log(num, str); // undefined undefined
+        // var num = 18;
+        // var str = "lily";
+
+        // function fn2() {
+        //     console.log(str, num); //lily undefined
+        //     num = 19;
+        //     str = "candy";
+        //     var num = 14;
+        //     console.log(str, num); //candy 14
+        // }
+        // fn2();
+        // console.log(str, num); //candy 18
+
+        // 伪代码
+        var num;
+        var str;
+        console.log(num, str); // undefined undefined
+         num = 18;
+        str = "lily";
+
+        function fn2() {
+            var num;
+            console.log(str, num); //lily undefined
+            num = 19;
+            str = "candy";
+            num = 14;
+            console.log(str, num); //candy 14
+        }
+        fn2();
+        console.log(str, num); //candy 18
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

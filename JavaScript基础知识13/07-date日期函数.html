@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(new Date());
+        // new Date() 获取系统的日期 年 月 日 时 分 秒 星期几  ---系统自带
+        var dt = new Date();
+        // console.log(dt);
+        // 获取年
+        var year = dt.getFullYear();//获取年的
+        console.log(year);
+        // 获取月
+        var month = dt.getMonth() + 1; //我们的月份是从0开始的，所以记得要加1
+        console.log(month);
+        // 获取天
+        var day = dt.getDate();//获取天，日
+        console.log(day);
+        // 获取小时
+        var hours = dt.getHours();//获取小时
+        console.log(hours);
+        // 获取分钟
+        var fen = dt.getMinutes();
+        console.log(fen);
+        // 获取秒
+        var miao = dt.getSeconds();//获取秒
+        console.log(miao);
+        // 星期几
+        var week = dt.getDay();
+        console.log(week);
+    </script>
+</body>
+</html>
