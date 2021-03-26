@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //.concat(字符串1,字符串2...) 返回拼接之后的新的字符串
+       var str1 = "我们";
+       var str2 = str1.concat("曾经","跨过","山河","大海");
+       console.log(str2);
+
+        //.indexOf(要找的字符串,从什么位置开始) 返回时这个字符串的索引,如果没有找到返回 -1，如果找到了就显示这个字符串的索引位置（注意：从什么位置开始是可以省略的）
+        var str3 = "我们曾经长发飘飘蛮开心，嗨皮,开心哦，开心噢噢";
+        // var index = str3.indexOf("心");
+        var index = str3.indexOf("心",12);
+        console.log(index);
+
+        // .lastIndexOf(); 从后往前查找，但是字符串的索引位置还是从左往右查询的
+        var str4 = "hello word";
+        var index1 = str4.lastIndexOf("o");
+        console.log(index1);
+        
+    </script>
+
+</body>
+</html>

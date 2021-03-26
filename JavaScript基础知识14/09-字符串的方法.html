@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // .split("以什么字符串拆分","拆分后留下的字符串个数") 第二参数也可以省略 以什么字符串来拆分，他是把字符串以指定的字符拆分成数组
+    var str="乔峰|慕容|凤姐|梅超风|小明|大蛇丸";
+    var arr = str.split("|");
+    console.log(arr);
+
+    // .substr(开始的位置,个数) 返回的是截取后的新的字符串，个数可以省略
+    var str1 = "我们都是靓仔,靓妹";
+    var str2 = str1.substr(4,5);
+    console.log(str2);
+
+    // .substring(开始的索引,结束的索引) 返回截取后的新的字符串，不包含结束的索引
+    var str3 = "哈哈,嘻嘻,么么哒";
+    var str4 = str3.substring(6,9);
+    console.log(str4);
+    // 总结：索引都是从0开始的
+    </script>
+
+</body>
+</html>

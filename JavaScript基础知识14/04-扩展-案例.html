@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv{
+            width: 300px;
+            height: 300px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv"></div>
+    <script>
+        /* 
+        扩展一个进制 计算机 二进制  0 - 1
+        生活中如果 输入 0   1   2  3 4 5  生活中10进制 缝10进1
+        在计算机里面是  00  01  10 11         缝二进 一
+
+        举个例子：生活中的3怎么变成  11  
+
+        // 八进制  0 - 7  
+           16进制 0 - f
+        */
+        // 封装一个16进制的颜色 （数字0-9  字母 a - f） 0 - f
+        function getColor() {
+            //16进制 从 0 - 9 a - f
+            var str = "#";//颜色是以#号开头的
+            var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9","a","b","c","d","e","f"];
+            // 循环遍历
+            for(var i = 0; i < 6; i++){
+                var num = parseInt(Math.random() * arr.length);
+                str += arr[num];
+            }
+            // 返回
+            return str;
+        }
+        // var result = getColor();
+        // console.log(result);
+        window.onload = function(){//当页面加载的时候---入口函数
+            // css的背景颜色 background-color 到js里面 backgroundColor
+            document.getElementById("dv").style.backgroundColor = getColor();
+            /* 
+            document ---文档
+            get --- 获取
+            Element ----元素
+            By --- 通过
+            id ---就是我们页面的id
+            .中文 "的"的意思
+
+            总结：通过id获取元素  标签就是元素
+            */
+        }
+    </script>
+</body>
+
+</html>

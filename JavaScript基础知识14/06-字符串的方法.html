@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        String 系统自带的内置对象
+        */
+        //.length ---获取字符串的长度
+        var str = "what are you no sha lei";
+        console.log(str.length);
+        // .charAt(索引) 返回值是指定索引位置的字符串，如果超出了，返回空字符串
+        var str1 = "what are you no sha lei";
+        // var str2 = str1.charAt(9);
+        var str2 = str1.charAt(100);
+        console.log(str2);
+
+        // .fromCharCode(数字值,可以是多个) 返回的是ASCII码的对应的值
+        // var str3 = String.fromCharCode(65,66,67);
+        var str3 = String.fromCharCode(83,79,83);//SOS
+        console.log(str3);
+    </script>
+
+</body>
+</html>
