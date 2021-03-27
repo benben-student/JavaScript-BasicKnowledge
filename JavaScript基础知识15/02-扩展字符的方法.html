@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // .toLocaleLowerCase() 转换小写字母的
+        // .toLowerCase();转小写 两个方法都是转换小写的
+        var str1 = "LIVE ME";
+        // var str2 = str1.toLowerCase();
+        var str2 = str1.toLocaleLowerCase();
+        console.log(str2);
+
+        // .toLocaleUpperCase() 转大写
+        // .toUpperCase(); 转大写
+        var str3 = "what are you no sha lei";
+        // var str4 = str3.toUpperCase();
+        var str5 = str3.toLocaleUpperCase();
+        console.log(str5);
+
+
+        // .trim() 删除两端的空格，中间的空格是删除不了的
+        console.log("===============");
+        var  str6 = "       今天又是神奇的一天      哦我们学了很多的内置对象     ";
+        var str7 = str6.trim();
+        console.log(str7);
+    </script>
+</body>
+</html>

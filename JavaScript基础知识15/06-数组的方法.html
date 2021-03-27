@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 以下四个方法非常的重要：可以对比着来记忆
+        // .push(值1,值2...); 把值往数组后面添加(追加),返回值是追加之后的数组的长度
+        var arr1 = [10,20,30,40,50];
+        var result1 = arr1.push(100,200);
+        console.log(result1,arr1);
+        // .unshift(值1,值2...) 把值往数组前面添加(追加),返回值是追加之后的数组的长度
+        var arr2 = [10,20,30,40,50];
+        var result2 = arr2.unshift(100,200);
+        console.log(result2,arr2);
+
+        // .pop() 删除数组的最后一项，返回值是删除的那一项
+        var arr3 = [10,20,30,40,50];
+        var result3 = arr3.pop();
+        console.log(result3,arr3);
+        // .shift() 删除数组的第一项,返回值是删除的那一项
+        var arr4 = [10,20,30,40,50];
+        var result4 = arr4.shift();
+        console.log(result4,arr4);
+
+    </script>
+</body>
+</html>

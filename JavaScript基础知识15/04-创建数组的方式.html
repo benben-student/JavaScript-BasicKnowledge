@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 通过字面量的方式创建数组
+        // 我们创建数组有两种方式：
+        // 第一种：字面量创建数组
+        // var arr = [];//空数组
+
+        var arr = [10,20,30,40,50,60];//第一种方式
+        console.log(arr);
+
+        // 第二种方式 ：内置构造函数方式 new 来创建
+        var array = new Array(10,20,30,40,50,60);
+        console.log(array);
+        console.log(array.length);
+        console.log(array[2]);
+
+        // 总结：第二种创建数组和我们第一种字面量创建数组几乎都是一样的
+        // 面试题:有一种情况不一样
+        console.log("=================");
+        var ary = [6];
+        console.log(ary.length);
+
+        var ary2 = new Array(6);//如果用第二种方式创建对象，只写一个数字，就表示里面有6个empty
+        console.log(ary2.length);
+        ary2[0] = 1; //有则改，无责加
+        ary2[1] = 2; //有则改，无责加
+        ary2[2] = 3; //有则改，无责加
+        ary2[3] = 4; //有则改，无责加
+        ary2[4] = 5; //有则改，无责加
+        ary2[5] = 666666; //有则改，无责加
+        console.log(ary2);
+    </script>
+</body>
+</html>

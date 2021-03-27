@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // .reverse()数组反转 ,返回值是反转之后的数组
+        var arr = [10,20,30,40,50];
+        var temp = arr.reverse();
+        console.log(temp);
+
+        // .sort()数组排序--冒泡排序，如果没有参数,只能排序10以内的数字，(如果超过了10，或者或者说任意数字，那么要传递一个参数---这个参数叫做回调函数---其实就是一个匿名函数)
+        // var arr1 = [1,8,9,2,3,5,7];
+        // var temp1 = arr1.sort();
+        // console.log(temp1); 没有参数的时候默认的从小到大
+
+        // 重点：******** 如果有参数，这个参数就是一个匿名函数--- 回调函数
+        // var arr2 = [1,100,20,11,15,18,21,88,99,3,6,200,8];
+        // var temp2 = arr2.sort(function(a,b){//这是一个匿名函数--- 高大上名字--回调函数
+        //     return a - b;//如果是 a - b 就表示从小到大
+        // });
+        // console.log(temp2);
+
+
+        // 如果想要从大到小 return b - a
+        var arr2 = [1,100,20,11,15,18,21,88,99,3,6,200,8];
+        var temp2 = arr2.sort(function(a,b){//这是一个匿名函数--- 高大上名字--回调函数
+            return b - a;//如果是 b - a 就表示从大到小
+        });
+        console.log(temp2);
+    </script>
+</body>
+</html>

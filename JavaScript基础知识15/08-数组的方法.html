@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // .slice(n,m) 从索引n开始获取到索引m（不包含m）返回值是获取到的元素组成的新的数组
+        // var arr = [10,20,30,40,50,60,70,80];
+        // var temp = arr.slice(2,6);
+        // console.log(temp);
+
+        // .splice(n,m,x/y/z) 把数组从索引n开始删除m个元素，用x/y/z替换删除的m项，返回值是删除的m项的新数组
+        // var arr1 = [1,2,3,4,5,6];
+        // var temp1 = arr1.splice(2,2,7,8,9);//替换、修改
+        // console.log(temp1);
+        // console.log(arr1);
+
+        //扩展
+        // 当m项是0的时候，他是把x,y,z... 替换项放到索引n的前面------添加
+        // var arr2 = [1,2,3,4,5,6];
+        // var temp2 = arr2.splice(2,0,7,8,9);
+        // // console.log(temp2);
+        // console.log(arr2);
+
+        // 当不写x、y、z替换项的时候代表删除数组的元素---删除
+        // var arr3 = [1,2,3,4,5,6];
+        // var temp3 = arr3.splice(2,2);
+        // console.log(temp3);
+        // console.log(arr3);
+
+        // 当splice() 里面什么都不写的时候，代表没有对数组做任何操作，，返回的是一个空数组
+        // var arr4 = [1,2,3,4,5,6];
+        // var temp4 = arr4.splice();
+        // console.log(temp4);
+        // console.log(arr4);
+
+        // 当splice(0) 里面是0的时候，代表删除整个数组，返回的原数组的数据，原数组变为空数组
+        var arr5 = [1,2,3,4,5,6];
+        var temp5 = arr5.splice(0);
+        console.log(temp5);
+        console.log(arr5);
+    </script>
+</body>
+</html>
