@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 750px;/*图片的宽度*/
+            height: 140px;/*图片的高度*/
+            margin: 100px;
+            position: relative;/*相对定位 ---父相子绝*/
+        }
+        .box ul{
+            position: absolute;/*绝对定位*/
+            right: 10px;
+            bottom: 10px;
+        }
+        .box ul li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            background: hotpink;
+            margin: 5px;
+            cursor: pointer;/*小手样式，不要加a链接，a链接具有跳转到下一页。*/
+        }
+    </style>
+    <script>
+        // function fun2(){
+        //     document.getElementById("pic").src= "02.jpg";
+        // }
+        /* 
+        document --- 文档
+        get ---获取
+        Element--元素
+        By --- 通过
+        id---页面的pic
+        .中文"的"的意思
+        总结：通过id获取元素
+        */
+
+        function fun1(){
+            document.getElementById("pic").src="01.jpg";
+        }
+        // 事件处理程序
+        function fun2(){
+            document.getElementById("pic").src = "02.jpg";
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="01.jpg" alt="" id="pic">
+        <ul>
+            <li onclick="fun1()">1</li>
+            <li onclick="fun2()">2</li>
+        </ul>
+    </div>
+
+    <!-- 
+        事件三要素 *****
+        第一、事件源:被触发的对象，举个栗子：就拿我们这个栗子来说事件源就是我们的第二个li被触发了
+        第二、事件: 用户的操作； 比如：点击 onclick 、鼠标经过 onmouseover 、鼠标离开 onmouseout...
+        第三、事件处理程序：事件触发后要执行代码(用户要做什么事情) ,就拿我们这个栗子来说:就是要切换图片
+     -->
+</body>
+</html>

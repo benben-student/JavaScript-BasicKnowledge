@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dj(){//第一、定义函数
+            alert("我被点击了");
+        }
+
+        function sj(){
+            alert("我被双击了");
+        }
+        function jg(){
+            alert("经过了我哦");
+        }
+        function lk(){
+            alert("鼠标离开了我，哦哦")
+        }
+    </script>
+</head>
+<body>
+    <button onclick="dj()">点击</button>
+    <button ondblclick="sj()">双击</button>
+    <button onmouseover="jg()">鼠标经过</button>
+    <button onmouseout="lk()">鼠标离开</button>
+</body>
+</html>
