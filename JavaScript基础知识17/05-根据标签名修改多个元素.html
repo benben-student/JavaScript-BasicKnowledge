@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改p标签的内容" id="btn">
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <p>我们班的同学，学雷锋做好事不留名</p>
+    <script>
+        // 获取事件源
+        var btn = document.getElementById("btn");
+        // 事件源.事件 = function(){执行代码}
+        btn.onclick = function(){
+            // alert("测试一把") 记得工作经验
+            var pObjs = document.getElementsByTagName("p");//获取所有的p标签--是一个集合(伪数组)
+            console.log(pObjs);
+            // 循环遍历
+            for(var i = 0; i < pObjs.length; i++){
+                pObjs[i].innerText = "我又变帅了";
+            }
+            
+        }
+
+        // 美工---设计--UI-  前端 ---后端 3个人
+        // 总结：getElementsByTagName("标签"); --- 获取元素的是一个集合(伪数组)，就算你获取的是一个标签，结果也是一个集合
+    </script>
+</body>
+</html>

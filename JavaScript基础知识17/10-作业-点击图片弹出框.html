@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/1.jpg" alt="" id="im1">
+    <img src="images/2.jpg" alt="" id="im2">
+    <img src="images/3.jpg" alt="" id="im3">
+    <script>
+        // var im1 = document.getElementById("im1");
+        // var im2 = document.getElementById("im2");
+        // var im3 = document.getElementById("im3");
+        // im1.onclick = function(){
+        //     alert("我被点了")
+        // }
+        // im2.onclick = function(){
+        //     alert("我被点了")
+        // }
+        // im3.onclick = function(){
+        //     alert("我被点了")
+        // }
+
+        // 优化代码
+        var imgObjs = document.getElementsByTagName("img");//集合--伪数组
+        // 循环遍历
+        for(var i = 0; i < imgObjs.length; i++){
+            //要给每个图片加点击事件
+            imgObjs[i].onclick = function(){
+                alert("哈哈,来点我呀");
+            }
+        }
+    </script>
+</body>
+</html>

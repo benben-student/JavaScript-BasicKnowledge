@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="fun()">点击</button>
+    <script>
+        function fun(){
+            alert("内嵌式"); 这样写不够优秀，---因为我们在工作里面，要求实现HTML和JS相分离
+        }
+    </script> -->
+    <!-- 我们在工作里面：真正要求是要实现结构就是html结构，js是在script里面的 -->
+    <button id="btn">内嵌式</button>
+    <script>
+        // 定义一个变量来接收
+        var btn = document.getElementById("btn");//--规范  获取事件源
+        /* 
+        公式：
+        事件源.事件 = function(){//匿名函数----工作里面的写法--最完美的写法
+            要执行的代码;
+        }
+        */
+       btn.onclick = function(){
+           alert("这个写法是真正的实现了HTML和JS分离写法,哦，我又学会了,简单--加油")
+       }
+    </script>
+    <!-- 工作经验：把js代码直接放到/body上面就可以了，你也可以放到整个html最下面 -->
+</body>
+</html>

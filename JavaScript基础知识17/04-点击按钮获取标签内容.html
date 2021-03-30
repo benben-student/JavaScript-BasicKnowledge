@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改p标签里面的内容" id="btn">
+    <p id="p1">我是段落内容</p>
+    <script>
+        // 获取事件源
+        var btn = document.getElementById("btn");
+        var p1 = document.getElementById("p1");
+        // 事件源.事件 = function(){要执行的代码}
+        btn.onclick = function(){
+            // alert("看看我有没写对");学会测试代码
+            p1.innerText = "哈哈, 我被修改啦";
+        }
+
+        // 总结：我们只要获取或者修改一对标签里面的内容，我们都用innerText(后面我们还会学习innerHTML)
+    </script>
+</body>
+</html>

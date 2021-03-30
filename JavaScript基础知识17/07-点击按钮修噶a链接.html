@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改链接"  id="btn">
+    <a id="ak" href="https://www.jiumodiary.com/">鸠摩搜书</a>
+    <script>
+        // 获取事件源
+        var btn = document.getElementById("btn");
+        // 事件源.事件  = function(){}
+        btn.onclick = function(){
+            // 获取a标签
+            var aObj = document.getElementById("ak");
+            aObj.href="http://www.zztion.com";//修改a链接
+            aObj.innerText = "中职通";
+        }
+    </script>
+</body>
+</html>

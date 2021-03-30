@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="修改p标签的内容" id="btn">
+    <div id="dv1">
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+    </div>
+
+    <div id="dv2">
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+    </div>
+    <script>
+        // 获取事件源
+        var btn = document.getElementById("btn");
+        // 事件源.事件 = function(){要执行的代码}
+        btn.onclick = function () {
+            // var pObjs = document.getElementsByTagName("p");
+            var pObjs = document.getElementById("dv1").getElementsByTagName("p");//先获取id，然后在获取里面的所有的p标签
+            // 注意:getElementById("dv1")后面直接写获取标签名getElementsByTagName("p")
+            // 循环遍历
+            for (var i = 0; i < pObjs.length; i++) {
+                pObjs[i].innerText = "看我72变化"
+            }
+        }
+    </script>
+</body>
+
+</html>
