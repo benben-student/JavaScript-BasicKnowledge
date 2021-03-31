@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="设置样式" id="btn">
+    <div id="dv"></div>
+    <script>
+        // 事件源
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // document.getElementById("dv").style.width = "300px";
+            // document.getElementById("dv").style.height = "300px";
+            // document.getElementById("dv").style.backgroundColor = "pink";
+            var dv = document.getElementById("dv");
+            dv.style.width = "300px";
+            dv.style.height = "300px";
+            dv.style.backgroundColor = "hotpink";
+        }
+    </script>
+</body>
+</html>

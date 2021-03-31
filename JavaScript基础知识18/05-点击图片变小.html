@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/liuyan.jpg" alt=""  id="im">
+    <script>
+        // 获取事件源
+        var im = document.getElementById("im");
+        im.onclick = function(){
+            // im.width = "200";//注意：千万不要加单位 px 面试官来了
+            // im.height = "300";
+            this.width = "200";//this，自己，自身
+            this.height = "300";//this，自己，自身
+            // 总结：this----- 看点.-点前面是谁，this就指向谁
+        }
+    </script>
+</body>
+</html>

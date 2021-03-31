@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv{
+            width: 300px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btn1">
+    <input type="button" value="显示" id="btn2">
+    <div id="dv"></div>
+    <script>
+        //获取事件源 ： 这个案例有两个事件源
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        // 事件源.事件 = function(){}
+        btn1.onclick = function(){
+            var dv = document.getElementById("dv");
+            dv.style.display = "none";//表示隐藏
+        }
+
+        btn2.onclick = function(){
+            document.getElementById("dv").style.display = "block";//表示显示
+        }
+
+        // 在线的下拉菜单效果就是这个思想
+    </script>
+</body>
+</html>

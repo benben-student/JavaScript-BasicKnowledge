@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- selected="selected" 默认选择下拉带单 或者简写selected -->
+    <input type="button" value="选择菜单" id="btn">
+    <select name="city" id="">
+        <option value="油炸榴莲">油炸榴莲</option>
+        <option value="青椒炒蛋">青椒炒蛋</option>
+        <option value="油炸蝎子">油炸蝎子</option>
+        <option value="西红柿炒番茄" id="fq" >西红柿炒番茄</option>
+        <option value="凉拌鱼腥草">凉拌鱼腥草</option>
+        <option value="蒸熊掌，蒸鹿尾">蒸熊掌，蒸鹿尾</option>
+        <option value="烧花鸭，烧雏鸡">烧花鸭，烧雏鸡</option>
+        <option value="麻婆豆腐">麻婆豆腐</option>
+    </select>
+    <script>
+        // 获取事件源
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var fq = document.getElementById("fq");
+            fq.selected = true;
+        }
+    </script>
+</body>
+</html>

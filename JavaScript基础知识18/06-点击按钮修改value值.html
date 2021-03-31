@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="按钮">
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // btn.value = "看我被修改了"
+            // btn.type = "text";
+            // btn.id = "btn2";
+            this.value = "看我被修改了";//this指向(看点前面是谁，this就指向谁)--面向对象会详细讲解这个this指向
+            this.type = "text";
+            this.id = "btn2";
+        }
+    </script>
+</body>
+</html>

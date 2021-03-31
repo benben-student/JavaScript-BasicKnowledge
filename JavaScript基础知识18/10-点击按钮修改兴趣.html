@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="选择爱好" id="btn">
+    <input type="checkbox" name="like" id="cg"> 唱歌
+    <input type="checkbox" name="like"> 跳舞
+    <input type="checkbox" name="like"> Rap
+    <input type="checkbox" name="like"> 吃饭
+    <input type="checkbox" name="like"> 睡觉
+    <input type="checkbox" name="like" id="dd"> 打豆豆
+    <input type="checkbox" name="like" id="py"> 找朋友
+    <input type="checkbox" name="like"> 敲代码
+    <input type="checkbox" name="like"> 找bug
+    <script>
+        // 事件源
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            document.getElementById("cg").checked = true;
+            document.getElementById("dd").checked = true;
+            document.getElementById("py").checked = true;
+            // 推荐大家使用checked = true;---规范一些
+        }
+    </script>
+</body>
+</html>
