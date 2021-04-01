@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background: skyblue;
+        }
+        .cls{
+            display: none;/*这个类就是隐藏的意思*/
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btn">
+    <div id="dv"></div>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // console.log(document.getElementById("dv").className);测试代码
+            // 判断有没有这个类 cls
+            if(document.getElementById("dv").className != "cls"){//表示这个类不存在
+                //此时是显示的，因为这个类不存在，我们可以给他加这个类，让他隐藏了
+                document.getElementById("dv").className = "cls";
+                this.value = "显示";
+            }else{
+                document.getElementById("dv").className = "";
+                this.value = "隐藏";
+            }
+        }
+    </script>
+</body>
+</html>

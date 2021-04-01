@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls{
+            width: 300px;
+            height: 300px;
+            background: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="设置样式" id="btn">
+    <div id="dv"></div>
+    <script>
+        // 优化我们前面的设置样式案例
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // var dv = document.getElementById("dv");
+            // dv.style.width = "300px";
+            // dv.style.height = "300px";
+            // dv.style.backgroundColor = "hotpink";
+            // 在JS中操作DOM元素的时候，设置类样式用className---公式
+            document.getElementById("dv").className = "cls";//加薪
+            //注意：.className = "cls" cls前面不要加点
+        }
+    </script>
+</body>
+</html>

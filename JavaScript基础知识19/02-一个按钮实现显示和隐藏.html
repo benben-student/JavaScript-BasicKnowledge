@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        div{
+            width: 300px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btn">
+    <div id="dv"></div>
+    <script>
+        // 把我们前面的案例优化了
+        // 事件源
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // 判断当前点击的按钮的value值---当前、自身、自己---this
+            if(this.value == "隐藏"){// = 是赋值 ==是判断
+                document.getElementById("dv").style.display = "none";
+                this.value = "显示";
+            }else if(this.value == "显示"){
+                document.getElementById("dv").style.display = "block";
+                this.value = "隐藏";
+            }
+        }
+    </script>
+</body>
+</html>

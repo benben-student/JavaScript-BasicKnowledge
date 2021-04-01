@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="隔行变色" id="btn">
+    <ul id="uu">
+        <li>红旗</li>
+        <li>五菱宏光</li>
+        <li>奔驰</li>
+        <li>兰博基尼</li>
+        <li>哈弗</li>
+        <li>奥拓</li>
+        <li>奥迪</li>
+        <li>悍马</li>
+    </ul>
+    <script src="publick.js"></script>
+    <script>
+        // 需求：奇红偶黄
+        my$("btn").onclick = function(){
+            // 获取所有的li
+            var list = my$("uu").getElementsByTagName("li");//集合--伪数组
+            // 循环遍历
+            for(var i = 0; i <list.length; i++){
+                // 判断
+                if(i % 2 == 0){//表示的是偶数（因为我们下标是从0开始）
+                    list[i].style.backgroundColor = "red";
+                }else{
+                    list[i].style.backgroundColor = "yellow";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
