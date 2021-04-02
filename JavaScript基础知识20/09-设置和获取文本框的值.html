@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="文本框" id="txt">
+    <script src="publick.js"></script>
+    <script>
+        my$("txt").onblur = function(){
+            // 设置文本框的值
+            this.value = "看我72变，嘎嘎";//设置文本框的值
+            console.log(this.value);//获取到文本框的值
+            console.log(this.type);//获取到文本框的类型
+            console.log(this.id);//获取到文本框的id
+
+        }
+    </script>
+</body>
+</html>

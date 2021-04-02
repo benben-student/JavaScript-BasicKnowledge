@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls{
+            background: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <p class="cls">这是第一个p标签</p>
+    <p>这是第二个p标签</p>
+    <div class="cls">这是第一个div</div>
+    <div>这是第二个div</div>
+    <script>
+        // 总结：归类这两个都是根据选择器的方式来获取元素
+        // var btn = document.getElementById("btn")--第一个学习的
+        // var btnObj = document.querySelector("#btn");//后面两个都要加选择器的 #
+        // btnObj.onclick = function(){
+        //     alert("哈哈，你们变厉害了")
+        // }
+
+        var objs = document.querySelectorAll(".cls");//是一个集合-伪数组
+        // 循环遍历
+        for(var i = 0; i < objs.length; i++){
+            objs[i].style.backgroundColor = "orangered"
+        }
+
+        /* 
+        获取元素的方式：
+        根据id获取元素
+        1、document.getElementById("id的属性值")
+        根据标签获取元素
+        2、document.getElementsByTagName("标签的名字")
+        根据name的属性值获取元素
+        3、document.getElementsByName("name的属性值")
+        根据类样式的名字来获取元素
+        4、docuemnt.getElementsByClassName("类样式的名字")
+        根据选择器的方式来获取元素
+        5、document.querySelector("#btn")
+        6、document.querySelectorAll(".cls")
+        7、document.body是专门获取body标签
+        总结：我们一共学习了7个获取元素的方式了
+        （后面我们讲解到节点的，再教大家给获取html的元素：document.docuemntElement---专门用来获取html这个标签）--我们后面会详细讲解
+        */
+    </script>
+</body>
+</html>

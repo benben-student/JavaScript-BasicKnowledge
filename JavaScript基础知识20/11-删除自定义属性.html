@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background: pink;
+        }
+        .cls{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="删除自定义属性" id="btn">
+    <div id="dv" score = "10" class="cls"></div>
+    <script src="publick.js"></script>
+    <script>
+        // removeAttribute("自定义属性的名字");//删除自定义属性
+        my$("btn").onclick = function(){
+            my$("dv").removeAttribute("score");//删除自定义属性
+            // 能不能删除系统自带属性---可以的class
+            my$("dv").removeAttribute("class");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="uu">
+        <li>小明的成绩</li>
+        <li>小丽的成绩</li>
+        <li>小花的成绩</li>
+        <li>小李的成绩</li>
+        <li>乔峰的成绩</li>
+    </ul>
+    <script src="publick.js"></script>
+    <script>
+        // 设置自定义属性:setAttribute("属性的名字","属性的值")
+        // 获取自定义属性:getAttribute("属性的名字")
+        // 根据id获取ul标签,获取所有的li标签
+        var list = my$("uu").getElementsByTagName("li");//集合--伪数组
+        // 循环遍历
+        for(var i = 0; i < list.length; i++){
+            list[i].setAttribute("score", (i + 1) * 20);
+            // 点击每个li标签，显示对应的自定义属性的值
+            list[i].onclick = function(){
+                alert(this.getAttribute("score"));
+            }
+        }
+
+    </script>
+</body>
+</html>

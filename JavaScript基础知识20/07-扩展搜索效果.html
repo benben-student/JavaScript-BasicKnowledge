@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            color:gray;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="请输入搜索内容" id="txt">
+    <script src="publick.js"></script>
+    <script>
+        // 获取焦点事件 onfocus
+        my$("txt").onfocus = function(){
+            // 判断
+            if(this.value == "请输入搜索内容"){
+                this.value = "";
+                this.style.color = "black";
+            }
+        }
+        // 失去焦点事件 onblur
+        my$("txt").onblur = function(){
+            // 判断
+            if(this.value == ""){
+                this.value = "请输入搜索内容";
+                this.style.color = "gray";
+            }
+        }
+    </script>
+</body>
+</html>
