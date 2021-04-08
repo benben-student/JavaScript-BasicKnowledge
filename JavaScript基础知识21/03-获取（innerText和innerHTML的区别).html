@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="dv">
+        我是div里面的文字
+        <p>我是段落标签</p>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            // console.log(my$("dv").innerText); //获取  只获取纯文本
+            console.log(my$("dv").innerHTML);//获取文本和标签
+
+            /* 
+            innerText:可以获取标签里面所有的内容，就算你标签里面嵌套标签，也能获取到里面的内容，但是innerText 只能获取纯文本
+            innerHTML：也能拿到标签里面所有的内容，就算你标签里面嵌套标签，不仅能获取标签里面的内容，还能获取标签里面的标签
+
+            总结：
+                如果只想要获取里面的内容，我们推荐使用innerText
+                如果想要获取里面的内容还要获取里面的标签，我们推荐使用innerHTML
+
+            大总结：
+                1、不管是设置还是获取，如果只想要获取纯文本内容我们使用innerText
+                2、如果想要文本和标签，我们使用innerHTML
+            */
+        }
+    </script>
+    
+</body>
+</html>

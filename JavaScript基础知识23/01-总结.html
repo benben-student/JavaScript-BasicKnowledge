@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="uu">
+        <li>列表</li>
+        <li>列表</li>
+    </ul>
+    <script>
+        /* 
+        第一、节点的相关理论
+        文本: document
+        元素: element --- 页面中的标签叫做元素  p div a  元素就是标签
+        节点: 页面中所有的内容都叫做节点 (包含了元素---包含了标签，属性，文本---包含：文字，空格，换行，回车)
+
+        第二、必须要倒背如流----
+        nodeType:节点类型（1代表的是标签节点，2代表的是属性节点，3代表的是文本节点）
+        nodeName:节点的名字（如果是标签节点--获取的是大写的标签名,如果是属性节点--获取的是小写的属性名,如果是文本节点---获取的是#text）
+        nodeValue: 节点的值（如果是标签节点---null、属性节点---属性的值，文本节点---文本的内容）
+
+        第三、12行代码 都是获取节点元素（前四个是必须要会的）
+        var ulObj = document.getElementById("uu");
+
+        父级节点 ulObj.parentNode
+
+        父级元素 ulObj.parentElement
+
+        子级节点 ulObj.childNodes
+
+        子级元素 ulObj.children
+
+        // 以上四个是最常用的, 兼容所有的浏览器
+        //  下面扩展
+
+        第一个子节点 ulObj.firstChild ----- IE8中是元素
+
+        第一个子元素 ulObj.firstElementChild ----- IE8不支持
+
+        最后一个子节点 ulObj.lastChild ----- IE8中是元素
+
+        最后一个子元素 ulObj.lastElementChild ----- IE8不支持
+
+        某个元素的前一个兄弟节点 .previousSibling ----- IE8中是元素
+
+        某个元素的前一个兄弟元素 .previousElementSibling ----- IE8不支持
+
+        某个元素的后一个兄弟节点 .nextSibling --- IE8中是元素
+
+        某个元素的后一个兄弟元素 .nextElementSibling --- IE8不支持
+
+        总结：从第一个子节点开始，只要是节点--在IE8等低版本浏览器都叫做--元素
+              只要是子元素----IE8等低版本浏览器都不支持
+
+        获取属性（用的很少） .getAttributeNode("id") ---到此我们把标签、属性、和文本都获取到了
+        */
+    </script>
+</body>
+</html>

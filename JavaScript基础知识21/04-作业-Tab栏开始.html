@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .hd {
+            height: 45px;
+        }
+
+        .hd span {
+            display: inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hd span.current {
+            background-color: purple;
+        }
+
+        .bd li {
+            height: 255px;
+            background-color: purple;
+            display: none;
+        }
+
+        .bd li.current {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box" id="box">
+    <div class="hd">
+        <span class="current">体育</span>
+        <span>娱乐</span>
+        <span>新闻</span>
+        <span>综合</span>
+    </div>
+    <div class="bd">
+        <ul>
+            <li class="current">我是体育模块</li>
+            <li>我是娱乐模块</li>
+            <li>我是新闻模块</li>
+            <li>我是综合模块</li>
+        </ul>
+    </div>
+</div>
+<script src="publick.js"></script>
+<script>
+    // 获取最外面的div
+    var box = my$("box");//获取到了最面的div
+    // 获取box里面的第一个div
+    var hd = box.getElementsByTagName("div")[0];//获取第一个div
+    // 获取box里面的第二个div
+    var bd = box.getElementsByTagName("div")[1];//获取第二个div
+
+    // 获取所有的li bd里面所有的li
+    var list = bd.getElementsByTagName("li");//集合 --伪数组
+    // 获取所有的span
+    var spans = hd.getElementsByTagName("span");//集合 --伪数组
+
+    // 循环遍历的方式，给所有的span做点击事件
+    for(var i = 0; i < spans.length; i++){
+        // 给每个span做点击事件
+        spans[i].onclick = function(){
+            // 第一件事，所有span的类样式全部移除---排他思想
+            for(var j = 0; j < spans.length; j++){
+                spans[j].removeAttribute("class");
+            }
+            // 第二件事情：自己，自身---排他思想
+            this.className = "current";
+        }
+    }
+
+</script>
+</body>
+</html>

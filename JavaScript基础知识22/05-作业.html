@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="改变标签颜色" id="btn">
+    <div id="dv">
+        <span>大家今天继续给力</span>
+        <p>继续优秀，遇到bug多去讨论，共同进步</p>
+        <span>大家今天继续给力</span>
+        <p>继续优秀，遇到bug多去讨论，共同进步</p>
+        <span>大家今天继续给力</span>
+        <p>继续优秀，遇到bug多去讨论，共同进步</p>
+        <span>大家今天继续给力</span>
+        <p>继续优秀，遇到bug多去讨论，共同进步</p>
+        <span>大家今天继续给力</span>
+        <a href = "http://www.baidu.com">百度</a>
+    </div>
+    <script  src="publick.js"></script>
+    <script>
+        //  需求：点击按钮-设置div中的p标签背景颜色
+        my$("btn").onclick = function(){
+            // 先获取div
+            var dvObj = my$("dv");
+            // 获取div中所有的子节点
+            var nodes = dvObj.childNodes;//集合
+            // 循环遍历
+            for(var i = 0; i < nodes.length; i++){
+                // 判断
+                if(nodes[i].nodeType == 1 && nodes[i].nodeName == "P"){
+                    nodes[i].style.backgroundColor = "pink";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

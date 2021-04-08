@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="创建元素" id="btn">
+    我们继续加油，如果有问题，建议大家都发到qq群，我们是一个大家庭，互帮互助来学习，效果更好
+    <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            document.write("<p>我是一个段落标签，我们班很多大神，都是活雷锋都会帮助你学习的</p>")
+        }
+        // document.write缺陷：当页面加载完毕之后，再执行document.write，他会把我们前面的的内容都会覆盖掉
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="变色" id="btn">
+    <ul id="uu">
+        <li>西施</li>
+        <li>昭君</li>
+        <li>貂蝉</li>
+        <li>玉环</li>
+        <li>芙蓉姐姐</li>
+        <li>范冰冰</li>
+    </ul>
+    <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            var count = 0;//记录多少个li
+            // 获取ul 里面所有的子节点
+            var nodes = my$("uu").childNodes;//集合---节点的范围大
+            // 循环遍历
+            for(var i = 0; i < nodes.length; i++){
+                //判断
+                if(nodes[i].nodeType == 1 && nodes[i].nodeName == "LI"){
+                    // nodes[i].style.backgroundColor = i % 2 == 0 ? "red" :"yellow";
+                    nodes[i].style.backgroundColor = count % 2 == 0 ? "red" :"yellow";
+                    count++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

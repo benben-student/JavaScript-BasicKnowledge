@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+        // 点击按钮设置内容
+        my$("btn").onclick = function(){
+            // my$("dv").innerText = "哈哈";//设置内容
+            // my$("dv").innerText = "<p>我是段落标签</p>";//设置内容 就是把标签当成字符串--文本
+
+            // 区别
+            // my$("dv").innerHTML = "哈哈";
+            my$("dv").innerHTML = "<p>我是段落标签</p>";
+
+            /* 
+            总结：我们如果直接设置纯文本---innerText和innerHTML是一样
+            如果我们设置内容里面也有标签，我们会推荐使用innerHTML(因为innerHTML不会把标签当成字符串)
+            如果我们设置的纯文本，不带标签的推荐使用innerText
+            */
+
+
+        }
+    </script>
+</body>
+</html>

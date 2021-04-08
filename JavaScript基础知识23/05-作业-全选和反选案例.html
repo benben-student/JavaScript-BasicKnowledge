@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="j_cbAll"/>
+            </th>
+            <th>菜名</th>
+            <th>饭店</th>
+        </tr>
+        </thead>
+        <tbody id="j_tb">
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>红烧肉</td>
+            <td>田老师</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>西红柿鸡蛋</td>
+            <td>田老师</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>油炸榴莲</td>
+            <td>田老师</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>清蒸助教</td>
+            <td>田老师</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="publick.js"></script>
+<script>
+    // 获取全选的这个复选框
+    var ckAll = my$("j_cbAll");//获取到了上面的全选和反选复选框
+    // 获取tbody中所有的小的复选框
+    var cks = my$("j_tb").getElementsByTagName("input");//集合 获取到了所有的的复选框--bbody里面的复选框
+    // 点击全选的这个复选框，获取他当前的状态，然后设置tbody中的所有的复选框的状态--跟他一模一样
+    ckAll.onclick = function(){
+        // alert("123");
+        // console.log(this.checked);
+        // 循环下面所有的复选框
+        // 拿到复选框的状态this.checked让tbody里面所有的复选框跟他this.checked
+        for(var i = 0; i < cks.length; i++){
+            cks[i].checked = this.checked;
+        }
+    };
+
+    // 循环tbody里面所有的复选框，分别做点击事件
+    for(var i = 0; i < cks.length; i++){
+        // 给每个复选框做点击事件
+        cks[i].onclick = function(){
+            // 假设flag
+            var flag = true;//假设都被选中了
+            // 循环判断 判断下面的复选框是否 都被选中了
+            for(var j = 0; j < cks.length; j++){
+                // 判断 为了判断下面的复选框到底有没有都被选中
+                if(!cks[j].checked){//cks[j].checked表示复选框的状态 false  -- !false -- true
+                    // 没有被选中就进来
+                    flag = false;
+                    break;
+
+                }
+            }
+            //让我们上面的全选复选框跟我们flag一样的
+            ckAll.checked = flag;
+        }
+    }
+</script>
+</body>
+</html>

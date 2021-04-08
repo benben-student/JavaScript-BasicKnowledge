@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+</head>
+<body>
+<div id="dv">
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <ul id="uu">
+        <li>乔峰</li>
+        <li>鹿茸</li>
+        <li id="three">段誉</li>
+        <li>卡卡西</li>
+        <li>雏田</li>
+    </ul>
+</div>
+<script src="publick.js"></script>
+<script>
+    // var dvObj = document.getElementById("dv");
+    // // 节点范围大，包含：元素--标签，文本，换行...
+    // // 获取子节点
+    // console.log(dvObj.childNodes);//7个 
+    // // 子元素---就是标签
+    // console.log(dvObj.children);//3个 元素就是标签，所有有3个标签--元素
+
+    // 总结：节点的范围大（回车换行算是文本节点） 元素的范围小的---元素就是标签
+    // for(var i = 0; i < dvObj.childNodes.length; i++){//获取每个子节点
+    //     /* 
+    //     nodeType ---> 节点类型： 1---代表标签，2---代表属性，3--代表文本
+    //     nodeName ---> 节点名字： 标签---大写的标签，属性---小写的属性名，文本---#text
+    //     nodeVlue ---> 节点的值： 标签 ---null，属性---属性的值，文本--- 文本的的内容
+    //     */
+    //     var node =  dvObj.childNodes[i];
+    //     console.log(node.nodeType + "===" + node.nodeName + "===" + node.nodeValue);
+    // }
+
+    // 获取的属性节点(用的很少)--扩展
+    console.log("================");
+    var dvObj = document.getElementById("dv");
+    var node = dvObj.getAttributeNode("id");
+    console.log(node.nodeType + "===" + node.nodeName + "===" + node.nodeValue);
+
+    // 总结：到此我们把标签，属性，和文本都获取到了
+</script>
+</body>
+</html>
