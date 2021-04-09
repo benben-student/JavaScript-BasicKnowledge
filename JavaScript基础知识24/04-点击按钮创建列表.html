@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 500px;
+            border:1px solid #000;
+        }
+        ul{
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建列表" id="btn">
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+        var names = ["杨过", "郭靖", "张无忌", "张三丰", "乔峰", "段飞", "丁棚","小龙女","黄蓉"];
+        my$("btn").onclick = function(){
+            var str = "<ul>";
+            // 循环遍历
+            for(var i = 0; i < names.length; i++){
+                // 用到我们的大招 删除固定的字符串----- 隐隐+变量+
+                str += "<li>"+names[i]+"</li>";
+            }
+            str += "</ul>"; 
+            my$("dv").innerHTML = str;
+
+            //获取所有的li，遍历循环完毕添加鼠标经过和鼠标离开
+            var list = my$("dv").getElementsByTagName("li");
+            // 循环遍历
+            for(var i = 0; i < list.length; i++){
+                // 鼠标经过
+                list[i].onmouseover = function(){
+                    this.style.backgroundColor = "pink";
+                };
+                // 鼠标离开
+                list[i].onmouseout = function(){
+                    this.style.backgroundColor = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

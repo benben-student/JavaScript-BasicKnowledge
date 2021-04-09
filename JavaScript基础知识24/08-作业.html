@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建表格" id="btn">
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+        var arr=[
+        {name:"百度",href:"http://www.baidu.com"},
+        {name:"谷歌",href:"http://www.google.com"},
+        {name:"优酷",href:"http://www.youku.com"},
+        {name:"土豆",href:"http://www.tudou.com"},
+        {name:"快播",href:"http://www.kuaibo.com"},
+        {name:"爱奇艺",href:"http://www.aiqiyi.com"}
+    ];
+    // 点击按钮创建表格
+    my$("btn").onclick = function(){
+        // 创建table加入到div中
+        var tableObj = document.createElement("table");
+        // 追加到div中
+        tableObj.border = "1";
+        tableObj.cellPadding = "0";//边距  内边距 ---- padding
+        tableObj.cellSpacing = "0"//间距
+        // 追加到div中
+        my$("dv").appendChild(tableObj);
+        //循环遍历创建行tr 键入table中
+        for(var i = 0; i < arr.length; i++){
+            var dt = arr[i];//这个就是把数组里面的数据全部拿到--给下面的td单元格来使用 第一步：
+            // 创建tr 加入到table表格中
+            var trObj = document.createElement("tr");
+            tableObj.appendChild(trObj);
+
+            // 第二步：创建列td，然后加入到行中tr，我们会创建两列
+            var td1 = document.createElement("td");
+            td1.innerText = dt.name;//点 "的"的意思  dt的name
+            // 追加给tr
+            trObj.appendChild(td1);
+
+            // 第三步：创建第二列td
+            var td2 = document.createElement("td");
+            // 这个方法必须要会的
+            // td2.innerHTML = "<a href=\""+dt.href+"\">"+dt.name+"</a>";
+            td2.innerHTML = "<a href='"+dt.href+"'>"+dt.name+"</a>"
+            // 我们来使用我们前面扩展的ES6的写法
+            // td2.innerHTML = `<a href="${dt.href}">${dt.name}</a>`;
+            trObj.appendChild(td2);
+
+
+        }
+    }
+    </script>
+
+    <a href="http://www.baidu.com">百度</a>
+</body>
+</html>

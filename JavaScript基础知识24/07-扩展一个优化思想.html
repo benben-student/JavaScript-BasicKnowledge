@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            cursor: pointer;
+        }
+        div{
+            width: 300px;
+            height: 500px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建元素" id="btn">
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+         var kungfu = ["降龙十八掌", "黯然销魂掌", "葵花宝典", "九阴真经", "吸星大法", "如来神掌", "化骨绵掌", "玉女心经", "极乐神功", "辟邪剑谱"];
+        //  点击按钮创建列表，把列表加在div里面
+        my$("btn").onclick = function(){
+            // 创建 ul把ul加入到div中
+            var ulObj = document.createElement("ul");
+            // 追加到div里面
+            my$("dv").appendChild(ulObj);
+            // 动态创建li，加入到ul里面
+            // 循环遍历
+            for(var i = 0; i < kungfu.length; i++){
+                // 创建元素
+                var liObj = document.createElement("li");
+                liObj.innerHTML = kungfu[i];
+                ulObj.appendChild(liObj);
+                // 鼠标经过效果--不够优秀的--我们要站在性能优化的角度去考虑
+                // liObj.onmouseover = function(){
+                //     this.style.backgroundColor = "yellowgreen";
+                // }
+                // // 鼠标离开
+                // liObj.onmouseout = function(){
+                //     this.style.backgroundColor = "";
+                // }
+
+                // 鼠标经过
+               liObj.onmouseover = mouseoverHandle;
+                // 鼠标离开
+                liObj.onmouseout = mouseoutHandle;
+            }
+        }
+
+        // 封装一个函数：一次，谁需要谁调用--加薪
+        function mouseoverHandle(){//命名函数
+            this.style.backgroundColor = "yellowgreen";
+        }
+
+        function mouseoutHandle(){
+            this.style.backgroundColor = "";
+         }
+
+         /* 
+         我们就站在了性能优化的角度去考虑问题了
+         总结：如果在循环里面我们推荐使用命名函数（有名字的函数）
+               如果在循环外面推荐使用匿名函数------这样我们就站在性能优化的角度去考虑问题了
+         */
+        // 留给面试：到此我们创建元素有三种方式：
+    </script>
+</body>
+</html>
