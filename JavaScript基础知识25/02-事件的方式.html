@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        我们事件有三种方式：
+        第一种都是以on开头： onclick、onmouseover、onmouseout... 以on开头的---有bug
+        铺垫一点理论：
+        工作流程：是多人合作来做项目，是可以多个人对同一个按钮做多个相同事件，多个用户可能会对一个按钮进行相同点击事件
+     -->
+
+     <input type="button" value="团队协作"  id="btn">
+     <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            console.log("第一个事件");
+        };
+        my$("btn").onclick = function(){
+            console.log("第二个事件");
+        };
+        my$("btn").onclick = function(){
+            console.log("第三个事件");
+        }
+
+        // 问题：如果多个人做一个项目，然后都有点击事件，后面会出现覆盖，只会执行最后要给js
+    </script>
+</body>
+</html>

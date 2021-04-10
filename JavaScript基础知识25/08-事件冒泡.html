@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height:150px;
+            background-color:greenyellow;
+        }
+        #dv3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        事件冒泡:一定有盒子嵌套盒子，如果对里面的盒子做了点击事件，外面的盒子也有和里面的盒子相同事件，那么外面的盒子也会被触发。
+        满足条件有两个：
+        1、首先是盒子嵌套盒子
+        2、每个盒子身上都有相同的点击事件
+        */
+
+        my$("dv1").onclick = function(){
+            console.log(this.id);
+        }
+        my$("dv2").onclick = function(){
+            console.log(this.id);
+        }
+        my$("dv3").onclick = function(){
+            console.log(this.id);
+        }
+
+        // 总结：这个就是典型的事件冒泡-- 就是触发了里面的盒子的点击事件，外面的盒子也被触发了
+
+        // 小小的面试题
+        document.body.onclick = function(){//因为事件冒泡了，所以body也被触发了
+            console.log("看我的body有没有被触发");
+        }
+    </script>
+</body>
+</html>

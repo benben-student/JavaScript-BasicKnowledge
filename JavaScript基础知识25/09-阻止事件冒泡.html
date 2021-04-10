@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height:150px;
+            background-color:greenyellow;
+        }
+        #dv3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        事件冒泡:一定有盒子嵌套盒子，如果对里面的盒子做了点击事件，外面的盒子也有和里面的盒子相同事件，那么外面的盒子也会被触发。
+        满足条件有两个：
+        1、首先是盒子嵌套盒子
+        2、每个盒子身上都有相同的点击事件
+        */
+
+        // 阻止事件冒泡：e.stopPropagation() 和 window.event.cancelBubble= true; IE专有的
+        my$("dv1").onclick = function(){
+            console.log(this.id);
+            
+        }
+        my$("dv2").onclick = function(e){//event---事件对象，默认的可以简写为e
+            console.log(this.id);
+            e.stopPropagation();//给火狐和谷歌用的
+            window.event.cancelBubble = true;//给IE用的 专有的
+        }
+        my$("dv3").onclick = function(e){//event---事件对象
+            console.log(this.id);
+            // console.log(arguments.length);// 1 有个默认的事件对象event--简写e
+            // console.log(e);
+            e.stopPropagation();//谷歌和火狐都兼容的 --阻止事件冒泡
+            window.event.cancelBubble = true;//给IE用的 专有的
+        }
+
+       
+    </script>
+</body>
+</html>

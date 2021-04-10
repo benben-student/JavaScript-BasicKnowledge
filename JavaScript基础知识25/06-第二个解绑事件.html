@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="绑定事件" id="btn1">
+    <input type="button" value="解绑事件" id="btn2">
+    <script src="publick.js"></script>
+    <script>
+        // 第二种绑定事件 事件源.addEventListener("没有on的事件类型",命名函数，false)---绑定事件
+        // my$("btn1").addEventListener("click",function(){
+        //     console.log("我是第一个事件");
+        // },false);
+
+        // my$("btn1").addEventListener("click",function(){
+        //     console.log("我是第二个事件");
+        // },false);
+
+        // // 点击第二个按钮，解绑第一个按钮的第一个点击事件
+        // my$("btn2").onclick = function(){
+        //     my$("btn1").removeEventListener("click",function(){
+        //         console.log("我是第一个事件");
+        //     },false);
+        // }
+
+        // 语法公式：事件源.addEventListener("没有on的事件类型",命名函数,false)
+        function f1(){
+            console.log("我是第一个事件");
+        }
+        function f2(){
+            console.log("我是第二个事件");
+        }
+        my$("btn1").addEventListener("click",f1,false);
+        my$("btn1").addEventListener("click",f2,false);
+        // 点击第二个按钮把第一个按钮的第一个点击事件解绑
+        my$("btn2").onclick = function(){//命名函数是可以解绑的
+            my$("btn1").removeEventListener("click",f1,false);
+        }
+
+    </script>
+</body>
+</html>

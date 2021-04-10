@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="团队协作" id="btn">
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        对象.attachEvent("事件类型",事件处理函数)----谷歌和火狐不支持，给IE低版本浏览器用的
+        事件源.attachEvent("事件类型",事件处理函数)----谷歌和火狐不支持，给IE低版本浏览器用的
+        第一个参数：事件类型(事件类型带on)
+        第二个参数：事件处理函数(匿名函数和命名函数)
+        */
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第一个事件");
+       });
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第二个事件");
+       });
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第三个事件");
+       });
+
+    // 这个attachEvent在ie低版本浏览器可以看到效果---兼容了解即可--后面从JQ开始，框架都已经把兼容都解决完毕了
+
+    // 总结：三种 on开头 addEventListener和attachEvent
+    // 大总结：到此我们的绑定事件学习了三种：面试会被问到的
+    // 既然有三种绑定事件，就有三种解绑事件--引出了解绑知识
+    </script>
+</body>
+</html>
