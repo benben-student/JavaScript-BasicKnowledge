@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height: 150px;
+            background-color: yellowgreen;
+        }
+        #dv3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        详细讲解事件的三个阶段
+        第一个阶段叫做事件捕获：用数字代表就是1(如果你看到了数字1就代表的是事件捕获)--- 从外往里
+        第二个阶段叫做目标阶段: 用数字代表就是2(如果你看到了数字2就代表的是目标阶段)--执行当前的点击元素
+        第三个阶段叫做冒泡：用数字代表的就是3 (如果你看到了数字3就代表了是冒泡阶段) --- 从里到外
+        */
+       var objs = [my$("dv3"),my$("dv2"),my$("dv1")];
+       //for循环已经会了---forEach 也是遍历循环  跟for一样
+       /* 
+       语法格式
+       for(var i = 0; i <objs.length; i++){}
+       forEach(function(ele){// ele元素 一次性获取三个事件---比for好用---后面我们还会详细讲解
+            代码
+       })
+       */
+    //  循环遍历
+    objs.forEach(function(ele){//element--元素 可以简写为ele
+        ele.addEventListener("click",function(e){//event  简写 e
+            console.log(this.id + "====="+e.eventPhase);//e.eventPhase为了检测事件三个阶段分别代表什么数字
+        },true);//false---就是冒泡 (就两个布尔值true和false)---true代表的是捕获，false代表的是冒泡
+    });
+
+    /* 
+    总结：事件有三个阶段：要么是冒泡触发的，要么是捕获触发的，冒泡和捕获不会同时触发
+    true代表的捕获，false代表的是冒泡-----工作里面推荐大家使用冒泡（就是false，true相对用的少）
+    */
+    </script>
+</body>
+</html>

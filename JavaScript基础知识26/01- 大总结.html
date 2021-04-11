@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、innerText 和 innerHTML区别：
+        如果只想要获取里面的内容----  我们推荐使用innerText
+        如果想要获取里面的内容还要获取里面的标签--我们推荐使用innerHTML
+
+        第二、tab栏案例 --- 写到倒背如流，优秀666
+        
+        第三、节点的概念：
+        文档：document
+        元素：element ---- 页面中的标签叫做元素 div p a 都是元素
+        节点：node --- 页面总所有的内容叫做节点 （包含了元素，包含了标签，文本--又包含了：文字，空格，回车，换行，属性）
+
+        第四：必须要记住的
+            nodeType：节点类型（1代表的是标签，2代表的是属性，3代表的是文本）
+            nodeName: 节点的名字（如果是标签节点---获取的是大写的标签名，如果是属性节点---获取的是小写的属性名，如果是文本节点--- 获取的是#text）
+            nodeValue：节点的值（如果是标签节点---null，如果是属性节点--属性的值，如果是文本节点--文本的内容）
+
+         第五、12行代码（前四个是必须要记住的）
+
+         假设页面有ulObj
+
+            父节点 ulObj.parentNode 
+
+            父元素 ulObj.parentElement  
+
+            子节点 ulObj.childNodes
+
+            子元素 ulObj.children
+            以上四个是最常用的--兼容所有的浏览器
+
+            //  下面是扩展的---留给面试官来问的
+            第一个子节点 ulObj.firstChild ------- IE8中 叫元素
+
+            第一个子元素 ulObj.firstElementChild ------- IE8中不支持
+
+            最后一个子节点 ulObj.lastChild ------- IE8中是元素
+
+            最后一个子元素 ulObj.lastElementChild ------- IE8中不支持
+
+            某个元素的前一个兄弟节点：ulObj.previousSibling ---- IE8中是元素
+
+            某个元素的前一个兄弟元素：ulObj.previousElementSibling ---- IE8中不支持
+
+            某个元素的后一个兄弟节点：ulObj.nextSibling ---- IE8中是元素
+
+            某个元素的后一个兄弟元素：ulObj.nextElementSibling ---- IE8中不支持
+
+            总结：从第一个子节点开始，只要是节点---在IE8 等低版本浏览器都叫做元素
+                  只要是元素-----IE8等低版本浏览器都不支持
+
+                  获取属性（知道有这个） .getAttributeNode("id")
+                  到此我们把标签，属性，文本都获取到了
+
+            第六、各种案例：隔行换色，背景切换图片效果，全选和复选框，字符串拼接4个方法等等..
+            
+            第七、创建元素的方式
+             1.document.write()
+             缺陷：如果页面加载完毕之后，通过这个方式，那么后面的内容会被覆盖
+             2.innerHTML
+             3.创建元素分两步
+              1) 先创建元素 document.createElement("标签名")
+              2) 把创建好的元素追加到父元素身上、里面 appendChild()
+              
+            第八、各种案例。创建列表，创建表格, 点击生成MM...
+
+            第九、为元素绑定事件三种方法
+                1、事件源.on事件类型 = 事件处理函数
+                2、事件源.addEventListener("没有on的事件类型",事件处理函数,false)
+                3、事件源.attachEvent("有on的事件类型",事件处理函数)
+
+            第十、为元素绑定事件三种方法
+                1、事件源.on事件类型 = null
+                2、事件源.removeEventListener("没有on的事件类型",命名函数,false)    
+                3、事件源.detachEvent("有on的事件类型",命名函数) 
+
+            第十一、事件冒泡：一定是盒子嵌套盒子，如果里面的盒子做了点击事件，外面的盒子和里面的盒子有相同的点击事件，外面的盒子也会被触发。---冒泡
+            满足条件
+            1、盒子嵌套
+            2、有相同的事件
+
+            第十二、阻止事件冒泡 
+            1、event.stopPropagation()  event可以简写为e 默认的事件对象 ---火狐和谷歌用的
+            2、window.event.cancelBublle = IE专有的
+
+            先扩展一个面试题
+
+
+        */
+    </script>
+</body>
+</html>

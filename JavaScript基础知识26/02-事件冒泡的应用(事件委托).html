@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅e.target</title>
+</head>
+
+<body>
+    <!--网上搜的故事 再通俗点：就是自己的事不想干，叫它爸爸，甚至爷爷、甚至祖先来干。或者拿取快递来比喻都行
+有三个同事预计会在周一收到快递。为签收快递，有两种办法：一是三个人在公司门口等快递；二是委托给前台MM代为签收。现实当中，我们大都采用委托的方案（公司也不会容忍那么多员工站在门口就为了等快递）。前台MM收到快递后，她会判断收件人是谁，然后按照收件人的要求签收，甚至代为付款。
+
+事件委托---它还有一个名字叫事件代理
+    -->
+    <ul id="ul">
+        <li>西施</li>
+        <li>貂蝉</li>
+        <li>昭君</li>
+        <li>凤姐</li>
+        <li>芙蓉姐姐</li>
+    </ul>
+    <script src="publick.js"></script>
+    <script>
+        // 事件委托--也叫做事件代理---（事件冒泡的应用）
+        my$("ul").onclick = function(e){//默认的事件对象event的简写e
+            // console.log(this);
+            // console.log(e.target);//e.target就是找到真正的目标
+            var target = e.target;
+            target.style.backgroundColor = "pink";
+            // 核心思想：把事件委托给了ul，他的父级，然后通过e.target 找打真正的目标---这种实现的过程就是我们的事件委托
+        }
+
+    </script>
+</body>
+
+</html>
