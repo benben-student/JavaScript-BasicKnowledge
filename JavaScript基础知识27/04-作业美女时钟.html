@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="" id="im">
+    <script src="publick.js"></script>
+    <script>
+        setInterval(function(){
+            // 获取当前时间
+            var dt = new Date();
+            // console.log(dt);
+            // 获取小时
+            var hour = dt.getHours();
+            // 获取秒钟
+            var second = dt.getSeconds();
+            // 判断长度的三元写法
+            hour = hour < 10 ? "0" + hour :hour;
+
+            second = second < 10 ? "0" + second : second;
+            // console.log(hour + "=====" + second); 测试代码
+            // 大招：好用 隐隐加加
+            my$("im").src = "meimei/"+hour+"_"+second+".jpg";
+
+        },1000);//1000毫秒就等于 1秒 1s
+    </script>
+</body>
+</html>

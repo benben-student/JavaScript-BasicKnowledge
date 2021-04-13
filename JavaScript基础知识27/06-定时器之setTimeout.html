@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        回顾：我们的定时器有两个 setInterval(函数,时间)---轮播图
+        我们的定时器setTimeout(函数,时间)--- 只执行一次--弹出广告，到了时间就执行一次
+        setTimeout(函数,时间)
+        参数1：函数
+        参数2:时间  单位是毫秒 1000毫秒等于1秒 1s
+
+        */
+
+    window.onload = function(){
+        var timeId = setTimeout(function(){
+            alert("我只爆炸一次");// 一次性的筷子，一次性的碗都要清除
+        },1000);
+
+        my$("btn").onclick = function(){
+            clearTimeout(timeId);// 定时器清除--这样节省内存
+        }
+    }
+
+    // 总结：不管那个定时器setInterval和setTimeout 都要清除定时器 ---规定--规范--乌龟的屁股
+    </script>
+    <input type="button" value="清除定时器" id="btn">
+</body>
+</html>

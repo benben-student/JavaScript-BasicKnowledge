@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、事件委托（事件代理）:通俗一点就是冒泡的应用(自己的事情不想做,找他的爸爸，爷爷，前台，秘书-----经典的场景--取快递) e.target---他能找到我们真正的目标
+
+        第二、事件的三个阶段：
+            1、事件捕获：用数字代表是1 (如果你看到了数字是1就代表了是捕获)---从外到里
+            2、目标阶段：用数字代表是2 （如果你看到的是数字2就代表的是目标阶段）--执行当前的元素
+            3、冒泡阶段: 用数字代表是3 (如果你看到了是数字3就代表的是冒泡阶段) ---从里到外
+            e.eventPhase为了检测事件三个阶段分别代表什么数字
+
+            第三、扩展了一个forEach(function(ele){
+
+            })--跟for是一样
+
+            第四、入口函数--最大的匿名函数 window.onload = function(){}
+
+            第五、定时器 原子弹 setInterval ----这个定时器用的最多  （当时还提到了setTimeout）
+            var timeId = setInterval(匿名函数,时间)
+            执行的过程是反复，过了一段时间就执行这个函数，
+            清除定时器---window.clearInterval(timeId)----清除定时器
+            window是可以省略
+         */
+    </script>
+</body>
+</html>
