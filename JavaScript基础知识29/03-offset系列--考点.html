@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            position: absolute;
+            top: 220px;
+        }
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background: lawngreen;
+            /* position: relative;相对定位
+            left: 100px;
+            top: 30px; */
+            margin-left: 200px;/*不要用定位，直接给标准流*/
+            padding-left: 20px;
+            border:10px solid #000;
+        }
+        #dv2{
+            width: 100px;
+            height: 100px;
+            background: hotpink;
+            /* position: absolute;
+            left: 20px; */
+            margin-left: 30px;
+            border:5px solid #000;
+            padding-left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv1">
+        <div id="dv2"></div>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            // 第一种情况：给了定位计算下面offsetLeft
+            //公式：自己的left值加上自己的margin值
+            // console.log(my$("dv2").offsetLeft);
+            // 第二种情况：标准流下面----不要加定位的情况下
+            // 公式:父盒子的 margin值 + padding值 + border边框 + 自己的margin值---公式
+            console.log(my$("dv2").offsetLeft);
+        }
+    </script>
+</body>
+</html>

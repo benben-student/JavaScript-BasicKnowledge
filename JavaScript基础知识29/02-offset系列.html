@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            position: absolute;
+            top: 220px;
+        }
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background: lawngreen;
+            position: absolute;
+            left: 100px;
+            top: 30px;
+        }
+        #dv2{
+            width: 100px;
+            height: 100px;
+            background: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv1">
+        <div id="dv2"></div>
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            console.log(my$("dv1").offsetWidth);//注意获取的宽度不带单位
+            console.log(my$("dv1").offsetHeight);//注意获取的宽高度不带单位
+            // 获取盒子左面的距离：注意一定记得给盒子加定位，才可以获取的他的定位的位置
+            console.log(my$("dv1").offsetLeft);//获取盒子左面的距离
+            console.log(my$("dv1").offsetTop);//获取盒子上面的距离
+        }
+    </script>
+</body>
+</html>

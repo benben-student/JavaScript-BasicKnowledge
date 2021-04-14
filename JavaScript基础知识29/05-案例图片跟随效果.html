@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/bird.png" alt="" id="im">
+    <script src="publick.js"></script>
+    <script>
+        // 移动事件 onmousemove ---鼠标移动事件 --- 精确到1px
+        document.onmousemove = function(e){//默认的事件对象 event的简写 e
+            my$("im").style.left = e.clientX + "px";//x坐标
+            my$("im").style.top = e.clientY + "px";//y坐标
+        }
+    </script>
+</body>
+</html>

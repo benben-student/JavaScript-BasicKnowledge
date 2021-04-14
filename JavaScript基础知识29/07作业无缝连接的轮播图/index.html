@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /*取消图片底部3像素距离*/
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            border: 1px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box ul li {
+            float: left;
+        }
+
+        .box ul {
+            width: 1500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="screen">
+    <ul>
+        <li><img src="imagess/01.jpg" alt=""/></li>
+        <li><img src="imagess/02.jpg" alt=""/></li>
+        <li><img src="imagess/03.jpg" alt=""/></li>
+        <li><img src="imagess/04.jpg" alt=""/></li>
+        <li><img src="imagess/01.jpg" alt=""/></li>
+    </ul>
+</div>
+<script src="publick.js"></script>
+<script>
+    var current = 0;//给个全局的，方便在其他地方都可以使用
+    function f1(){
+        // 获取ulObj
+        var ulObj = my$("screen").children[0];
+        // 判断
+        if(current < -1200){//表示走完了 -1200
+            ulObj.style.left = 0 + "px";
+            current = 0;
+        }else{
+            current -= 10;
+            ulObj.style.left = current + "px";
+        }
+        
+    }
+    var timeId = setInterval(f1,20);
+
+    //鼠标经过和鼠标离开
+    my$("screen").onmouseover = function(){
+        // 清除定时器
+        clearInterval(timeId);
+    }
+    // 鼠标离开开启定时器
+    my$("screen").onmouseout = function(){
+        timeId = setInterval(f1,20);
+    }
+</script>
+</body>
+</html>
