@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none
+        }
+
+        img {
+            vertical-align: top
+        }
+
+        .box {
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .inner {
+            width: 730px;/*相框的宽度就是我们图片素材的宽度*/
+            height: 454px;
+            background-color: pink;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .inner ul {
+            width: 1000%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .inner li {
+            float: left;
+        }
+
+        .square {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .square span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .square span.current {
+            background-color: orangered;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="inner"><!--相框-->
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/6.jpg" alt=""/></a></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+        </div>
+    </div>
+</div>
+<script src="publick.js"></script>
+<script>
+    // 获取最外面的div
+    var box = my$("box");
+    // 获取相框
+    var inner = box.children[0];
+    // 获取相框的宽度--也就是我们图片的宽度 offsetWidth
+    var imgWidth = inner.offsetWidth;//获取图片的宽度
+    // 获取ul
+    var ulObj = inner.children[0];
+    // 获取所有的span
+    var spanObjs = inner.children[1].children;
+    // 循环遍历
+    for(var i = 0; i < spanObjs.length;i++){
+        //在点击之前设置自定义属性
+        spanObjs[i].setAttribute("index",i);
+        //为了给每个span做点击事件
+        spanObjs[i].onclick = function(){
+            // alert("123") 测试代码
+            // 排他思想---先干掉所有span的背景颜色
+            for(var j = 0; j < spanObjs.length; j++){
+                // 移除每个span的类样式
+                spanObjs[j].removeAttribute("class");
+            }
+            // 第二件事情,自身自己 this
+            this.className = "current";
+            // 给个变量存储
+            var index = this.getAttribute("index");
+            //大招---调用动画函数 animate
+            animate(ulObj,-index*imgWidth);//- 索引值*图片的宽度
+        }
+    }
+
+    // 直接拷贝我们最终版的animate函数
+    // 函数封装 animate
+    function animate(element,target){//element--元素，target--目标
+            // 设表先关---先清除定时器（先清除定时器，再设置定时器，点击按钮的时候先清除定时器，然后再设置定时器----这个思想后面项目会大量用）
+            clearInterval(element.timeId);//第二步
+            // 为了保证只有一个定时器，节省内存 
+            element.timeId = setInterval(function(){//第一步：先加element.timeId
+                // 获取div的当前位置
+                var current = element.offsetLeft;//记得改成element
+                // console.log(current);学会测试
+                // 设置div每次移动的像素 -步数
+                var step = 10;//假设每次走10步
+                // 判断走正数还是负数
+                step = current < target ? step : -step;
+                // 每次移动后的距离
+                current += step;// current = current + 10
+                // 判断当前移动后的距离是否到达目标位置了-这个公式都经过了时间考验
+                if(Math.abs(target - current) > Math.abs(step)){//加了绝对值就把正反两个方向都考虑进来。
+                    element.style.left = current + "px";
+                }else{
+                    // 清除定时器
+                    clearInterval(element.timeId);//第三
+                    // 
+                    element.style.left = target + "px";
+                }
+            },20)
+        }
+        //完美封装动画函数---必须会
+</script>
+</body>
+</html>
+
+

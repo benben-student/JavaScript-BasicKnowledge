@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            margin-top: 20px;
+        }
+        div{
+            margin-top: 30px;
+            width: 200px;
+            height: 100px;
+            background: hotpink;
+            position: absolute;/*因为要移动，就要有定位*/
+            /* left:100px; 为了测试的*/
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="移动到400px" id="btn1">
+    <input type="button" value="移动到800px" id="btn2">
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        核心思想:首先要一定盒子，我们就让他脱离了标准流----position: absolute;
+        获取div的当前位置：my$("dv").offsetLeft --- 获取到div的当前位置
+        */
+        //温故而知新
+        // 点击第一个按钮移动到400px
+        my$("btn1").onclick = function(){
+            //调用函数
+            animate(my$("dv"),400);
+        }
+        // 点击第二个按钮移动到800px
+        my$("btn2").onclick = function(){
+            // 调用函数
+            animate(my$("dv"),800);
+        }
+        // 函数封装 animate
+        function animate(element,target){//element--元素，target--目标
+            // 设置定时器
+            var timeId = setInterval(function(){
+                // 获取div的当前位置
+                var current = element.offsetLeft;//记得改成element
+                // console.log(current);学会测试
+                // 设置div每次移动的像素 -步数
+                var step = 10;//假设每次走10步
+                // 每次移动后的距离
+                current += step;// current = current + 10
+                // 判断当前移动后的距离是否到达目标位置了
+                if(current <= target){//记得改成target
+                    element.style.left = current + "px";
+                }else{
+                    // 清除定时器
+                    clearInterval(timeId);
+                }
+            },20)
+        }
+    
+        //思考：有两个问题：1、第一个bug快速点击多次会出现问题---设表先关--非常经典的面试题，2、点击到800px之后回不到400px
+
+        // 以上两个问题，我们后面一一来解决啊，我们先解决第一个大问题--代码优化问题--封装
+    </script>
+</body>
+</html>
