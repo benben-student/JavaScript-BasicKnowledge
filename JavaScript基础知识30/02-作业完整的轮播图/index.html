@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: #DB192A;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen"><!--相框-->
+        <ul>
+            <li><img src="images/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+    <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script src="publick.js"></script>
+<script>
+    // 获取最外面的div
+    var box = my$("box");
+    // 获取相框
+    var screen = box.children[0];
+    // 获取相框的宽度--图片的宽度
+    var imgWidth = screen.offsetWidth;
+    // 获取ul
+    var ulObj = screen.children[0];
+    // 获取ul里面的 li
+    var list = ulObj.children;
+    // 获取ol
+    var olObj = screen.children[1];
+    // 获取焦点--就是左右按钮
+    var arr = my$("arr");
+
+    // pic其他很多地方都会用到，直接变成全局的
+    var pic = 0;
+
+    // 重点开始---加薪
+    // 创建下面的点击小按钮---根据ul中的li的个数
+    for(var i = 0; i < list.length; i++){
+        // 创建li标签，追加到ol li 里面--上大招了--通过创建元素
+        var liObj = document.createElement("li");
+        olObj.appendChild(liObj);
+        liObj.innerHTML = (i + 1);//优秀--完美
+        //给ol中的li添加自定义属性
+        liObj.setAttribute("index",i);
+        //点击事件
+        liObj.onclick = function(){
+            // alert("123")测试代码
+            //典型的排他思想
+            for( var j = 0; j < olObj.children.length; j++){
+                // 先干掉所有的li的class样式
+                olObj.children[j].removeAttribute("class");
+            }
+            this.className = "current";
+
+            // 获取li当前索引
+            pic = this.getAttribute("index");
+            // 调用动画函数 animate
+            animate(ulObj, -pic * imgWidth);
+        }
+    }
+    // 设置ol中第一个里的背景颜色
+    olObj.children[0].className = "current";//此时ol中第一个li有背景颜色
+    // 继续优秀--扩展-我们直接克隆第一个li,加入到ul中的最后===克隆
+    ulObj.appendChild(ulObj.children[0].cloneNode(true));//可以加鸡腿
+
+    var timeId = setInterval(clickHandle,2000);//此时2000 表示2s走下
+
+    // 鼠标经过box显示按钮
+    box.onmouseover = function(){
+        arr.style.display = "block";
+        // 清除定时器
+        clearInterval(timeId);
+    };
+    // 鼠标离开隐藏焦点--按钮
+    box.onmouseout = function(){
+        arr.style.display = "none";
+        // 离开的时候开启定时器
+        timeId = setInterval(clickHandle,2000);
+    };
+
+    // 右侧按钮开始
+    my$("right").onclick =clickHandle;
+    // 此时这个右侧函数封装搞定
+    function clickHandle (){//最难的就是右侧
+        // console.log(pic);
+        // 判断--核心思想 pic的值是5，此时页面显示的是第六张图，用户认为是第一张图，用户点击的时候应该看到第二张图片。
+        if(pic == list.length - 1){;//学活了 判断是 ==
+            pic = 0;//设置pic = 0
+            ulObj.style.left = 0 + "px";//把ul的位置还原到了开始的位置
+        }
+        pic++;
+        animate(ulObj, - pic * imgWidth);
+
+        // pic == 5 说明 显示的是第六张图片（对于用户来说是第一张）--第一个小按钮要有颜色
+        if(pic == list.length - 1){//此时的pic == 5
+            // 第五个颜色给他干掉
+            olObj.children[olObj.children.length - 1].className = "";
+            // 第一个按钮加颜色
+            olObj.children[0].className = "current";
+        }else{
+            // 排他思想
+            for(var i = 0; i < olObj.children.length; i++){
+                // 干掉所有小按钮的颜色
+                olObj.children[i].removeAttribute("class");
+            }
+            olObj.children[pic].className = "current";
+        }
+    }
+
+    // 左侧按钮开始
+    my$("left").onclick = function(){
+        // 判断
+        if( pic == 0){//此时是第一张图
+            pic = 5;//要先到第六张图，下面减减
+            ulObj.style.left = -pic * imgWidth + "px";
+        }
+        pic--;
+        // 调用动画函数
+        animate(ulObj, - pic * imgWidth);
+
+        // 典型的排他思想
+        for(var i = 0; i < olObj.children.length; i++){
+            // 所有的小按钮颜色都删除--干掉
+            olObj.children[i].removeAttribute("class");
+        }
+        // 设置当前的pic索引对应的按钮设置颜色值
+        olObj.children[pic].className = "current";
+    }
+
+
+// 封装好的animate
+function animate(element,target){//element---元素，target--目标
+    // console.log(my$("dv").offsetLeft);
+    // 先清理定时器，--设表先关的由来（先清理定时器，点击的时候是先清理定时器，然后在设置）
+    clearInterval(element.timeId);//设表先关
+    // 设置定时器
+    // 为了保证只有一个定时器，节省内存不用每次开辟一个空间
+    element.timeId = setInterval(function(){
+        // 获取div的当前位置
+    var current = element.offsetLeft;
+    // div每次移动多少像素--多少步假设10步
+    var step = 10;//假设每次走10步
+    // 判断走正数还是负数
+    step = current < target ? step : -step;
+    // 每次移动后的距离
+    current += step;//current = current + 10
+    // 判断当前的移动后的位置是否达到目标位置
+    if(Math.abs(target - current) > Math.abs(step)){//如果目标减去我们的当前>步数就走
+        element.style.left = current + "px";
+    }else{
+        // 清除定时器
+        clearInterval(element.timeId);
+        element.style.left = target + "px";//当步数小于我们的step的时候直接到目标 
+    }
+    },5);
+}
+</script>
+</body>
+</html>
