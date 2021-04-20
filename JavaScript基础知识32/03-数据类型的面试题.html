@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+       第一类： JS数据类型：基本数据类型（简单数据类型、值类型）
+            1)数值型数据(包含整数和小数) number
+            2)字符型数据 string
+            3)布尔类型 boolean （true/false）
+            4)空 null
+            5)未定义 undefined
+
+
+        第二类： 复合数据类型（复杂数据类型、引用数据类型）
+            1) 对象 Object
+            2) 函数 Function
+            3) 日期 Date
+            4) 数组 Array
+            5) 扩展一个：基本包装类型 ： String、Number、Boolean 我们后面会详细讲解 
+            
+            以上两大类留给面试官
+        */
+
+        /* 
+        检测数据类型: typeof
+        语法 typeof 变量 或者 typeof（变量）
+        返回值: 返回的是字符串---记住了----下面面试题就会用到这句话啊
+        */
+        //数据值数据
+        var num = 666;
+        console.log(typeof num);
+        //  字符型数据
+        var str = "沐沐真可爱";
+        console.log(typeof str);
+        // 布尔类型
+        var bool = true;
+        console.log(typeof bool);
+        // 空
+        var nul = null;
+        console.log(typeof nul);//Object 历史遗留的问题
+        // 还是否曾经记得我们的大招
+        console.log(Object.prototype.toString.call(nul));//讲解原型回来看就秒懂了--了解即可
+        // 未定义
+        var age;
+        console.log(typeof age);
+
+        // 面试题上场了
+        console.log("=====================");
+        var b;
+        // console.log(typeof b);  小心啊，面试题
+        if(b == undefined){
+            console.log("大家好好看这个面试题");
+        }
+
+        if(typeof b == "undefined"){//完美解决  考点：typeof 返回的是一个字符串
+            console.log("这句话代码会不会输出--小心被面试到，而且不难");
+        }
+
+        console.log("================");
+        // 引用类型、复杂数据类型、复合数据类型
+        var arr = [1,2,3,4,5];
+        console.log(typeof arr);
+        /* 
+        对象语法----键值对方式
+        var obj = { 
+            键1 : 值1,
+            键2 : 值2,
+            键3 : 值3...
+        }
+        */
+       var obj = {
+           name:"zs",
+           age:18,
+           sex:"保密" // 了解  1 代表的是男  0 代表的是女 
+       }
+       console.log(typeof obj);
+       var per = {name:"lw",age:16,sex:"未知"};
+       console.log(typeof per);
+
+       //函数
+       function fun(){
+
+       }
+       console.log(typeof fun);
+       /* 
+       总结归纳：
+       值类型有一个特殊null他用typeof检测返回的类型是object,其他的类型都是返回默认的对应的数据类型。
+       引用类型也有一个特殊的function，他用typeof检测返回的是function，其他的都是object
+       */
+    </script>
+</body>
+</html>

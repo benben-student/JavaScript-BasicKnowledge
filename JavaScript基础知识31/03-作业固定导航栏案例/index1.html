@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            /* 垂直对其方式：上top 中middle 下bottom 
+              align 水平对其方式：左 left 中center 右侧right
+            */
+            vertical-align: top;
+        }
+
+        .top,
+        .nav {
+            width: 1423px;
+            margin: 0 auto;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            margin-top: 10px;
+
+        }
+
+        .fixed {
+            /*这个类就是给我做固定定位的*/
+            position: fixed;
+            top: 0;
+            left: 50%;
+            margin-left: -711px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top" id="topPart">
+        <img src="images/top.png" alt="" />
+    </div>
+    <div class="nav" id="navBar">
+        <img src="images/nav.png" alt="" />
+    </div>
+    <div class="main" id="mainPart">
+        <img src="images/main.png" alt="" />
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        ----扩展进来
+        如果有很多个数据要定义变量--- 那么我们会想到数组---数组就是大变量，里面可以存储很多个数据
+        除了数组之外还有一个也可以存储很多个数据 ---对象---万物皆对象
+        目前知道一点，对象也可以存储很多个数据---对象跟数组一样可以实现一个变量存储很多个数据
+        定义空数组 var arr = []
+        定义一个空对象 var obj = {} ----存储方式键值对的方式
+        */
+        //    定义一个对象
+        //   var obj = {
+        //       name:'张三',
+        //       age:18,
+        //       num:1003
+        //   }
+        //   console.log(obj);
+
+        // 封装要给函数获取被卷去的上面和被卷去的左面
+
+        // function getScroll(){//兼容了浏览器
+        //     var left = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;//写这么多就是为了兼容各种浏览器
+        //     var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;//写这么多就是为了兼容各种浏览器
+        // }
+
+        //优化了
+        // function getScroll() {//兼容了浏览器
+        //     var obj = {
+        //         left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,//写这么多就是为了兼容各种浏览器
+        //         top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0//写这么多就是为了兼容各种浏览器
+        //     }
+        //     return obj;
+
+        // }
+        // 再进一步优化
+        function getScroll() {//兼容了浏览器--工作项目里面完整写法
+            return {
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,//写这么多就是为了兼容各种浏览器
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0//写这么多就是为了兼容各种浏览器
+            }
+        }
+
+        window.onscroll = function(){//页面的滚动事件
+            // console.log("我被滚动了"); 测试代码
+            // console.log(getScroll().top);
+            if(getScroll().top >= my$("topPart").offsetHeight){
+                // alert("我到了这个位置")
+                my$("navBar").className = "nav fixed";
+                my$("mainPart").style.marginTop = my$("navBar").offsetHeight + "px";
+            }else{
+                my$("navBar").className = "nav";
+                my$("mainPart").style.marginTop = "10px"
+            }
+        }
+    </script>
+</body>
+
+</html>

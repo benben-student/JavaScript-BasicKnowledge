@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            border: 5px solid #000;
+            /* background-color: hotpink; */
+            overflow: auto;
+            /*有了滚动条*/
+        }
+
+        input {
+            position: absolute;
+            left: 330px;
+            top: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv">
+        我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽我是这条街最亮的崽
+    </div>
+    <script src="publick.js"></script>
+    <script>
+        /* 
+        温故而知新：
+        offset系列：
+        获取盒子的宽度 .offsetWidth //不带单位 ----记得会加边框
+        获取盒子的高度 .offsetHeight //不带单位 ----记得会加边框
+        获取盒子的左面的距离 .offsetLeft //不带单位
+        获取盒子的上面的距离 .offsetTop //不带单位
+         */
+        my$("btn").onclick = function () {
+            //  console.log(my$("dv").offsetWidth); 盒子的宽度 + 边框
+            // console.log(my$("dv").offsetHeight);// 盒子的高度 + 边框
+            /* 
+            第一情况：盒子里面没有内容的情况下和内容小于盒子大小的情况下：
+            scroll系列: 滚动的距离，或者卷去的距离
+            scrollWidth: 盒子的实际宽度（没有边框）
+            scrollHeight: 盒子的实际的高度（没有边框）
+            */
+            //    console.log(my$("dv").scrollWidth); 盒子的实际宽度 不加边框 ，盒子里面没有内容或者盒子里面内容小于盒子的大小
+            //console.log(my$("dv").scrollHeight); //盒子的实际高度 不加边框 ，盒子里面没有内容或者盒子里面内容小于盒子的大小
+
+            // 第二种情况：内容超过了盒子的大小----记得滚动条是占位的
+            //  console.log(my$("dv").scrollWidth); 盒子中内容实际的宽度
+            // console.log(my$("dv").scrollHeight);// 盒子中内容实际的高度
+
+            // console.log(my$("dv").scrollTop);//向上滚动的距离、卷出去的距离
+            // console.log(my$("dv").scrollLeft);//和scrollTop同理，向左滚动的距离，卷出去的距离
+        }
+         // div的滚动事件
+         my$("dv").onscroll = function () {
+                // console.log("我被滚动了");
+                console.log(this.scrollTop);
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border:20px solid #000;
+            border-left-width: 50px;/*左侧边框的宽度*/
+        }
+    </style>
+</head>
+<body>
+    <div id="dv"></div>
+    <script src="publick.js"></script>
+    <script>
+        /* 三大系列：留个面试官来问
+        offset系列：
+        offsetWidth: 元素的宽度 有边框
+        offsetHeight: 元素的高度 有边框
+        offsetLeft:获取盒子左面的距离
+        offsetTop:获取盒子上面的距离
+
+        scroll系列
+        scrollWidth:元素的宽度(如果内容少，或者没有内容，盒子自身的宽度)--如果内容超过了盒子面就是内容的大小了。
+        scrollHeight:元素的高度(如果内容少，或者没有内容，盒子自身的高度)---如果内容超过了盒子，就是内容的大小
+        scrollLeft:向左卷出去的距离
+        scrollTop:向上卷出去的距离
+
+        client系列：可视区域
+        clientWidth:可视区域的宽度(没有边框)，边框内部的宽度
+        clientHeight:可视区域的高度(没有边框)，边框内部的高度
+        clientLeft:左边边框的宽度
+        clientTop: 上面的边框的宽度
+        */
+       console.log(my$("dv").clientWidth);
+       console.log(my$("dv").clientHeight);
+       console.log(my$("dv").clientLeft);
+       console.log(my$("dv").clientTop);
+    </script>
+</body>
+</html>
