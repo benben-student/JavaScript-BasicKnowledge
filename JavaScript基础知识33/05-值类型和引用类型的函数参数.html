@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        温故而知：
+        函数的参数：形参和实参
+        形参：函数在定义的时候小括号里面的变量就是形参----形参就是变量
+        实参：函数在调用的时候小括号里面的参数就是实参--实参就是实实在在的参数，也可以是变量
+        */
+    //    function fun(x,y){//形参 x，y
+    //     return x + y;
+    //    }
+    //    var x = 10;//实参可以是变量
+    //    var y = 20;//实参可以是变量
+    //    var result = fun(x,y);
+     //  console.log(result);
+
+    //  值类型传参---变量提升--不能忘了--在复习呢
+    var num = 20;
+    function fun(num){
+        num = 30;
+        console.log(num);
+    }
+    fun(num);//30
+    console.log(num);//20
+
+    // 重点来了---引用类型传参
+    var obj = {
+        name:"zs",
+        age:18
+    };
+    function fun2(obj){//引用类型传参
+        obj.name = "lw";
+        console.log(obj.name);
+    }
+    fun2(obj);//lw
+    console.log(obj.name);//lw
+    //总结：前面我们总结的话：引用类型传递的是地址，修改其中一个另一个也会被修改
+    </script>
+</body>
+</html>

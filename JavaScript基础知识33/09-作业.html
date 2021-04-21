@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 面试官来了：需求--只遍历属性，不遍历方法
+        var obj = {
+            name:"zs",//属性
+            age:18,//属性
+            sayHi:function(){
+                console.log("我是方法");
+            }
+        };
+
+        // 遍历循环 for in 循环
+        for(var key in obj){
+            //判断
+            if(typeof obj[key] != "function"){//考点：typeof返回的是字符串
+                console.log(key,obj[key]);
+            }
+        }
+
+        //扩展---for in 很强大，他不仅可以遍历对象，他还可以遍历数组
+        var arr = [1,2,3,4,5];
+        for(var key in arr){
+            console.log(key,arr[key]);
+        }
+
+        // 万物皆对象，数组也是对象
+    </script>
+</body>
+</html>

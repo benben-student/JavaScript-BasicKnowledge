@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全等 ===  等于 ==   赋值 =
+        // 面试题来了
+        var str = "66666";
+        var num = 66666;
+        console.log(str == num);//true 隐式转换（只比较值,不比较类型）
+        console.log(str === num);//false 更严格了，不仅比较值还比较类型
+
+
+        //对比着学习
+        console.log("================");
+        // 值类型比较
+        var str1 = "大家继续给力";
+        var str2 = "大家继续给力";
+        console.log(str1 == str2);//true
+        console.log(str1 === str2);//true
+        // 总结：在内存里面值类型存储的就是具体的值---存值---存储的是具体值
+
+        // 引用类型--存址---存储的是地址
+        console.log("================");
+        var arr1 = [1,2,3];//0x11
+        var arr2 = [1,2,3];//0x22
+        console.log(arr1 == arr2);//false
+        console.log(arr1 === arr2);//false
+
+        // 扩展一些概念：我们内存里面存储数据方式分为两种(栈内存和堆内存)
+        // 值类型一般都是存储在栈内存，在工作里面一般栈内存都是用矩形表示----我们前面学习的基本类型都是在栈内存
+        // 引用类型存储在堆内存，在工作里面一般堆内存都是用椭圆表示--我们前面学习的引用类型都是在堆内存.
+    </script>
+</body>
+</html>

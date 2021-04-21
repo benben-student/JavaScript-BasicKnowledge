@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* in的第一个作用：检测对中是否存在该属性
+        in关键字:检测对中是否存在该属性，如果存在该属性返回true，如果没有改属性返回false
+        语法 key in obj  注意：key 一定要加双引号
+        面试官：请列出检测对象中有哪些方法
+        */
+       var obj = {
+           name:"zs",
+           age:18,
+           sex:"男"
+       }
+       console.log("name" in obj);//true
+    //    console.log(name in obj);// 
+       console.log("num" in obj);//false
+
+    //    var a = "name";
+    //    console.log(a in obj); 不要定义变量，直接给key加双引号
+
+    // in的第二个作用： 可以遍历循环 for  迭代  枚举 --我们之前遍历循环数组，--跟数组是类似
+    for(var key in obj){
+        console.log(key,obj[key]);//用[] arr[i]
+    }
+    </script>
+</body>
+</html>

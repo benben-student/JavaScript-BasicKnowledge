@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 值类型、简单数据类型。基本数据类型
+        var str1 =  "lw";
+        var str2 = str1;
+        console.log(str1);
+        console.log(str2);
+        str2 = "wc";
+        console.log("==========");
+        console.log(str1);//lw
+        console.log(str2);//wc
+
+
+        // 重点引用类型来了
+        console.log("=================");
+        var obj1 = {
+            name:"zs",
+            age:18,
+            sex:"男"
+        };
+        var obj2 = obj1;//传址 ----传递的是地址
+        // 输出对象的方法点语法 (.)翻译中文 "的"的意思
+        console.log(obj1.name);
+        console.log(obj1.name);
+        // 修改对象里面的值也是使用点语法
+        console.log("=============");
+        obj2.name = "ls";
+        console.log(obj1.name);
+        console.log(obj2.name);
+
+    </script>
+</body>
+</html>

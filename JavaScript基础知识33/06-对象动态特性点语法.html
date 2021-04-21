@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        JS的动态特性:就是对一个空对象进行 增加、删除、 修改、 查询。
+        空对象定义语法：字面量创建对象的方式
+        var arr = []; 字面量定义一个空数组
+        var obj = {}; 字面量定义一个空对象，我们先学习字面量的方式，后面我们还可以通过new方式构造函数方式
+        */
+       var obj = {//空对象 跟我们前面学习的空数组一样  [] 对象用的是{}
+       }
+       //添加属性，通过点语法
+       obj.name = "wc";
+       obj.age = 3;
+       //查询添加的属性 通过点语法
+       console.log(obj.name);
+       console.log(obj.age);
+       //动态添加方法 （属性不带括号，方法带括号---方法就是函数）
+       obj.say = function(){
+           console.log("大家要认真的记笔记，我们要把基本功打扎实来");
+       };
+    //    查询对象里面的方法
+    obj.say();
+    // 动态修改
+    obj.name = "lw";//修改对象的属性和添加对象是一样的
+    // console.log(obj.name);
+    console.log(obj["name"]);
+    // 总结：有则改，无则加（如果这个属性有了就是修改，如果没有这个属性就是添加）
+
+    // 删除 delete
+    // delete obj.name 如果这个属性删除成功了返回true，删除失败返回false
+    console.log(delete obj.name);
+
+    // 以上都是对一个空对象进行 添加 删除 修改和查询  通过的是点语法
+    </script>
+</body>
+</html>
