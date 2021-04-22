@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        面向过程：注重的过程，每一步都要自己参与进来
+        面向对象：注重的是结果，不管中间的过程是如果做到的。
+
+        面向对象有两个特性：具有属性和方法
+        属性---静态的---->(HTML+CSS)--静态页面
+        方法---动态的----函数(js,行为，动效)
+
+        举例:邱非
+        属性: 名字、性别，年龄，长头发，大眼睛，白白的皮肤...靓
+        方法: 唱歌、跑步、打豆豆，跳舞干饭，睡觉，敲代码
+
+        是对象属性和方法
+        同学们
+         属性： 名字、性别、身高，体重，年龄，发型...
+         方法：跟老师互动，敲代码，唱歌，问问题，钓鱼...
+        */
+       var person = {//字面量创建对象
+            name:"zs",//属性
+            age:18,//属性
+            sex:"男",//属性
+            eat:function(){//方法
+                console.log("吃大餐");
+            },
+            play:function(){
+                console.log("敲代码,找朋友一起找bug");
+            }
+       };
+    //  访问对象的属性和方法
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.sex);
+    // 访问对象方法
+    person.eat();
+    person.play();
+    </script>
+</body>
+</html>

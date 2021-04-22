@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求：创建一个div标签，并设置内容，边框，背景色，文本添加到页面中
+        // 1.创建一个div标签
+        var oDiv = document.createElement("div");
+        // 2.并设置内容，边框，背景色
+        oDiv.innerText = "测试div的文字效果";
+        oDiv.style.backgroundColor = "hotpink";
+        oDiv.style.width = "200px";
+        oDiv.style.height = "200px";
+        oDiv.style.border = "1px solid #000";
+        // 添加到页面上面
+        document.body.appendChild(oDiv);
+        // 获取新创建的div
+        var div1 = document.getElementsByTagName("div")[0];
+        console.log(div1);
+        
+    </script>
+</body>
+</html>

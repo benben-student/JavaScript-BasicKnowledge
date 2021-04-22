@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 扩展的面试--需求：判断数组中是否存在B字符串，这个元素
+        var arr = ["A","B","C"];
+        // 第一种方法 for in 循环
+        for(var key in arr){
+            // 判断
+            if(arr[key] == "B"){
+                console.log("存在");
+            }
+        }
+        // 扩展 方法2 indexOf ：之前我们数组的方法
+        if(arr.indexOf("B") != -1){//存在
+            console.log("存在");
+        }
+
+        // 扩展一个方法--了解即可--推荐以上两个方法
+        if(1 in arr){
+            console.log("存在");
+        }
+
+        // indexOf:检测数组中是否存该元素，如果存在返回该元素对应的索引值、如果不存在返回 -1
+        var arr1 = [1,2,3,4,5,6];
+        console.log(arr1.indexOf(3));//2
+        console.log(arr1.indexOf(8));// -1 最后一次回顾
+    </script>
+</body>
+</html>

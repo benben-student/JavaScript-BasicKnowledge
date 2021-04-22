@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>我是段落标签1</p>
+    <p>我是段落标签2</p>
+    <p>我是段落标签3</p>
+    <h3 class="test">我是标题标签1</h3>
+    <h3 class="test">我是标题标签2</h3>
+    <h3 class="test">我是标题标签3</h3>
+    <script>
+        // 需求1:创建三个div标签，标签的内容是div-0-1-2,并设置边框，背景色，文本以及颜色
+        // 循环创建三个div
+        for(var i = 0; i < 3; i++){
+            var oDiv = document.createElement("div");
+            oDiv.innerText = "div" + i;
+            oDiv.style.backgroundColor = "hotpink";
+            oDiv.style.border = "1px solid #000";
+            oDiv.style.color = "#fff";
+            // 追加到页面
+            document.body.appendChild(oDiv);
+        }
+        // 需求2：获取页面中的所有的p标签，并设置边框，背景色，文本以及颜色
+        var oPs = document.getElementsByTagName("p");//集合--伪数组
+        //循环遍历
+        for(var i = 0; i < oPs.length; i++){
+            oPs[i].style.backgroundColor = "skyblue";
+            oPs[i].style.border = "1px solid #000";
+            oPs[i].style.color = "#fff";
+        }
+
+        // 需求3：获取页面中的所有的class为test的标签，并设置边框，背景色，文本以及颜色
+        var tests = document.getElementsByClassName("test");//集合--伪数组
+        // 循环遍历
+        for(var i = 0; i < tests.length; i++){
+            tests[i].style.backgroundColor = "violet";
+            tests[i].style.border = "1px solid #000";
+            tests[i].style.color = "#fff";
+        }
+
+        /* 
+        总结：
+        优势: 简单--一听就懂--一写就会
+        缺点：代码冗余---重复的代码太多-----函数
+        */
+
+    </script>
+</body>
+</html>

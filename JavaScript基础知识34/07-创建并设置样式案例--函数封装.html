@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>我是段落标签1</p>
+    <p>我是段落标签2</p>
+    <p>我是段落标签3</p>
+    <h3 class="test">我是标题标签1</h3>
+    <h3 class="test">我是标题标签2</h3>
+    <h3 class="test">我是标题标签3</h3>
+    <script>
+        // 继续给力--想到我们之前的my$
+        // 封装获取标签的函数
+        function getElementsByTagName(tagName){
+            return document.getElementsByTagName(tagName)
+        }
+        // 获取class类的函数
+        function getElementsByClassName(className){
+            return document.getElementsByClassName(className)
+        }
+        // 封装获取元素的函数
+        function setStyle(eles, bgcolor) {
+            for (var i = 0; i < eles.length; i++) {
+                eles[i].style.backgroundColor = bgcolor;
+                eles[i].style.border = "1px solid #000";
+                eles[i].style.color = "#fff";
+            }
+        }
+        var oPs = getElementsByTagName("p");//集合--伪数组
+        var tests = getElementsByClassName("test");//集合--伪数组
+
+        // 调用函数,谁需要谁调用
+        setStyle(oPs,"skyblue");
+        setStyle(tests,"violet")
+
+        // 完美-->优化代码--很多都封装成一个函数了，只写一次，以后谁需要谁调用。---引出了对象
+
+    </script>
+</body>
+
+</html>
