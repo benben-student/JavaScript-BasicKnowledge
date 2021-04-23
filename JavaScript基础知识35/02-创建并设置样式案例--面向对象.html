@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>我是段落标签1</p>
+    <p>我是段落标签2</p>
+    <p>我是段落标签3</p>
+    <h3 class="test">我是标题标签1</h3>
+    <h3 class="test">我是标题标签2</h3>
+    <h3 class="test">我是标题标签3</h3>
+    <div id="demoId">我是获取id的元素</div>
+    <script>
+        // 温故而知新
+        var $ = {
+            // 获取元素都属于一类
+            getElements: {
+                getElementsByTagName: function (tagName) {
+                    return document.getElementsByTagName(tagName)
+                },
+                getElementsByClassName: function (className) {
+                    return document.getElementsByClassName(className)
+                },
+                getElmentById:function(id){//想办法把这个也变成数组--集合
+                    return [document.getElementById(id)];//加个[] 变成数组就ok
+                }
+            },
+            setStyle: function (eles, bgcolor) {
+                for (var i = 0; i < eles.length; i++) {
+                    eles[i].style.backgroundColor = bgcolor;
+                    eles[i].style.border = "1px solid #000";
+                    eles[i].style.color = "#fff";
+                }
+            }
+        }
+        $.setStyle($.getElements.getElementsByTagName("p"), "skyblue");
+        $.setStyle($.getElements.getElementsByClassName("test"), "violet")
+        $.setStyle($.getElements.getElmentById("demoId"), "pink")
+
+    </script>
+</body>
+
+</html>

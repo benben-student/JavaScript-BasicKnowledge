@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 工厂模式：工厂模式就是把内置对象构造函数的方式放到函数里面。--函数封装
+        function createStudent(name,age,num){
+            var stu1 = new Object();
+            stu1.name = name;
+            stu1.age = age;
+            stu1.num = num;
+            stu1.sayHi = function(){
+                console.log("姓名:" + this.name + "学号:"+ this.num);
+            }
+            return stu1;
+        }
+        // 接收
+        var p1 = createStudent("zs",18,1001);
+        console.log(p1);
+        p1.sayHi();
+        var p2 = createStudent("lw",99,1002);
+        console.log(p2);
+        p2.sayHi();
+        var p3 = createStudent("ls",20,1003);
+        console.log(p3);
+        p3.sayHi();
+        
+        // 完美解决代码冗余的问题
+
+
+    </script>
+</body>
+</html>

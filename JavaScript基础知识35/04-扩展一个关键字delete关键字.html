@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // delete 关键字:删除---如果删除成功了返回true，如果删除失败了返回false
+        var obj = {//字面量创建对象的方式
+            name:"zs",
+            age:18,
+            sayHi:function(){
+                console.log("我是方法");
+            }
+        };
+        console.log(obj.name);
+        console.log(obj.age);
+        obj.sayHi();
+        console.log("========");
+        console.log(obj["name"]);
+        console.log(obj["age"]);
+        obj["sayHi"]();
+
+        // delete关键字
+        console.log(delete obj.name);//true
+        console.log(delete obj["age"]);//true
+
+        // 扩展来了
+        // 可以删除未使用var定义的变量: JS是弱类型语言，定义变量不严谨，可以使用var，也可以不使用var，（js是一门松散的语言）---后面我们会详细讲解严格模式就必须使用var声明变量了--了解
+        // java是强类型语言，定义变量前面必须有关键字
+
+        console.log("=============");
+        test = "我就是没有使用var声明的变量";
+        console.log(test);
+        console.log(delete test);
+        // 总结：因为未使用var声明的变量,会自动挂载到window上面，浏览器对象---全局的，能使用delete删除
+
+        // 能不能删除使用var声明的变量呢？--不能的---总结---delete是不能删除使用var声明的变量
+        var demo = "demo";
+        console.log(delete demo);
+        console.log("==============");
+        // 考题来了：问：可以删除直接定义在window上的属性 是可以的
+
+        window.demo1 = "demo1";
+        console.log(delete window.demo1);//delete 是可以删除window上的属性的
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 内置的构造函数方式创建对象---就是系统自带的 new Date()
+        var stu1 = new Object();//var dt = new Date()
+        stu1.name = "zs";
+        stu1.age = "18";
+        stu1.num = "1001";
+        stu1.sayHi = function(){
+            console.log("姓名:" + this.name + "学号:" + this.num);
+        }
+
+        var stu2 = new Object();//var dt = new Date()
+        stu2.name = "lw";
+        stu2.age = "98";
+        stu2.num = "1002";
+        stu2.sayHi = function(){
+            console.log("姓名:" + this.name + "学号:" + this.num);
+        }
+
+        var stu3 = new Object();//var dt = new Date()
+        stu3.name = "ls";
+        stu3.age = "19";
+        stu3.num = "1003";
+        stu3.sayHi = function(){
+            console.log("姓名:" + this.name + "学号:" + this.num);
+        }
+
+        // 访问内置的构造函数创建对象的属性和方法
+        console.log(stu1.name);
+        console.log(stu1.age);
+        console.log(stu1.num);
+        stu1.sayHi();
+        console.log("===========");
+        console.log(stu2.name);
+        console.log(stu2.age);
+        console.log(stu2.num);
+        stu2.sayHi();
+
+        console.log(stu3.name);
+        console.log(stu3.age);
+        console.log(stu3.num);
+        stu3.sayHi();
+
+        /* 
+        优势：简单--跟字面量一样，一听就会，一些就会默写
+        缺点：代码冗余---函数封装----》（工厂模式）
+        */
+    </script>
+</body>
+</html>

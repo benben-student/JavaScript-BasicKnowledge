@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字面量的方式创建对象
+        var stu1 = {
+            name:"zs",
+            age:18,
+            sex:1,
+            num:1001,
+            className:"葵花宝典",
+            sayHi:function(){
+                //console.log("姓名:" + stu1.name + "年龄:" + stu1.age);
+                // 当前，自己，自身
+                console.log("姓名:" + this.name + "年龄:" + this.age);  
+            }
+        };
+
+        var stu2 = {
+            name:"lw",
+            age:88,
+            sex:1,
+            num:1002,
+            className:"九阳神功",
+            sayHi:function(){
+                //console.log("姓名:" + stu1.name + "年龄:" + stu1.age);
+                // 当前，自己，自身
+                console.log("姓名:" + this.name + "年龄:" + this.age);  
+            }
+        };
+
+        var stu3 = {
+            name:"ls",
+            age:20,
+            sex:0,
+            num:1003,
+            className:"从删库到跑路",
+            sayHi:function(){
+                //console.log("姓名:" + stu1.name + "年龄:" + stu1.age);
+                // 当前，自己，自身
+                console.log("姓名:" + this.name + "年龄:" + this.age);  
+            }
+        };
+
+        // 访问对象的属性和方法
+        console.log(stu1.name);
+        console.log(stu1.age);
+        console.log(stu1.sex);
+        console.log(stu1.num);
+        console.log(stu1.className);
+        stu1.sayHi();
+        console.log("===============");
+        console.log(stu2.name);
+        console.log(stu2.age);
+        console.log(stu2.sex);
+        console.log(stu2.num);
+        console.log(stu2.className);
+        stu2.sayHi();
+
+        console.log("===============");
+        console.log(stu3.name);
+        console.log(stu3.age);
+        console.log(stu3.sex);
+        console.log(stu3.num);
+        console.log(stu3.className);
+        stu3.sayHi();
+
+        /* 
+        优势：简单--秒懂，一听就会，一些就会默写
+        缺点：代码冗余
+        */
+    </script>
+</body>
+</html>

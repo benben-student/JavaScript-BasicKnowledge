@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用工厂模式创建两个类，一个是人类，一个是动物类
+        function createPerson(name,age,sex){
+            var per = new Object();
+            per.name = name;
+            per.age = age;
+            per.sex = sex;
+            return per;
+        }
+
+        var per1 = createPerson("zs",18,1);
+        console.log(per1);
+
+        function createAnimal(name,age,sex){
+            var animal = new Object();
+            animal.name = name;
+            animal.age = age;
+            animal.sex = sex;
+            return animal;
+        }
+
+        var animal1 = createPerson("lw",88,1);
+        console.log(animal1);
+
+        //练习:有一个黄色的小狗,叫大黄,今年已经三岁了,250斤的重量每次走路都很慢,喜欢吃大骨头
+//练习:创建一个手机对象,手机有型号,有颜色,可以打电话和发短信
+// 分别用--字面量、和内置构造函数 
+    </script>
+</body>
+</html>
