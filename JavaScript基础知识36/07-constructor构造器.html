@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        constructor属性可以获取到创建对象使用的构造函数对象，我们可以通过构造器constructor属性来得到创建对象的类型
+        总结一句话：constructor 和 instanceof --- 找父类
+        */
+        //构造函数 --- 构造器
+        function Person(name,age,sex) {
+            this.name = name;//属性
+            this.age = age;//属性
+            this.sex = sex;//属性
+            this.sayHi = function(){
+                console.log("姓名:" + this.name + "年龄:" + this.age + "性别:" + this.sex);
+            }
+        }
+
+        // 实例化对象
+        var per1 = new Person("zs",18,1);
+        console.log(per1);
+
+    //    console.log( per1.constructor);测试代码
+    // 判断
+    if(per1.constructor == Person){
+        console.log("per1 是 Person的孩子");
+    }
+
+    // 构造函数--构造器
+    function Dog(name,age,sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sayHi = function(){
+            console.log("姓名:" + this.name + "年龄:" + this.age + "性别:" + this.sex);
+        }
+    }
+
+    // 实例化对象
+    var dog1 = new Dog("wc",3,1);
+    console.log(dog1);
+
+    //console.log( per1.constructor);测试代码
+    // 判断
+    if(dog1.constructor == Dog){
+        console.log("dog1 是Dog的孩子");
+    }
+    </script>
+</body>
+</html>

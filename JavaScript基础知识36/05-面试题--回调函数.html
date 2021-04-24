@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        回调函数---我们的函数可以作为参数来使用，这种写法我们有一个高大上的名字--回调函数
+        总结：就是函数作为参数来使用了，我们把这种写法叫做回调函数
+        */
+        // function fun(fn) {//fn就是形参
+        //     console.log("我是第一个函数");
+        //     fn();//因为我们传递的是一个函数，所以加()执行我们的函数
+        // }
+        // 调用函数---我们传递的是要给匿名函数
+        // fun(function(){//匿名函数
+        //     console.log("我是一个匿名函数");
+        // });
+
+        // 我们还可以传递命名函数--就是有名字的函数
+        // function fn2() {
+        //     console.log("我是一个命名函数，但是我也是作为参数来使用的");
+        // }
+        // // 调用fn函数来传递fn2
+        // fun(fn2);
+
+        // 工作里面常见的写法
+         
+        function sayHi(fn) {//fn形参--但是是一个函数作为参数来使用了---回调函数
+            console.log("您好，世界");
+            fn();
+        }
+        function sayYes() {
+            console.log("是的，很好");
+        }
+        sayHi(sayYes);
+
+        // 总结：回调函数---就是函数作为参数来使用了--可以传递的匿名函数也可以传递命名函数
+
+    </script>
+</body>
+
+</html>

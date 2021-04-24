@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // instanceof 关键字可以直接用来判断对象的类型，如果是指定的类型,返回true,反之就返回false
+        function Person(name,age,sex,num,score) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.score = score;
+            this.sayHi = function(){
+                console.log("姓名:" + this.name + "年龄:" + this.age);
+            }
+        }
+        // 实例化对象
+        var per = new Person("老王",108,1,1001,150);
+        console.log(per);
+
+        // 构造函数
+        function Animal(name,age,sex,num,color) {
+            this.name = name;
+            this.age = age;
+            this.num = num;
+            this.color = color;
+            this.sayHi = function(){
+                console.log("姓名:"+ this.name + "年龄:" + this.age);
+            }
+        }
+
+        // 实例化对象
+        var wc = new Animal("旺财",9,1,1002,"hotpink");
+        console.log(wc);
+
+        // 找父类--找老爹
+        console.log(per instanceof Person);//true
+        console.log(wc instanceof Animal);//true
+    </script>
+</body>
+</html>

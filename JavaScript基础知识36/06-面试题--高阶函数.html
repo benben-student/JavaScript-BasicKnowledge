@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        函数很强大：如果把函数作为参数来使用，我们叫做回调函数
+        我们的函数还可以作为返回值来使用-----高阶函数
+        */
+       function fun1() {
+           console.log("我是第一个函数");
+           return function(){
+               console.log("我是一个函数，此时我是作为返回值来使用的");
+           }
+       }
+
+       var result = fun1();
+        //console.log(result); 是一个函数体
+        result();//函数体加() ---表示的就是执行我们函数
+
+        /* 
+        大总结：
+        如果函数作为参数来使用----- 回调函数
+        如果函数作为返回值来使用---- 高阶函数
+
+        目前：我们学习了几种创建对象方式
+            1、字面量创建对象的方式
+            2、内置的构造函数创建对象的方式
+            3、工厂模式
+            4、自定义构造函数方式-----工作里面用自定义构造函数方式创建对象
+        */
+    </script>
+</body>
+</html>

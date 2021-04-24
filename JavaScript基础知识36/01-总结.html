@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、delete关键字
+        1、删除对象中的属性
+        2、能删除未使用var声明的变量
+        3、不能删除使用var声明的变量
+        4、能删除直接定义在window上面的属性
+        5、总结：如果删除成功返回 true，如果删除失败返回false
+
+        第二、--优化了面向对象的封装：注意：id 别忘了加[]
+
+        第三、异常捕获
+        try{
+            可能会出现错误的代码，可能会有bug的代码
+        }catch(e){
+            e-系统提错误信息
+            throw{
+                errorMsg:错误信息
+                errorCode:错误编码
+            }
+        }finally{
+            不管前面的代码有无错误都会执行。
+        }
+
+        第四、创建对象：3种方式
+          1)、字面量的方式 var obj = {name:"zs",age:18}
+            优势：简单，一听就会：
+            缺陷：代码冗余
+          2)内置的构造函数方式 var obj = new Object()
+            优势：简单，一听就会：
+            缺陷：代码冗余
+          3)工厂模式： 就是一个函数，把内置的构造函数方式放到函数里面  
+        */
+    </script>
+</body>
+</html>

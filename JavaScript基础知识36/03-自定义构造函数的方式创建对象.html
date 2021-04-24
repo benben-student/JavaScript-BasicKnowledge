@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        自定义构造函数的方式创建对象
+        我们强大了，我们可以自己自定义构造函数了
+        语法格式---
+        function 构造函数() {
+             this.属性 = 值;
+             this.方法 = function() {}
+         }
+         new 构造函数名();
+        */
+       function Person(name,age,sex){//自定义构造函数
+            // var obj = new Object();
+            // this = obj;
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHi = function(){
+                console.log("姓名:"+ this.name + "年龄:" + this.age);
+            }
+            // 他会有默认的返回值return this
+       }
+
+    // 实例化对象
+    var per1 = new Person("zs",18,1);
+    console.log(per1);
+
+    // 自定义构造函数创建对象
+    function Animal(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sayHi = function(){
+            console.log("姓名:" + this.name + "年龄:" + this.age);
+        }
+    }
+
+    // 实例化对象
+    var ani1 = new Animal("wc",3,1);
+    console.log(ani1);
+
+    // instanceof 判断这个对象是谁创建的（大白话：找父亲，找父类）---如果这个对象是这个函数创建的就返回true，反之返回false
+    console.log(per1 instanceof Person);
+    console.log(ani1 instanceof Animal);
+
+    // 总结：我们以后工作里面都用的是自定义构造函数方式创建对象---完美解决了代码优化--还能找到父类
+
+    /* 
+    大总结：面试会问到的几句话：
+     问：自定义构造函数和工厂模式非常的相似，但是还是有区别的
+     1、自定义构造函数首字母要求大写---规范
+     2、需要new关键字和构造函数一起来创建对象
+     3、在构造函数最后，不需要手动返回创建好的对象，会默认的自动返回  return this
+    */
+
+    /* 
+    继续扩展底层原理：自定义构造函数如何来创建对象呢？
+    1、在函数内部会默认的创建一个空对象 var obj = new Object()
+    2、会把默认创建好的对象赋值给this  this = obj;
+    3、通过this来添加属性和方法
+    4、默认会把内部创建好的对象返回 return this
+
+    通过以上分析：相信大家已经能够理解了自定义构造函数创建对象的原理了。
+    */
+
+
+    </script>
+</body>
+</html>

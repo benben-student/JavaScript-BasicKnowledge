@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        构造函数返回值的问题----小心面试到的
+        第一、我们都知道构造函数有默认的返回值 return this
+        第二、可以修改的
+           1) 如果修改的是值类型，修改无效
+           2) 如果是引用类型，修改有效
+        */
+    //   自定义构造函数
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    //     return 66666;//值类型
+
+    // }
+    // // 实例化对象
+    // var per = new Person("zs",18);
+    // console.log(per);
+
+    function Person(name,age){//自定义构造函数
+        this.name = name;
+        this.age = age;
+        return [];//引用类型
+    }
+    // 实例化对象
+    var per = new Person("zs",18);
+    console.log(per);
+    </script>
+</body>
+</html>

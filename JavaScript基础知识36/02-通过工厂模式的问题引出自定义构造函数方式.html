@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用工厂模式写两个类，一个人类，一个动物类
+        function createPerson(name,age,sex){
+            var per = new Object;
+            per.name = name;
+            per.age = age;
+            per.sex = sex;
+            return per;
+        }
+
+        var per1 = createPerson("zs",18,1);
+        console.log(per1);
+
+        // 动物类
+        function createAnimal(name,age,sex){
+            var ani = new Object;
+            ani.name = name;
+            ani.age = age;
+            ani.sex = sex;
+            return ani;
+        }
+
+        var ani1 = createPerson("wc",8,1);
+        console.log(ani1);
+
+        // instanceof 判断这个对象是谁创建的（大白话：找父亲，找父类）---如果这个对象是这个函数创建的就返回true，反之返回false
+        console.log(per1 instanceof createPerson);//本来就应该是true 但是找不到父亲 所以返回false
+        console.log(ani1 instanceof createAnimal);//本来就应该是true 但是找不到父亲 所以返回false
+
+        // 总结：工厂模式----缺点：找不到父类-----引出我们的自定义构造函数方式
+    </script>
+</body>
+</html>
