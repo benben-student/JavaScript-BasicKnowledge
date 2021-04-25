@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //总结：this的指向几种情况?
+        console.log(this);//在全局作用域下面this执行window
+        function demo() {
+            console.log(this);//在普通函数下面this执行window
+        }
+        demo();
+        var obj = {
+            name:"zs",
+            age:18,
+            sex:1
+        };
+        obj.demo = demo;//有则改，无则加，通过点语法给obj添加了一个方法
+        obj.demo();//我们前面总结的 看点（点前面是谁this就指向谁）
+
+        /* 
+        到此：我们分为以下几种情况看this的指向
+        1.函数外部，或者说在全局作用域下面this指向window
+        2.普通函数，例如 直接调用函数demo()---this指向window
+        3.用对象去调用函数 例如 obj.demo()--this指向obj（看点，点前面是谁this就指向谁）
+
+        在实际的开发工作里面：call和apply()还可以改变this指向---后续会详细讲解
+        this指向是动态，是可以改变
+        */
+    </script>
+</body>
+</html>

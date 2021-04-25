@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自定义构造函数
+        function Person(name,age,sex){
+            this.name = name;//属性
+            this.age = age;//属性
+            this.sex = sex;//属性
+            // 添加方法
+            // this.sayHi = function(){
+            //     console.log("姓名:" + this.name + "年龄:" + this.age);
+            // }
+        }
+
+        /* 
+        总结：引出了原型：prototype
+        我们的真正的工作里面,一般会把属性放到构造函数身上
+        方法放到原型上面，目的就是为了实现数据共享
+        总结：我们以后属性都放到构造函数身上，所有的方法都放到原型上
+        */
+       Person.prototype.sayHi = function(){//我们就是把方法放到了原型上，这样的目的节省内存空间了
+            console.log("姓名:" + this.name + "年龄:" + this.age);
+        }
+
+        // 实例化对象
+        var per1 = new Person('zs',18,1);
+        console.log(per1);
+        console.log(per1.name);
+        console.log(per1.age);
+        console.log(per1.sex);
+        per1.sayHi();
+
+        // 实例化对象
+        var per2 = new Person('lw',88,1);
+        console.log(per2);
+        console.log(per2.name);
+        console.log(per2.age);
+        console.log(per2.sex);
+        per2.sayHi();
+    </script>
+</body>
+</html>

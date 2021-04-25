@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person() {
+            console.log("我是一个构造函数");
+            console.log(this);
+        }
+        Person();//直接当普通函数来用的this指向window
+        // 实例化对象 
+        var per = new Person()// new实例化之后，我们的this就指向了当前的对象
+        /* 
+        总结归纳：
+        1、构造函数和普通函数在定义语法上没有任何区别
+          function 函数名(参数){代码块}
+        2、为了区分普通函数和构造函数，我们就约定了将构造函数首字母大写
+        3、我们在工作里面，不建议直接调用构造函数的，建议将我们的new和构造函数一起来使用  
+        */
+
+        /* 
+        了解：this是我们的重点，后面我们还会讲解严格模式，this还会发生变化
+        总结一句话：我们的this是可以改变的，后面我们会详细讲解如何来改变this指向 call() apply()
+        */
+    </script>
+</body>
+</html>
