@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        经典的三句话
+        第一、每一个构造函数都有一个prototype属性,指向他的原型对象
+        第二、每一个实例化对象都有一个__proto__ 属性,指向他所属类的原型对象
+        第三、每一个原型对象都有一个constructor属性，指向构造函数本身
+        */
+    //    构造函数
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    // 实例化对象
+    var per = new Person("zs",18);
+
+    // 测试
+    console.log(Person.prototype.__proto__.constructor);//通过constructor找到父类Object
+    console.log(Object.prototype.__proto__);//计算机直接给Object.prototype.__proto__ 指向了null
+
+    var arr = [];
+    </script>
+</body>
+</html>

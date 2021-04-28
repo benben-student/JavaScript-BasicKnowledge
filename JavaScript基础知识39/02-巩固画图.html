@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 方法都添加在原型上---如果只有一个方法这样写是可以的，如果很多个方法这样写就不好了
+        // Person.prototype.sayHi = function() {
+        //     console.log("我是原型上面的方法");
+        // }
+
+        // 如果原型上面有很多个方法，我们可以直接给他一个对象{}
+        // var obj = {} 等价于 var obj = new Object()
+        Person.prototype = {
+            constructor:Person,//如果你把原型的指向给了一个对象{},那么千万别忘了在对象里面修改指向 constructor:Person
+            sayHi:function(){
+                console.log("姓名:"+ this.name+"年龄:"+this.age);
+            },
+            play:function(){
+                console.log("姓名:"+this.name);
+            }
+        }
+        
+        //实例化对象
+        var per1 = new Person("zs",18);
+        console.log(per1);
+        console.log(per1.name);
+        console.log(per1.age);
+        per1.sayHi();
+        per1.play();
+
+        console.log(per1.constructor);//本来应该是Person，
+        // 扩展底层图---额外底层原型图
+    </script>
+</body>
+</html>

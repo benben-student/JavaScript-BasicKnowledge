@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 总结：如果我们直接修改Array.prototype,这样如果大家都这么改，别人使用这个数组方法的时候，就降低的搜索的效率。
+        function MyArray(){
+
+        }
+        // 让我们的MyArray的原型指向Array对象
+        // 即继承了Array中所有的成员方法，为了继承数组Array原型上所有的方法 sort 排序，pop push...
+        MyArray.prototype = new Array();//继承数组里面所有的方法
+        MyArray.prototype.getLength = function(){
+            return this.length;
+        }
+
+        // 实例化对象
+        var arr1 = new MyArray();
+        arr1.push("A","B","C","D","E");
+        console.log(arr1.getLength());
+    </script>
+</body>
+</html>

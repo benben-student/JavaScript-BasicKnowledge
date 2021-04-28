@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、经典的原创三句话
+        1、每一个构造函数都有一个prototype属性,指向他的原型对象
+        2、每一个实例化对象都有一个__proto__属性,指向他所属类的原型对象
+        3、每一个原型对象都有一个constructor属性,指向构造函数本身
+
+        第二、获取原型对象的方法 3个
+        1、构造函数.prototype
+        2、实例化对象.__proto__
+        3、Object.getPrototypeOf(实例化对象)   Object.getPrototypeOf(per1)
+
+        第三、in 和 hasOwnProperty 方法 区别
+        in--检测对象中是否存在该属性和方法（不仅能检测私有的还能检测公有的）----私有的就是自己身上的属性和方法，公有就是原型上的属性和方法，如果有这个属性返回true，反之返回false
+
+        hasOwnProperty：也是检测对象的属性和方法（只能检测私有的，不能检测公有的）-- 就是原型上的属性和方法都是检测不到的，能检测到自己身上的属性和方法，同理检测到了就返回true，检测不到就返回false
+
+        第四、总结：如果你把原型的指向给了一个对象{}，千万不要忘了在对象中修改指向 constructor:Person
+        
+        实现我们的诺言:我们一起来画图
+        */
+    </script>
+</body>
+</html>
