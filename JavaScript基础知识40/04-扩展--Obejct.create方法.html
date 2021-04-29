@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        面试官：创建对象的方式 
+        1、字面量创建对象
+        2、内置的构造函数方式创建对象
+        3、工厂模式
+        4、自定义构造函数的方式
+        5、Object.create()--- 优势：能创建一个连原型链都没有的对象，这样好处我们查询数据更快
+        */
+    
+        // 创建传递进来的对象，并设置该对象的原型对象为当前的参数
+       var temp = {
+           name:"zs",
+           age:18
+       }
+       var obj = Object.create(temp);
+       console.log(obj);
+
+    // 面试题:创建一个空对象，这个对象中连最基本的原型链都没有，这样我们查询数据就会更快
+    var o = Object.create(null);
+    console.log(o.name = "我是一个没有原型链的对象");
+    console.log(o);
+    </script>
+</body>
+</html>

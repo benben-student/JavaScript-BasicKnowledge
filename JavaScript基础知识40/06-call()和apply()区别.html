@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 面试官会经常问到的点
+        call()和apply()：借用其他对象的方法，并绑定this指向--下面会详细讲解
+        call()和apply()语法
+        语法:公式
+        第一、对象1.方法.call(对象2);-----注意,我们的方法一定不能加括号()
+        第二、对象1.方法.apply(对象2);-----注意,我们的方法一定不能加括号()
+
+        特点：
+        我们的call()和apply()不仅能借用其他对象的方法，还能改变this指向。是如何改变呢？
+        ***** 看call(第一个参数)或者apply(第一个参数); 传递的第一个参数是谁，this就指向谁。
+        */
+        var obj1 = {
+            name:"zs",
+            age:18,
+            dog:function(){
+                console.log(this.name+"借用张三加的dog");
+            },
+            add:function(a,b){
+                return a + b;
+            }
+        };
+        var obj2 = {
+            name:"lw"
+        }
+       
+        console.log(obj1);
+        // 照着公式来写
+        console.log(obj1.add.call(obj2,2,6));
+        console.log(obj1.add.apply(obj2,[2,6]));
+        /* 
+        如果不传递多个参数，call()和apply()没有任何区别
+        如果传递了多个参数,call()后面的参数可以是任意的数据序列，而我们的apply()必须传递是数组
+        */
+    //  扩展---call()和apply()都是挂载在Function的原型链上
+    console.dir(Function)
+
+    </script>
+</body>
+</html>

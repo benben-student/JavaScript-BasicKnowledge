@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 人 Person 有姓名、性别、年龄、体重和sayHi方法...
+        // 学生，都有姓名，年龄，性别，成绩，体重 学习的行为...
+        function Person(name,age,sex,weight){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.weight = weight;
+        }
+        //方法都加在原型上
+        Person.prototype.sayHi = function(){
+            console.log("大家好好听课，跟上老师的脚步，不要请假，每天知识都很重要，把基础打扎实来，后面就会很轻松");
+        }
+
+        // 学生的构造函数
+        function Student(name,age,sex,weight,score){//借用构造函数继承（call继承、经典继承）
+            // 公式:构造函数.call(当前对象this,参数,参数,参数...)
+            Person.call(this,name,age,sex,weight);//window.Person.call(this)---window是可以省略
+            this.score = score;
+        }
+        // 组合继承(原型链继承 + 借用构造函数继承)
+        Student.prototype = new Person();//原型链继承
+        // 学生原型上添加方法
+        Student.prototype.student = function(){
+            console.log("学习使我快乐！--能加薪");
+        }
+
+        // 实例化对象
+        var stu1 = new Student("小明",18,1,"500kg",100);
+        console.log(stu1.name,stu1.age,stu1.sex,stu1.weight,stu1.score);
+        stu1.sayHi();
+        stu1.student();
+
+        // 实例化对象
+        var stu2 = new Student("阿卓",20,1,"666kg",110);
+        console.log(stu2.name,stu2.age,stu2.sex,stu2.weight,stu2.score);
+        stu2.sayHi();
+        stu2.student();
+
+        // 实例化对象
+        var stu3 = new Student("川大神",20,1,"666kg",110);
+        console.log(stu3.name,stu3.age,stu3.sex,stu3.weight,stu3.score);
+        stu3.sayHi();
+        stu3.student();
+        //最完美的来了---优秀的写法----工作里面推荐组合继承
+
+        /* 
+        总结：创建对象的方式
+        1、字面量的方式
+        2、内置的构造函数的方式
+        3、工厂模式
+        4、自定义构造函数方式
+        5、Object.create()----优势：可以创建一个没有原型链的对象
+
+
+        继承：5个继承
+        1、混入式继承
+        2、原型式继承
+        3、原型链继承
+        4、借用构造函数继承 构造函数.call(当前对象,参数,参数,参数)
+        5、组合继承（原型链继承 + 借用构造函数继承）---工作最常用
+        */
+
+    </script>
+</body>
+</html>
