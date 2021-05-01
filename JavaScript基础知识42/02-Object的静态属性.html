@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object静态属性
+        console.dir(Object);
+        /* 
+        length:长度  形参的个数
+        name: 方法的名字
+        assign:将多个对象合并到一个对象中，并返回---这个也是我们创建对象的一种方式
+        */
+       var obj = {
+           name:"zs",
+           age:18,
+           sex:"男"
+       };
+    //    console.log(Object.assign(obj,{info:"信息"},{age:88},{name:"lw"}));//总结：可以合并对象,如果有重名了对象,后写的会覆盖先写的
+    // Object.create() 创建对象
+    // is:判断连个参数是否相等  等同于 === 注意下面有两组特殊的
+    // console.log(0 === -0);//true
+    // console.log(Object.is(0,-0));//false
+    // console.log(NaN === NaN);//false
+    // console.log(Object.is(NaN,NaN));//true
+    // 总结：0 和 -0 NaN 和 NaN 记住这两组特殊的
+
+    // 下面都是对属性的（增删改查）
+    // getOwnPropertyDescriptor:获取当前对象中指定的属性的描述对象
+    // console.log(Object.getOwnPropertyDescriptor(obj,"name"));
+    /* 
+    configurable: true 属性可配置型，false，当前属性是不能被删除的，默认的都是true
+    enumerable: true 可枚举 默认的是true 可以循环、遍历 如果设置为false就是不能被循环遍历
+    value: "zs"  当前的属性的值
+    writable: true 可写型  默认是true 是可以修改和添加 如果设置为false不能被修改了
+    */
+
+    // getOwnPropertyDescriptors:获取所有的属性的描述对象
+    // console.log(Object.getOwnPropertyDescriptors(obj));
+
+    // defineProperties: 一次性定义多个属性的可操作性（configurable、enumerable、value、writable）
+    // Object.defineProperties(obj,{
+    //     name:{
+    //         configurable:false
+    //     },
+    //     age:{
+    //         configurable:false 
+    //     }
+    // })
+    // console.log(delete obj.name);//false
+    // console.log(delete obj.age);//false
+    // console.log(obj.name);
+    // console.log(obj.age);
+
+    // defineProperty:定义当前对象指定属性的可操作性（configurable、enumerable、value、writable）
+    Object.defineProperty(obj,"name",{
+        configurable:false
+    });
+    console.log(delete obj.name);
+    console.log(obj.name);
+
+
+    </script>
+</body>
+</html>

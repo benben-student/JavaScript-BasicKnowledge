@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本类型和基本包装类的比较
+        var str1 = "test";
+        var str2 = new String("test");//比较的是地址 0x11
+        var str3 = "test2";
+        var str4 = new String("test");//比较的是地址 0x22
+
+        // 如果相等返回true，如果不相等返回false
+        console.log(str1 == str2);//true 进行了隐式转换(会调用toString()方法)
+        console.log(str1 == str3);//false
+        console.log(str2 == str4);//false
+        console.log(str1 === str2);//false
+        console.log(str1 === str3);//false
+        console.log(str2 === str4);//false
+    </script>
+</body>
+</html>

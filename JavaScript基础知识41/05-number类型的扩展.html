@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        工作里面真正的给你模拟的数据大多数的都是json格式的数据
+        json格式的数据跟对象是一样，就一点区别 对象 var obj = {name:"zs",age:18}
+        var json = {"name":"zs","age":18}
+        总结：我们拿到json数据要转换成真正的对象来操作 ()圆括号语法
+        */
+       Number.prototype.add = function(num){
+            return this + num;
+       }
+    //    var num = 100;
+    //    var result = num.add(100);
+    //    console.log(result);
+    console.log((100).add(100));//圆括号语法
+    
+    // json数据做铺垫  ()语法
+     ({"name":"zs"})//总结：我们以后工作里面，拿到json数据第一件事情就是()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 方法都加在原型上
+        Person.prototype.say = function(){
+            console.log("我们继续给力，坚持就是胜利，继续优秀。--放假好好休息一下");
+        }
+
+        //实例化
+        var per = new Person("zs",18);
+        console.log(per);
+
+        // 测试，所有的函数都是Function实例化（所有的对象都是Object实例化）
+        console.log(Person.constructor);//找父类 Function
+        // 我们的Person构造函数当成对象来看
+        console.log(Person.__proto__);//找妈妈 f()空函数
+        console.log(Function.prototype);//找妻子 f()空函数
+
+        // 扩展--找Function的父类  Function是上帝--自己造自己--金主爸爸--造万物
+        console.log(Function.constructor);//自己 Function
+        //扩展---把对象当成函数来看
+        console.log(Object.__proto__.constructor);//找父类 Function
+
+    </script>
+</body>
+</html>

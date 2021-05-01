@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建函数的方式
+        // 创建函数方式1
+        function fun(){
+            console.log("命名函数");
+        }
+        fun();
+
+        // 创建函数方式2
+        var fun2 = function(){
+            console.log("匿名函数，也有人会说是匿名函数表达式");
+        }
+        fun2();
+        
+        // 通过new方式创建函数
+        var fun3 = new Function("console.log('我是通过new方式来创建函数的')");
+        // 面试题来了
+        // fun3(); 这个懂了下面就变一下
+        console.log(fun3());//获取到函数返回值，如果没有返回值结果
+        //举个例子
+        var fun5 = new Function("a,b","console.log(a+b)");
+        fun5(1,5);
+        // 扩展 通过new方式创建函数
+        var fun6 = new Function("console.log('大家假期要把我们这段时间的内容好好复习一下，劳逸结合')");
+        fun6();
+    </script>
+</body>
+</html>

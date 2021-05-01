@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、创建对象的方式
+        1、字面量创建对象
+        2、内置构造函数创建对象
+        3、工厂模式
+        4、自定义构造函数方式----工作里面大量使用的
+        5、Object.create()---特点：可以创建一个没有原型链的对象，这样查询数据很快
+
+        第二、call()和apply()
+        1、借用其他对象的方法
+        2、并且可以改变this
+        特点：看call(第一个参数),传递的第一个参数是谁this就指向谁
+
+        总结：如果不传递多个参数,call()和apply()是一样的
+        如果传递多个参数，call()后面的参数可以是任意的，apply()必须是数组
+        扩展---他们都在Function的原型上面
+
+        第三、继承
+        1、混入式继承
+        2、原型式继承 Student.prototype = Person.prototype
+        3、原型链继承 Student.prototype = new Person()
+        4、借用构造函数继承（call()继承、经典继承）语法： 构造函数.call(当前对象,参数，参数...)
+        5、组合继承（原型链继承 + 借用构造函数继承）
+
+        实现我们的诺言
+         */
+    </script>
+</body>
+</html>

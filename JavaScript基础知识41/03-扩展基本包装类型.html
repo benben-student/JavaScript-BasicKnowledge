@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        回顾：基本类型、值类型:number、string,boolean,null,undefined
+        基本包装类型：Number、String、Boolean ---我们的基本包装类型可以调用属性和方法
+        */
+        // 创建基本包装类型的方式
+       var str = new String();
+       console.log(str);
+       var num = new Number();
+       console.log(num);
+       var bool = new Boolean();
+       console.log(bool);
+
+    // 区别
+    var str1 = "hello";
+    str1 = str1.replace("ll","HH");
+    console.log(str1);
+
+    // num
+    var num1 = 100;
+    num1 = num1.toString();
+    console.log(num1);
+    // 总结：记得我们的基本包装类型 就这三个，记下来
+    </script>
+</body>
+</html>
