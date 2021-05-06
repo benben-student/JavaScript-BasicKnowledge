@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.dir(Object.prototype);
+        // constructor: 找父类---获取创建的当前实例对象的构造函数
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 实例化对象
+        var per = new Person("zs",18);
+        /* 
+        toString():返回数据格式字符串
+        基本类型：返回对应值的字符串
+        如果是数字类型，可以传递一个参数,指定转换成上面进制的数字字符串，二进制、八进制、十六进制
+        引用类型：返回[object Object]格式的字符串，object是对象的类型，Object为对象的构造函数
+        */
+       console.log("demo".toString());
+       console.log((100).toString());
+       console.log((100).toString(2));
+       console.log((100).toString(16));
+       console.log((per).toString());//[object Object]
+    //面试官来了
+    var arr = [1,2,"A","B"];
+    // console.log(arr.toString());//[object Array]
+    console.dir(arr);
+    console.log(Array.prototype.toString() == Object.prototype.toString());//false
+    console.log(Object.prototype.toString.call(arr));
+    // 封装一个函数判断对象是否是数组类型 Array.isArray()方法是ES5的会有不兼容的问题
+    // 为了兼容性，让所有浏览器都兼容
+    function isArray(arr){
+        if(Array.isArray){
+            return Array.isArray(arr);
+        }else{
+            return Object.prototype.toString.call(arr) == "[object Array]";
+        }
+    }
+    // var result = isArray([1,2,3]);
+    // console.log(result);
+    console.log(isArray({}));
+    console.log(isArray([1,2,3,4,5]));
+
+    // toLocaleString() 可以将日期转换成本地格式的数据
+    var now = new Date();
+    console.log(now.toLocaleString());
+    </script>
+</body>
+</html>

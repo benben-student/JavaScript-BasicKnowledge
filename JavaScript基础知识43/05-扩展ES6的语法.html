@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数--温故而知新
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.say = function(){
+        //         console.log("我是在构造函数身上的方法");
+        //     }
+        // }
+        // // 方法都加在原型上
+        // Person.prototype.sayHi = function(){
+        //     console.log("我是原型上面的方法");
+        // }
+        // // 实例化对象
+        // var per = new Person("zs",18);
+        // console.log(per);
+
+        // ES6的class语法 用class 类
+        // 用ES6写一个类 class
+
+        class Animal{//语法--格式---语法糖--语法格式就像我们学习for 、if等等记住就可以了
+           constructor(name,age){
+               this.name = name;
+               this.age = age;
+           }
+           doWork(){//这个就是一个函数,这个是在原型上添加的方法
+                console.log("我是ES6原型上面的方法");
+           }
+           //构造函数身上加方法
+           static doWork2(){
+               console.log("我是在构造函数身上的");
+           }
+        }
+
+        // 实例化对象
+        var d1 = new Animal("wc",3);
+        // 调用属性和方法
+        console.log(d1);
+        console.log(d1.name);
+        console.log(d1.age);
+        d1.doWork();
+
+        // 特殊情况
+        Animal.doWork2();//特殊来记忆下来,如果是静态函数，也就是说在构造函数身上直接用类名来调用
+
+    </script>
+</body>
+</html>

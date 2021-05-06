@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.dir(Object.prototype);
+        // constructor: 找父类---获取创建的当前实例对象的构造函数
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 实例化对象
+        var per = new Person("zs",18);
+        //hasOwnProperty :判断当前实例对象中是否存在指定的属性---检测私有属性 和 in对比的学
+        console.log(per.hasOwnProperty("name"));//true
+        console.log(per.hasOwnProperty("age"));//true
+        // isPrototypeOf :判断当前对象是否在指定对象的原型链中，如果存在这个链中返回true，反之就是false
+        console.log("=====================");
+        console.log(Person.prototype.isPrototypeOf(per));//true
+        console.log(Object.prototype.isPrototypeOf(per));//true
+        console.log(Array.prototype.isPrototypeOf(per));//false
+        // 以上都是我们前面的知识点，巩固了一下
+        // propertyIsEnumerable:属性是否可枚举(循环遍历) 如何可以被枚举循环遍历返回true，反之返回false
+        console.log("==============");
+        console.log(per.propertyIsEnumerable("name"));//true
+        // valueOf()
+        /* 
+        基本包装类型：返回对应的值
+        引用类型：返回的对象本身
+        日期类型：返回的是时间戳
+        */
+       var str1 = new String("demo");
+       console.log(str1.valueOf());
+       var obj1 = {
+           name:"zs",
+           age:18
+       };
+       console.log(obj1.valueOf());
+       var now = new Date();
+    //    console.log(now);
+    console.log(now.valueOf());
+    </script>
+</body>
+</html>

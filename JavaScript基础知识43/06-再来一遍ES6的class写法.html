@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 写个Person构造函数用class来写
+        class Person{//语法格式--有人会把ES6这种写法叫做语法糖--原理跟我们前面构造函数是一样的简化了写法
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            // 在原型上加方法
+            say(){
+                console.log("雪哥说:你们很给力，有问题跟以前一样发到qq群，我们一起来互相学习");
+            }
+            // 在构造函数身上加方法
+            static play(){
+                console.log("邱非说:吃火锅");
+            }
+        }
+
+        // 实例化对象
+        var p1 = new Person("zs",18);
+        console.log(p1);
+        console.log(p1.name);
+        console.log(p1.age);
+        p1.say();
+        Person.play();
+    </script>
+</body>
+</html>

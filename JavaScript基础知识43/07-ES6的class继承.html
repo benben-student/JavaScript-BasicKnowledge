@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用ES6继承 来写
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            // 方法都是加在原型上
+            eat(){
+                console.log("吃饭饭");
+            }
+            sleep(){
+                console.log("睡觉觉");
+            }
+        }
+        // 继承 extends
+        class Person extends Animal{//表示让Person继承了Animal
+            constructor(name,age){
+                super(name,age);//表示子类向父类传递参数
+            }
+            // 自己原型上面的方法
+            play(){
+                console.log("打豆豆");
+            }
+        }
+
+        // 实例化对象
+        var p1 = new Person("zs",18);
+        console.log(p1);
+        p1.eat();
+        p1.sleep();
+        p1.play();
+
+        /* 
+        实现我们的诺言
+        1、混入式继承
+        2、原型式继承
+        3、原型链继承
+        4、借用构造函数继承
+        5、组合继承
+        6、class继承 
+        */
+
+
+    </script>
+</body>
+</html>

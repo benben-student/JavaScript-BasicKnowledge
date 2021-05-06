@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        eval()和function函数几乎都是一样的,他们的共同特点都是把字符串转换为js的代码
+        eval()和function区别？函数必须调用，而eval()可以立马执行
+        */
+       function fun(){
+           console.log("大家还是非常给力的，继续加油");
+       }
+       fun();
+       var jsonStr = '({"name":"zs","age":"18"})';
+       console.log(jsonStr);
+       console.log(eval(jsonStr))//eval()可以把json数据转换为真正的对象格式的数据
+    //   继续扩展--eval() 还可以做运算
+    console.log(eval("3+3"));
+    console.log(eval("3-3"));
+    console.log(eval("3*3"));
+    console.log(eval("3/3"));
+    console.log(eval("10%3"));
+    </script>
+</body>
+</html>
