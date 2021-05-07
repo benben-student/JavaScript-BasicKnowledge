@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "大家都棒棒哒，都很优秀，继续加油！跟着老师来互动，这样学习效果更好";
+        // 构造函数
+        function Person(name,age){
+            // 判断 方法一
+            // if(this == window){
+            //     // throw "请仔细检查一下，你下面的代码有没写new，如果忘写了,记得加班，免费加班"
+            //     return new Person();//保证了代码的健壮性,更安全
+            // }else{
+            //     this.name = name;
+            //     this.age = age;
+            // }
+
+            // 下面我要扩展了啊
+            // 方法二,在ES6或者在严格模式下面 this 都不是指向window，严格模式明天会详细讲解
+            // if(!(this instanceof Person)){//更安全了，更完美了
+            //     //throw "请仔细检查一下，你下面的代码有没写new，如果忘写了,记得加班，免费加班"
+            //     return new Person();//保证了代码的健壮性,更安全
+            // }else{
+            //     this.name = name;
+            //     this.age = age;
+            // }
+            // 继续扩展 方法三：在ES6里面提供一个new.target == undefined 就表示没有写new
+            // if(new.target == undefined){//更安全了，更完美了
+            //     throw "请仔细检查一下，你下面的代码有没写new，如果忘写了,记得加班，免费加班"
+            //     // return new Person();//保证了代码的健壮性,更安全
+            // }else{
+            //     this.name = name;
+            //     this.age = age;
+            // }
+            // 再来上大招--为了高薪
+            if(!(new.target)){//更安全了，更完美了 undefined取反--就是true
+                // throw "请仔细检查一下，你下面的代码有没写new，如果忘写了,记得加班，免费加班"
+                return new Person();//保证了代码的健壮性,更安全
+            }else{
+                this.name = name;
+                this.age = age;
+            }
+        }
+        // 实例化对象
+        var per1 = new Person("zs",18);
+        console.log(per1);
+        // 面试官来了--实例化对象
+        var per2 = Person("zs",20);//小弟，会一不小心丢了new
+        // console.log(per2); 函数一执行得到返回值，如果没有返回值默认是undefined
+        console.log(name);
+    </script>
+</body>
+</html>

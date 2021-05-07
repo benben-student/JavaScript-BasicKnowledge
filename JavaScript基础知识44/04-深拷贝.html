@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        我们的拷贝:浅拷贝和深拷贝
+        第一、浅拷贝:我们的浅拷贝只拷贝一层，会存在数据共享的问题，修改其中一个另外一个也会被修改
+        第二、深拷贝：我们的深拷贝是一层一层的拷贝，每一层都会独立开辟空间
+        */
+       var p1 = {
+           name:"zs",
+           age:18,
+           like:["Java","H5前端","UI"],
+           wife:{
+               name:"lily",
+               age:18
+           }
+       }
+       var p2 = {};
+
+    // 函数封装为了实现这个深拷贝
+    function deepCopy(source,target){//source--数据原，从哪里拷贝，target--目标--拷贝到哪里去
+        // 循环遍历
+        for(var key in source){//in是遍历所有,不管你是私有的还是公有
+            // 判断我们只要私有的属性
+            if(source.hasOwnProperty(key)){//只拷贝私有属性，不在拷贝原型上的属性
+                // 判断是否是引用类型
+                if(typeof source[key] == "object"){//此时表示的就是引用类型
+                    // 教你们测试代码--工作经验--学会找bug
+                    // console.log(source[key]);
+                    // console.log(target[key]);
+                    // target[key] = {};//我们拿一个对象来接收
+                    // 三元运算符---? : 完美解决了
+                    target[key] = Array.isArray(source[key]) ? [] : {};
+                    // 引出了递归：自己调用自己--这个语法要记下来
+                    deepCopy(source[key],target[key]);//这个就是典型的递归，自己调用自己
+                }else{
+                     // 表示就是拷贝了值类型
+                    target[key] = source[key];
+                }
+            }
+        }
+
+    }
+
+    // 调用函数
+    deepCopy(p1,p2);
+    console.log(p2);
+    p2.wife.name = "翠花";
+    console.log(p1);
+    
+    </script>
+</body>
+</html>
