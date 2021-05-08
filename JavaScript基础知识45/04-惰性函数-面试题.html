@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 惰性函数:在函数中会进行一些分支判断或者初始化操作，然后将函数指向给修改了，那么再次调用该函数的时候，执行的是修改之后的函数指向
+        function foo(){//0x11
+            console.log("我是JS的初始化");
+            foo = function(){//0x22
+                console.log("真正的业务逻辑代码");
+            }
+        }
+        // foo.des = "我是一个描述信息";
+        // foo();
+        // foo();
+        // foo();
+        // foo();
+        // foo();
+        // foo();
+        // console.log(foo.des);
+
+        // 扩展
+        var f = foo;//总结：我们如果想要一直执行初始化，我们可以定义一个变量来接收，下次直接执行这个变量
+        f();
+        f();
+        f();
+
+      
+    </script>
+</body>
+</html>

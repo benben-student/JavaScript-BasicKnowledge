@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+</head>
+
+<body>
+    <script>
+        var books = [
+            { name: "活着", price: 27.7, press: "作家出版社" },
+            { name: "流浪地球", price: 37.6, press: "中国华侨出版社" },
+            { name: "罗生门", price: 36.3, press: "开明出版社" },
+            { name: "三体", price: 51.5, press: "重庆出版社" }
+        ];
+
+        // 构造函数
+        function BookManager(books) {
+            this.books = books;
+        }
+        //方法都加在原型上
+        BookManager.prototype = {
+            constructor: BookManager,
+            getBookByName: function (name) {
+                for (var i = 0; i < this.books.length; i++) {
+                    if (this.books[i].name == name) {
+                        return this.books[i];
+                    }
+                }
+                return "查无此书";//优秀
+            },
+            addBoook: function (newBook) {
+                this.books.push(newBook);
+            },
+            updateBookByName: function (name, newBook) {
+                var book = this.getBookByName(name);
+                var i = this.books.indexOf(book);
+                this.books.splice(i, 1, newBook);// splice(当前的索引值,元素的个数,新的元素)---修改
+            },
+            deleteBookByName: function (name) {
+                var book = this.getBookByName(name);
+                var i = this.books.indexOf(book);// 查询这本书的索引
+                this.books.splice(i, 1);//表示删除
+            }
+        }
+
+        // 实例化对象
+        var manager = new BookManager(books);
+
+    </script>
+</body>
+
+</html>

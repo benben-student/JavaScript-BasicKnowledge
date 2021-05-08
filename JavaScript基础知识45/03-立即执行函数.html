@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自执行函数,一般做初始化
+        // 第一种方法
+        (function(){
+            console.log("方式1");
+        })();
+        // 下面扩展
+        // 第二种方式
+        (function(){
+            console.log("方式2");
+        }());
+        // 第三种写法
+        !function(){
+            console.log("方式3");
+        }();
+        // 第四种写法
+        +function(){
+            console.log("方式4");
+        }();
+         // 第五种写法
+         -function(){
+            console.log("方式5");
+        }();
+        // 第六种写法
+        ~function(){
+            console.log("方式6");
+        }();
+    </script>
+</body>
+</html>

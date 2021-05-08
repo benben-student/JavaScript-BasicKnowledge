@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+</head>
+
+<body>
+    <script>
+        var books = [
+            { name: "活着", price: 27.7, press: "作家出版社" },
+            { name: "流浪地球", price: 37.6, press: "中国华侨出版社" },
+            { name: "罗生门", price: 36.3, press: "开明出版社" },
+            { name: "三体", price: 51.5, press: "重庆出版社" }
+        ];
+
+        // 函数封装开始
+        function getBookByName(name) {
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].name == name) {
+                    return books[i];
+                }
+            }
+            return "查无此书";//优秀
+        }
+        console.log(getBookByName("三体"));
+
+        function addBoook(newBook) {
+            books.push(newBook);
+        }
+        addBoook({ name: "微积分", price: 48, press: "广州出版社" });
+
+        function updateBookByName(name, newBook) {
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].name == name) {
+                    books[i] = newBook;
+                    break;
+                }
+            }
+        }
+        updateBookByName("流浪地球", { name: "富婆经济排行榜", price: 100, press: "二十三期出版社" })
+
+        function deleteBookByName(name) {
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].name == name) {
+                    books.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        deleteBookByName("富婆经济排行榜");
+        console.log(books);
+
+
+    </script>
+</body>
+
+</html>

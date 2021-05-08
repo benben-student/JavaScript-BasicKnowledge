@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组去重
+        var arr = [1,2,2,2,3,3,3,4,5,5,5,6,6,6,6,7,8];
+        // 得到的结果是[1,2,3,4,5,6,7,8]
+        function distinctArray(arr){//设计一个函数(参数和返回值)
+            var newArray = []; //存放我们筛选之后没有重复的数据
+            // 循环遍历,获取所有的数据
+            for(var i = 0; i < arr.length; i++){
+                //indexOf()判断数组这个元素是否存在，如果存在返回对应元素的索引值、下标,如果不存在返回 -1
+                if(newArray.indexOf(arr[i]) == -1){//表示不存在
+                    newArray.push(arr[i]);
+                }
+            }
+            //有返回值
+            return newArray;
+        }
+
+        var result = distinctArray(arr);
+        console.log(result);
+    </script>
+</body>
+</html>

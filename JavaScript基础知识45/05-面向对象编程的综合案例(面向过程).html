@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>永远24K纯帅</title>
+</head>
+<body>
+<script>
+    var books = [
+        {name:"活着", price:27.7, press:"作家出版社"},
+        {name:"流浪地球", price:37.6, press:"中国华侨出版社"},
+        {name:"罗生门", price:36.3, press:"开明出版社"},
+        {name:"三体", price:51.5, press:"重庆出版社"}
+    ];
+    //需求1：查询三体这本书的相关信息
+    for(var i = 0; i < books.length; i++){
+        // 判断
+        if(books[i].name == "三体"){
+            console.log(books[i]);
+            break;//优秀
+        }
+    }
+    //需求2：增加一本书,书名菊与刀，价格24，开明出版社
+    books.push({name:"菊与刀", price:24, press:"开明出版社"})
+    console.log(books);
+    //需求3：将罗生门这本书的价格修改为40
+    for(var i = 0; i < books.length; i++){
+        // 判断
+        if(books[i].name == "罗生门"){
+            books[i].price = 40;
+            break;
+        }
+    }
+    console.log(books);
+    //需求4：将三体这本书从书单中删除
+    /* 
+    splice(当前的索引值,元素的个数,新的元素)---修改
+    splice(当前的索引值,0,新的元素)---添加
+    splice(当前的索引值,1)---删除
+    */
+    for(var i = 0; i < books.length; i++){
+        // 判断
+        if(books[i].name == "三体"){
+            books.splice(i,1);
+            break;
+        }
+    }
+    console.log(books);
+    
+
+</script>
+</body>
+</html>
