@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //"use strict" ;//更严格了，要求规范了----开关灯
+        // 1、在严格模式下是不允许使用未声明的变量
+        // "use strict";//加上他就代表进入严格模式了
+        // var num = 100;
+        // console.log(num);
+
+        // 2、严格模式定义在脚本开头，会对整个js脚本都执行严格模式
+        // function fun(){
+        //     age = 100;
+        // }
+        // fun();
+
+        // 3、如果严格模式是定义在函数里面，那么只对当前整个函数起作用，对外面的代码没有影响
+        // num = 100;
+        // console.log(num);
+        // function fun(){
+        //     "use strict";
+        //     age = 200;
+        // }
+        // fun();
+
+        // 4、严格模式下要求函数参数名唯一
+        // function sum(a,a,c){
+        //     "use strict";
+        //     return a + a + c;
+        // }
+        // sum();
+
+        // 5、禁止八进制数字语法
+        // "use strict";
+        // var sum = 015 + 197 + 142;
+        // console.log(sum);
+
+        // 6、普通函数this指向---我们之前的没有严格模式下面指向window
+        function fun(){
+            "use strict";
+            console.log(this);
+        }
+        fun();
+        // 总结：一般在严格模式下面试时候问的最多的就是这个this，在严格模式下this指向undefined
+    </script>
+</body>
+</html>

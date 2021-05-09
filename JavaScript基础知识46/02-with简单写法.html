@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var a = {
+            name:"zs",
+            b:{
+                age:10,
+                c:{
+                    color:"hotpink",
+                    des:"description"
+                }
+            }
+        };
+        console.log(a.b.c.color);//无限套娃娃，这样访问太长，我们可以使用with来解决
+        console.log(a.b.c.des);
+
+        with(a.b.c){
+            console.log(color);
+            console.log(des);
+        }
+
+        // 在严格模式下，不允许使用with，那么我们如何解决我们可以使用自执行函数来传递参数
+        var div = document.getElementById("div1");
+        // div.style.backgroundColor = "lavender";
+        // div.style.border = "1px solid red";
+        // div.style.width = "600px";
+        // div.style.height = "300px";
+
+        // 下面用自执行来优化
+        // (function(style){
+        //     style.backgroundColor = "lavender";
+        //     style.border = "1px solid red";
+        //     style.width = "600px";
+        //     style.height = "300px";
+        // })(div.style)
+
+        function setStyle(style){//也可以使用普通函数
+            style.backgroundColor = "lavender";
+            style.border = "1px solid red";
+            style.width = "600px";
+            style.height = "300px";
+        }
+        
+        setStyle(div.style)
+    </script>
+</body>
+</html>

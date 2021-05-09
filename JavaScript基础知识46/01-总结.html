@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、Object的静态成员
+        1、length:长度，形参个数
+        2、name：名称，方法的名字
+        3、assign: 将多个对象合并，如果后面有重复的直接覆盖
+        4、Object.create()创建一个没有原型链的对象,查询的速度快
+        5、is ：判断是否相等的 等同于 ===   特殊 0 和 NaN
+        下面都是对属性的增删改查
+        6、Object.getOwnPropertyDescriptor:获取当前对象的描述信息
+        7、Object.getOwnPropertyDescriptors：获取所有对象的描述信息
+        8、defineProperties:一次性定义多个属性的可操作性
+        9、defineProperty:定义当前指定的某一个属性的可操作性
+        10、keys:获取对象的key属性，获取到的是可枚举的(循环，遍历) 不可枚举除外
+        11、getOwnPropertyNames:获取当前对象的所有属性名称，包含可枚举的
+        12、isExtensible:是否可扩展的
+        13、isSealed检测对象是否可封闭的--密封，不能删除，不能添加，可以修改
+        14、isFrozen：检测对象是否冻结了（如果冻结了，不能添加，不能修改，不能删除）
+        15、preventExtensions:阻止扩展---就是不能添加属性了
+        16、seal:封闭当前属性 只能修改了，不能添加和删除
+        17、freeze:冻结当前对象 ，不能添加，不能修改，不能删除
+        18、entries:获取所有对象以数组形式返回
+
+        第二、创建函数 3种
+        1、命名函数
+        2、匿名函数
+        3、通过new方式创建函数
+
+        第三、Object原型成员
+        1、constructor 构造器，可以获取当前对象的构造函数
+        2、hasOwnProperty 检测私有属性，判断当前实例对象是否存在指定的属性
+        3、isPrototypeOf 判断当前的对象是哦福在指定对象的原型链里面 如果存在返回true，反之返回false
+        4、propertyIsEnumerable:判断属性是否可枚举,如果可以枚举返回true，反之返回false
+        5、valueOf()
+            1)基本类型返回对应的值
+            2)如果是引用类型，返回对象本身--自己
+            3)如果是日期返回 时间戳
+        6、toString()
+            1)基本类型返回对应的字符串
+            2) 如果是数字可以传递数字，如果传入2表示返回二进制，如果传入8返回八进制，如果传入16返回十六进制
+            3）引用类型 Object [object,Object] 
+            如何解决数组的问题：Object.prototype.toString.call(arr)   
+        
+        7、封装了一个函数判断对象是否是数组--为了兼容，让所有浏览器都兼容
+        8、toLocaleString() 可以将日期转换为本地格式数据--了解即可
+
+        第四、eval()直接执行
+            1、eval()和函数有相似的地方，都是把字符串转换为js能运行的代码
+            2、eval()和函数区别：eval()直接立马执行不用调用，而function函数需要调用
+            3、eval()可以把json数据转换为对象格式，还可以做运算
+
+        第五、class语法
+            如果是原型方法直接写函数
+            如果是静态方法在函数前面加 static
+            继承的关键字 extends  里面还有super()
+            到此继承总结了6种方式   
+            
+         第六、作用域安全问题
+            1、this == window 在严格模式下--this就不执行window，而是指向undefined
+            2、通过 this instanceof Person
+            3、在es6里面提供了一个new.target == undefined
+            4、!(new.target)   --表示把 !(undefined)  
+
+          第七、浅拷贝：只拷贝一层，会存在数据共享问题
+          第八、深拷贝：我们的深拷贝是一层一层的拷贝，每一层都是独立开辟空间
+          第九、数组去重
+          第十、执行性函数 IIFF立即执行函数
+          (function(){
+              console.log("方式一")
+          })();
+
+          (function(){
+              console.log("方式二")
+          }());
+
+          !function(){
+              console.log("方式三")
+          }();
+
+          +function(){
+              console.log("方式四")
+          }();
+
+          -function(){
+              console.log("方式五")
+          }();
+          ~function(){
+              console.log("方式六")
+          }();
+
+          第十一、惰性函数：函数中有时候会将函数的指向修改了，那么下次调用的时候，执行的是修改之后的指向。
+
+          第十二、面向对象封装：书城的增删改查--面向过程--函数封装---面向对象
+
+        */
+    </script>
+</body>
+</html>
