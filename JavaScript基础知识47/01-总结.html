@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        /* 
+        第一、严格模式 "use strict"
+          1、在严格模式下，不允许为使用var声明的变量
+          2、在严格模式下，如果把严格模式定义在js脚本开头,会对整个js都起作用
+          3、在严格模式下，禁止使用八进制
+          4、在严格模式下，不允许使用形参重名
+          5、在严格模式下，普通函数this指向undefined----这一个就够用了
+
+          第二、闭包
+            作用：为了缓存数据，或者说把变量保存下来。
+            优势：缓存数据
+            缺点：内存泄露，占用内存空间
+
+
+        语法格式：首先是函数套函数，子函数调用了父函数的变量，并且子函数被外界所引用，此时就形成了闭包    
+        */
+        function fun1(){
+            var num = 10;
+            return function(){//return 后面是可以跟任意数据类型的
+                return num;
+            }
+        }
+
+        var result = fun1();
+        console.log(result());
+    </script>
+</body>
+</html>

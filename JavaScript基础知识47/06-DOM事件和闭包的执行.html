@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是div1</div>
+    <div>我是div2</div>
+    <div>我是div3</div>
+    <div>我是div4</div>
+    <div>我是div5</div>
+    <div>我是div6</div>
+    <div>我是div7</div>
+    <div>我是div8</div>
+    <div>我是div9</div>
+    <div>我是div10</div>
+    <script>
+        // 需求:获取页面的10个div元素，点击的时候显示div1,div2...点击哪个显示哪个
+        // var divs = document.getElementsByTagName("div");//集合，伪数组
+        // // 循环遍历
+        // for(var i = 0; i < divs.length; i++){
+        //     divs[i].onclick = function(){
+        //         console.log("我是第"+i+"个div元素");
+        //     }
+        // }
+
+        var divs = document.getElementsByTagName("div");//集合，伪数组
+        // 循环遍历
+        for(var i = 0; i < divs.length; i++){
+            divs[i].onclick = (function(i){
+                return function(){
+                console.log("我是第"+(i+1)+"个div元素");
+            }
+            })(i);
+        }
+    </script>
+</body>
+</html>

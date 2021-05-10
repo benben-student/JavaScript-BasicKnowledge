@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    在原来的基础上把数组改成对象的
+        // function fun(){
+        //     var a = 10;
+        //     var b = 20;
+        //     return {
+        //         getA:function(){
+        //             return a;
+        //         },
+        //         getB:function(){
+        //             return b;
+        //         }
+        //     }
+        // }
+
+        // var f = fun();
+        // var a = f.getA();
+        // var b = f.getB();
+        // console.log(a,b);
+
+        // 继续变形---后面框架里面会常见。
+        // function fun() {
+        //     var a = 10;
+        //     var b = 20;
+        //     function getA() {//这样写法，就是把函数单独抽离出来
+        //         return a;
+        //     }
+        //     function getB() {
+        //         return b;
+        //     }
+        //     return {
+        //         getA:getA,
+        //         getB:getB
+        //     }
+        // }
+
+        // var f = fun();
+        // var a = f.getA();
+        // var b = f.getB();
+        // console.log(a, b);
+
+        // 模块化开发---工作里面会大量使用模块化开发--自执行函数()()
+        var modual = (function fun() {
+            var a = 10;
+            var b = 20;
+            function getA() {//这样写法，就是把函数单独抽离出来
+                return a;
+            }
+            function getB() {
+                return b;
+            }
+            return {
+                getA:getA,
+                getB:getB
+            }
+        })();
+        var a = modual.getA();
+        var b = modual.getB();
+        console.log(a,b);
+
+
+
+
+    </script>
+</body>
+
+</html>

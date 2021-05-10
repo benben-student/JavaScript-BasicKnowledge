@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的返回值如果有很多个，我们可以使用返回数组的形式来实现
+        // function fun(){
+        //     var a = 10;
+        //     var b = 20;
+        //     return function(){// return 后面可以返回任意数据类型
+        //         return [a,b]
+        //     }
+        // }
+        // var f = fun();
+        // var a = f()[0];
+        // var b = f()[1];
+        // console.log(a,b);
+
+        // 继续扩展
+        function fun(){
+            var a = 10;
+            var b = 20;
+            return [//数组里面是可以放函数的
+                function (){
+                    return a;
+                },
+                function (){
+                    return b;
+                }
+            ]
+        }
+
+        var f = fun();
+        var a = f[0]();
+        var b = f[1]();
+        console.log(a,b);
+
+    </script>
+</body>
+</html>
