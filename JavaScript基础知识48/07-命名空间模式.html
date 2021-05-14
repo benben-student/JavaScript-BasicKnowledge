@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 命名空间模式，以后我们的项目都会用模块化开发来写项目，我们的命名空间模式一般都是以项目的名称首字母大写来命名的。现在流行是模块化开发。--了解这个命名空间即可
+
+        var MOMO = {};
+        // 定义一个变量
+        MOMO.a = 10;
+        MOMO.b = 20;
+        // 对象
+        MOMO.obj = {
+            name:"zs",
+            age:18
+        }
+        // 函数也是可以的
+        MOMO.fun = function(){
+            console.log("函数");
+        }
+        // 构造函数
+        MOMO.Person = function(){
+            this.name = "zs";
+        }
+        console.log(new MOMO.Person());
+        // 总结：以上这种写法用大写字母来命名的----我们都叫做命名空间模式
+
+    </script>
+</body>
+</html>

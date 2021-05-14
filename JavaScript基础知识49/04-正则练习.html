@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        写正则表达式，根据字符串来写正则表达式进行匹配
+        工作经验：1，找规律; 2、不要追求完美
+        */
+    /* 
+    需求2： 座机号的正则表达式
+       010-19876754
+       0431-87123490
+    */
+   /* 
+     [0-9]{3,4}[-][0-9]{8} 或者
+     \d{3,4}[-]\d{8}
+
+     还有人会这样写 
+     \d{3,4}[-][0-9]{8} 可以，但是不推荐这样写，要么用数字都用数字，要么用\d
+   */
+
+   /* 
+   需求3： qq号码的正则表达式 5到 11位
+   [0-9]{5,11} 或者[1-9][0-9]{4,10}  这个是表示没有0开头
+   或者
+   \d{5,11}
+   */
+        
+    
+    </script>
+</body>
+</html>

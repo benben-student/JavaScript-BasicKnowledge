@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、扩展了一个面试题
+        第二，即使对象初始化---引出 init
+        第二、单例模式：单个实例
+            为什么当前实例不是单例？（问：new做了什么事情）
+            1、默认的会创建一个新的对象 var obj = new Object()
+            2、默认的会把这个对象赋值给this  this = obj
+            3、通过this添加属性和方法
+            4、默认的返回这个对象 return this
+
+            方法 var _instance 全局  还可以直接 通过点方法来添加属性 Person._instance
+        第三、发布订阅（观察者模式）
+        举例：售楼小姐姐 Rose
+        订阅者---就是我们的观察者
+        
+        第四、工厂模式--提供一个构造函数
+        第五、命名空间模式：约定---一般都是姓名的名称，大写的变量名
+
+        第六、阿里面试
+
+
+         */
+
+          //阿里面试题
+        var arr = [1, 2, 3, 4];
+        function fun(arr) {
+            arr[0] = 5;
+            arr = [0];
+            arr[0] = 6;
+            console.log(arr);//[6] 0x33
+            return arr
+        }
+        var res = fun(arr);
+        console.log(res);//[6]
+        console.log(arr);//[5, 2, 3, 4] 小心这个有难度啊 0x22
+    </script>
+</body>
+</html>

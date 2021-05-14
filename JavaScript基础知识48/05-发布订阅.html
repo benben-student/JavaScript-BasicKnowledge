@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        发布订阅模式(观察者模式)
+        举例：售楼部的小姐姐---有新的房源了---发布者
+        发布者：具有发布信息的能力
+                客户1----->联系电话
+                客户2----->联系的qq
+                客户3----->联系微信
+        订阅者：--也有人叫做订阅者模式（根据发布信息的状态，或者发布的信息，来采取一些行动）     
+        */
+
+        // 发布者发布信息:  女神：Rose 男生：Jack
+        var Rose = {//发布者
+            eat:function(){
+                console.log("我饿了");
+                Jack.jack_eat();//此时就有了联系方式，也有人叫做注册订阅者
+                // 让Tom和Rose有联系方式
+                Tom.tom_eat();
+            }
+        }
+
+        // 订阅者（观察者）对象 Jack
+        var Jack = {
+            jack_eat:function(){
+                console.log("邀请女神吃小龙虾！---jack");
+            }
+        }
+
+        //Tom
+        var Tom = {//多加了一个订阅者
+            tom_eat:function(){
+                console.log("邀请女神吃螺蛳粉！---tom");
+            }
+        }
+        //执行Rose
+        Rose.eat();
+        // 了解即可--以后用到的几乎都是单例模式
+    </script>
+</body>
+</html>

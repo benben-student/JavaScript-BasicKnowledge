@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 不要掉入坑啊---经典的面试题
+        // for(var i = 1; i <= 5; i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },(5-i)*10);
+        // }
+        /* 
+        主任务队列:
+        i = 1 创建一个定时器
+        i = 2 创建一个定时器
+        i = 3 创建一个定时器
+        i = 4 创建一个定时器
+        i = 5 创建一个定时器
+        i = 6 循环结束，此时主任务队列中的方法已经执行完毕了,到等待任务队里面先找到了时间的任务，拿到主任务队列里面去执行 function(){console.log(i)},i是全局的，此时的全局的i编程6个，创建了5个等待任务队列，就是五个定时器，所以会输出5个6
+
+        等待任务队列
+        40毫秒后执行某个方法
+        30毫秒后执行某个方法
+        20毫秒后执行某个方法
+        10毫秒后执行某个方法
+        0毫秒后执行某个方法
+        */
+
+        //继续扩展
+        // 当我们做点击事件的时候，主任务队列已经执行结束了，所以永远都是最后一个
+        // for(var i = 0; i < divs.length;i++){// 原来是异步任务都在等待任务队列里面
+        //     divs[i].onclick = function(){
+        //         console.log("我是第"+i+"个div元素");
+        //     }
+        // }
+
+        //面试：通过闭包把i值存储下来
+
+        for(var i = 1; i <= 5; i++){
+            ~function(i){
+                setTimeout(function(){
+                console.log(i);
+            },(5-i)*10);
+            }(i)
+        }
+
+        // 扩展 ES6定义变量的语法 let也可以把i存储下来
+        // var name = "zs"
+        // let name = "lw"
+
+        //  for(let i = 1; i <= 5; i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },(5-i)*10);
+        // }
+    </script>
+</body>
+</html>

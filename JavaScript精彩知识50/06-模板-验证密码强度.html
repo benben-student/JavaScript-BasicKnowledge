@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    #dv{
+        width: 300px;
+        height:200px;
+        position: absolute;
+        left:300px;
+        top:100px;
+    }
+    .strengthLv0 {
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv1 {
+        background: red;
+        height: 6px;
+        width: 40px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv2 {
+        background: green;
+        height: 6px;
+        width: 80px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv3 {
+        background: blue;
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+</style>
+<body>
+<div id="dv">
+    <label for="pwd">密码</label>
+    <input type="text" id="pwd" maxlength="16"><!--课外话题-->
+    <div>
+        <em>密码强度：</em>
+        <em id="strength"></em>
+        <div id="strengthLevel" class="strengthLv0"></div>
+    </div>
+</div>
+<script src="publick.js"></script>
+<script>
+    /* 
+    核心思想：
+    密码：数字、字母、特殊符号
+    密码:只有数字，或者之后字母，或者只有特殊符号---属于1级---显示弱红色表示
+    两两组合：数字和字母，数字和特殊符号,字母和特殊符号--属于2级---中显示绿色
+    三者都有：数字和字母和特殊符号---属于3级--强蓝色表示
+    */
+    // 键盘抬起事件 onkeyup 键盘抬起事件
+    my$("pwd").onkeyup = function(){
+        // 思路：每次键盘抬起的时候获取文本框的内容，验证文本框里面是什么内容，得到一个级别，然后下面的div显示对应的颜色
+        // 如果密码长度小于6位我们就没有必要去判断
+        if(this.value.length >= 6){
+            var lvl = getLvl(this.value);//this.value获取文本框的值
+            if(lvl == 1){//表示1级
+                my$("strengthLevel").className = "strengthLv1";
+            }else if(lvl == 2){
+                my$("strengthLevel").className = "strengthLv2";
+            }else if(lvl == 3){
+                my$("strengthLevel").className = "strengthLv3";
+            }
+        }else{
+            my$("strengthLevel").className = "strengthLv0";
+        }
+    }
+    // 封装一个函数来判断级别，给我密码，返回对应的级别
+    function getLvl(pwd){//这个函数是有参数和返回值
+        var lvl = 0;//默认的级别 0级别
+        // 判断是否有数字
+        if(/[0-9]/.test(pwd)){//如果有数字返回true
+            lvl++;
+        }
+        // 判断密码中是否有字母
+        if(/[a-zA-Z]/.test(pwd)){//如果有字母返回true
+            lvl++;
+        }
+        // 判断密码中是否有特殊符号
+        if(/[^0-9a-zA-Z_]/.test(pwd)){
+            lvl++;
+        }
+        return lvl;//返回值 最小值是1 最大值3
+    }
+</script>
+</body>
+</html>

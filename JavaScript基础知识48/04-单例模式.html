@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        历史：设计模式是从建筑行业来的（我们叫做搬砖，码农）
+        常见的设计模式：单例模式、发布订阅模式(观察者模式)、工厂模式(命名空间模式、代理模式...这些了解即可)
+
+        单例模式：在JS中单例模式，单个实例。
+        */
+    // 构造函数
+    //   var _instance;//一般不修改的变量前面加个下划线
+       function Person(){
+           if(Person._instance){
+                console.log("之前已经创建了对象，直接返回创建好的对象就可以了");
+                return Person._instance
+           }
+           /* 
+           原理：因为我们这段代码执行了三部曲，所以p1、p2、p3不是同一个对象，每次new都会创建一个对象
+            第一、默认的创建一个新对象 var obj = new Object()
+            第二、默认的把这个对象赋值给this  this = obj;
+            第三、默认返回对象 return this
+           */
+           Person._instance = this;
+          console.log("第一次创建对象");
+       }
+    // 实例化对象
+    var p1 = new Person();
+    var p2 = new Person();
+    var p3 = new Person();
+    var p4 = new Person();
+    var p5 = new Person();
+
+
+    // 单例模式
+    console.log(p1 === p2);//false 就不是单例，true就是一个实例
+    console.log(p1 === p3);//false 就不是单例，true就是一个实例
+    console.log(p2 === p3);//false 就不是单例，true就是一个实例
+    console.log(p1 === p4);//false 就不是单例，true就是一个实例
+    console.log(p2 === p5);//false 就不是单例，true就是一个实例
+    </script>
+</body>
+</html>

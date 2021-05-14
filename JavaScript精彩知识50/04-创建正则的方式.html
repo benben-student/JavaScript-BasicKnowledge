@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 总结：正则表达式的作用匹配字符串
+        // 第一、通过构造函数的方式创建正则
+        // var reg = new RegExp(/\d{5}/);//正则
+        // var str = "我的电话是10086";
+        // // 调用test方法来验证字符串是否匹配,如果匹配会返回一个true，否则返回false
+        // var flag = reg.test(str);
+        // console.log(flag);
+
+        // 优化写法
+        // var reg = new RegExp(/\d{5}/);//正则
+        // // 调用test方法来验证字符串是否匹配,如果匹配会返回一个true，否则返回false
+        // var flag = reg.test("我的电话是10086");
+        // console.log(flag);
+
+        // 第二、字面量的方式创建正则
+        var reg = /\d{1,5}/;
+        var flag = reg.test("我们班的幸运数字:9999");
+        console.log(flag);
+    </script>
+</body>
+</html>

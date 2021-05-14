@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 引入一个init关键字
+        // var obj = {//字面量创建对象
+        //     name:"zs",
+        //     age:18,
+        //     showName:function(){
+        //         console.log("姓名:" + this.name);
+        //     },
+        //     showAge:function(){
+        //         console.log("年龄:" + this.age);
+        //     }
+        // }
+        // console.log(obj.name);
+        // console.log(obj.age);
+
+        // var obj = {//字面量创建对象
+        //     name: "默认",
+        //     age: "默认",
+        //     showName: function () {
+        //         console.log("姓名:" + this.name);
+        //     },
+        //     showAge: function () {
+        //         console.log("年龄:" + this.age);
+        //     },
+        //     init: function (name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        // }
+        // obj.init("zs", 18);
+        // console.log(obj.name);
+        // console.log(obj.age);
+
+        // 优化代码
+        (
+            {//字面量创建对象
+                name: "默认",
+                age: "默认",
+                showName: function () {
+                    console.log("姓名:" + this.name);
+                },
+                showAge: function () {
+                    console.log("年龄:" + this.age);
+                },
+                init: function (name, age) {
+                    this.name = name;
+                    this.age = age;
+                    // 还可以调用方法
+                    this.showName();
+                    this.showAge();
+                }
+            }
+        ).init("lw",88)
+    </script>
+</body>
+
+</html>

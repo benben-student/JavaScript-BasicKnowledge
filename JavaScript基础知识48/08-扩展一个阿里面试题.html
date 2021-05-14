@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //阿里面试题
+        var arr = [1, 2, 3, 4];
+        function fun(arr) {
+            arr[0] = 5;
+            arr = [0];
+            arr[0] = 6;
+            console.log(arr);//[6] 0x33
+            return arr
+        }
+        var res = fun(arr);
+        console.log(res);//[6]
+        console.log(arr);//[5, 2, 3, 4] 小心这个有难度啊 0x22
+    </script>
+</body>
+
+</html>
