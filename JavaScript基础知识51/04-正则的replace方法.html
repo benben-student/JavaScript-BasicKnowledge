@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "你们好帅哦，真的是太帅了,帅,就是帅呆了";
+        str = str.replace(/帅/g,"靓");
+        console.log(str);
+
+        // 去除两端空格
+        // var str1 = "      哦真是神奇的一天,     太幸福了.       ";
+        // str1 = str1.trim();
+        // console.log("========"+str1+"========");
+
+        // 真正去除所有空格的
+        var str1 = "      哦真是神奇的一天,     太幸福了.       ";
+        str1 = str1.replace(/\s+/g,"");
+        console.log("========"+str1+"========");
+
+        // 需求:所有的小写的o或者O都变成大写S
+        // var str2 = "hello world O!";
+        // str2= str2.replace(/[o]/gi,"S");
+        // console.log(str2);
+
+        // 需求:所有的小写的o或者O都变成大写S---通过构造函数方式
+        var reg = new RegExp(/[o]/gi);
+        var str2 = "hello world O!";
+        str2= str2.replace(reg,"S");
+        console.log(str2);
+
+    </script>
+</body>
+</html>

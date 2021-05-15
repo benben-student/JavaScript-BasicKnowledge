@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+        // // match 会以数组的方式来显示
+        // var arr = str.match(/\d{5}/g);//正则表达式中，g表示全局匹配
+        // console.log(arr);
+
+        // 语法格式：正则表达式对象.exec方法传入一个字符串
+        // var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+        // var reg = /\d{5}/g;
+        // var arr = reg.exec(str);
+        // console.log(arr); // exec只能拿到一个
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+
+        var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+        var reg = /\d{5}/g;
+        var array = reg.exec(str);
+        while(array != null){
+            console.log(array[0]);//可以拿到我们数字的第一项
+            array = reg.exec(str);
+        }
+        
+        
+    </script>
+</body>
+</html>

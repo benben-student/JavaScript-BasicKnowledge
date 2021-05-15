@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+        // match 会以数组的方式来显示
+        var arr = str.match(/\d{5}/g);//正则表达式中，g表示全局匹配
+        console.log(arr);
+
+        // 提取日期中的年月日
+        var str1 = '2021-05-14';
+        var date = str1.match(/(\d{4})[-](\d{2})[-](\d{2})/);
+        // 总结：我们通过()来分组，获取分组的结果 RegEXp.$1 $2 $3 ... 来获取
+        // console.log(date);
+        // console.log(RegExp.$1);
+        // console.log(RegExp.$2);
+        // console.log(RegExp.$3);
+
+        // 提取一些邮箱的每一部分
+        var emial = "751439716@qq.com";
+        emial.match(/(^[0-9a-zA-Z_.-]+)[@]([0-9a-zA-Z_.-]+)(([.]com|cn){1,2}$)/);
+        console.log(RegExp.$1);//用户名
+        console.log(RegExp.$2);//qq
+        console.log(RegExp.$3);//.com
+    </script>
+</body>
+</html>
