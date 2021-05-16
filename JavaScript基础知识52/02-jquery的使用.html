@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <!-- <script>
+        // 温故而知新--回顾
+        window.onload = function(){//入口函数---原生JS写法
+            var btn = document.getElementById("btn");
+            var box = document.getElementById("box");
+            // 公式： 事件源.事件 = function(){}
+            btn.onclick = function(){
+                box.style.display = "none";
+            }
+        }
+    </script> -->
+    <!-- 第一步：先引入jquery包包 -->
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){//jquery的入口函数
+            $("button").click(function(){
+                // alert("123");测试代码
+                // jquery的优势：他会把很多功能模块都封装成了方法，我们就直接调用
+                $("div").hide(1000);//1000 以毫秒为单位的时间
+                // 总结：Write Less, Do More 写的少，做的多 效果更好（事半功倍--八级英语）
+            })
+        })
+    </script>
+</head>
+<body>
+    <script>
+        /* 
+        jquery的核心理念：write less do more(写的少做的多)
+
+        优点：
+        1、非常小，而且兼容CS3
+        2、jquery 几乎没有兼容问题，甚至IE6低版本的浏览器都兼容
+        3、jquery 代码简洁，代码更优雅
+        4、实现动画非常的强大
+        5、jquery是免费的，而且是开源
+        总结：简洁 方便
+        */
+
+        /* 
+        ********
+        重点来了
+        JavaScript:
+            1、入口函数 window.onload = function(){}
+            2、不需要引包
+            3、也没有特殊符号
+
+        Jquery
+            1、入口函数 
+                1)第一种写法： $(function(){});
+                2)第二种写法: $(document).ready(function(){}) 
+            2、必须要引入包
+            3、有特殊符号 $
+            
+            
+        使用步骤：
+            1、先引入包（注意：千万不要忘记引入包了）
+            2、写入口函数 $(function(){语法;});
+            3、jquery的事件一律不带on,再也不用写document.getElementById("id")-现在 $("元素")  
+        */
+    </script>
+    
+    <button id="btn">点击按钮</button>
+    <div id="box"></div>
+</body>
+</html>

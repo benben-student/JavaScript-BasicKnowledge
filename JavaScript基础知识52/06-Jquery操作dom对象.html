@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                console.log($("div").html());//获取的结果<span>我是文字</span>
+                console.log($("div").text());//获取真正的文字了
+                console.log($("input").val());//获取表单的值
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <div><span>我是文字</span></div>
+    <input type="text" value="我是表单的值，看看我是如何获取的">
+</body>
+</html>

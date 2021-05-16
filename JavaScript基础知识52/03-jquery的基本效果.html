@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            display: none;/*一开始隐藏*/
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("#xs").click(function(){
+                $("#box").show(1000);//show() 把隐藏的显示出来
+            });
+            $("#yc").click(function(){
+                $("#box").hide(1000);//hide() 把显示的隐藏
+            });
+            $("#qh").click(function(){
+                $("#box").toggle(1000);//toggle() 就是切换显示和隐藏
+            });
+            $("#xh").click(function(){
+                $("#box").slideDown(1500)//下滑 slideDown()
+            });
+            $("#sh").click(function(){
+                $("#box").slideUp(1500);//上滑 slideUp()
+            });
+            $("#qhh").click(function(){
+                $("#box").slideToggle(1500);//切换滑 slideToggle()
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="xs">显示</button>
+    <button id="yc">隐藏</button>
+    <button id="qh">切换</button>
+    <button id="xh">下滑</button>
+    <button id="sh">上滑</button>
+    <button id="qhh">切换滑动</button>
+    <div id="box"></div>
+</body>
+</html>
