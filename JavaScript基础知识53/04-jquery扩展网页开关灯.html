@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls{
+            background: #000;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // $(function(){
+        //     $("#btn").click(function(){
+        //         // 判断
+        //         if($("body")[0].className == "cls"){
+        //             $("body")[0].className = "";
+        //         }else{
+        //             $("body")[0].className = "cls";
+        //         }
+        //     })
+        // })
+
+        // 用jquery自己的方法来做网页开关灯
+        /* 
+        第一、addClass() 添加类 ----注意 addClass(cls) --- 这个cls前面不能写点
+        第二、removeClass() 移除类
+        第三、hasClass()  判断是否有这个类，如果有这个类返回true，如果没有这个类返回false
+        */
+
+        // $(function(){
+        //     $("#btn").click(function(){
+        //         // 判断是否有这个类
+        //         if($("body").hasClass("cls")){
+        //             $("body").removeClass("cls");
+        //         }else{
+        //             $("body").addClass("cls");
+        //         }
+        //     })
+        // })
+
+        // 扩展一个写法
+        $(function(){
+            $("#btn").click(function(){
+                // 换个思想，来判断value值也是可以实现的
+                if($(this).val() == "关灯"){
+                    $("body").css("background","black");
+                    $(this).val("开灯");
+                }else{
+                    $("body").css("background","");
+                    $(this).val("关灯");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="关灯" id="btn">
+</body>
+</html>

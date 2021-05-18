@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        筛选选择器语法:筛选选择器一般都是方法,都带() (一般情况下使用是:第N个 父，子，兄)
+        .eq(index) 选择第N个元素 index 从0开始  $("li").eq(2)
+        .parent() 查找父类 $("li").parent()
+        .children() 选择孩子 $("li").children()
+        .siblings() 这个强大啊，这个就是典型的排他思想， 选择兄弟，不分上下都是兄弟，这个用的特别多
+        */
+       $(function(){
+           $("button").click(function(){
+            //    $("li").eq(1).css("color","pink"); 选择第n个元素 从0开始
+            // $("li").parent().css("color","pink"); css具有继承性
+            // $("li").children().css("color","pink"); 选择孩子
+            // 下面这个太常用了典型的tab栏思想，排他思想一个单词搞定（tab栏会用到，轮播图会用到）
+            $(".one").siblings().css("color","pink");
+           })
+       })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <ul>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>
+            <p>我是li的孩子</p>
+        </li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li class="one">除了我自己</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+    </ul>
+</body>
+</html>

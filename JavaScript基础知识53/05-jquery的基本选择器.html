@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        基本选择器：
+        标签选择器 : 获取同一类标签的所有的元素 $("div") $("button")
+        ID选择器： 获取指定的id的元素  $("#id")
+        类选择器: 获取同一类的class元素 $(".demo")
+        通配符选择器: 获取所有元素 $("*") 很少用
+        并集选择器: 使用的逗号分隔 $(".demo,.test")
+        后代选择器: 空格  (子代和后代选择器都选中) $("li p")
+
+        // 总结：跟css是一样的
+
+        层级选择器：
+         > 大于号  子代选择器,获取儿子层级的，注意不会获取孙子层级 $("li>p")
+         + 加号 紧邻选择器 选择one下面的第一个邻居 $(".one+li")
+         ~  兄弟姐妹选择器 选择one下面的所有的邻居 $(".one~li")
+        */
+       $(function(){
+           $("button").click(function(){
+            //    $(".demo").css("background","#f40");类选择器
+            // $(".demo,.test").css("background","#f40"); 并集选择器
+            // $("li p").css("background","#f40"); 后代选择器，只要是后代都选择
+
+            // $("li>p").css("background","#f40"); 子代选择器 ，只选择儿子
+            // $(".one+li").css("background","#f40"); 紧邻选择器 向下选择第一个邻居
+            $(".one~li").css("background","#f40"); //兄弟姐妹选择器，one下面的所有邻居
+
+           })
+       })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <ul>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>
+            <p>我是li的子代标签</p>
+            <div>
+                <p>我是li的后代标签</p>
+            </div>
+        </li>
+        <li>我是列表内容</li>
+        <li class="demo">我是demo类的样式</li>
+        <li class="test">我是test类的样式</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li class="one">我是one类样式</li>
+        <li>我是one的第一个邻居</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+    </ul>
+</body>
+</html>

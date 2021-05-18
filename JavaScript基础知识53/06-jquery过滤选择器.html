@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        过滤选择器语法:我们的过滤选择器一般都是用冒号开头 :
+        :first 选择满足条件的第一个元素 $("li:first")---选择第一个li
+        :last 选择满足条件的最后一个元素 $("li:last")---选择最后一个li
+        :even 偶数 获取的是li元素索引值为奇数的元素 ，因为从0开始的
+        :odd 奇数 获取的是li元素索引值为偶数的元素 ， 因为从0开始的
+        :eq(index) 获取到第几个li元素， 索引值index 从0开始
+        */
+       $(function(){
+           $("button").click(function(){
+                //$("li:first").css("color","hotpink"); 选择满足条件的第一个元素
+                // $("li:last").css("color","hotpink"); //选择满足条件的最后一个元素
+                // $("li:even").css("color","hotpink"); 选择满足条件的偶数，从0开始
+                // $("li:odd").css("color","hotpink"); 选择满足条件的奇数，从0开始
+                $("li:eq(2)").css("color","hotpink") //可以选择第index个元素 从0开始
+           })
+       })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <ul>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li class="one">我是定义的one类样式</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+        <li>我是列表内容</li>
+    </ul>
+</body>
+</html>

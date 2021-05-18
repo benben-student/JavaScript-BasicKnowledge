@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        div{
+            width: 200px;
+            height: 200px;
+            background: tomato;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        总结公式：
+        第一、css里面只有一个属性的写法 css("width");--- 返回该属性的值
+        第二、css里面只有一对属性值的写法 css("width","300px");---改变该属性的值 
+        第三、css里面有多组属性值的写法 css({"width":"300px","height":"300px"...});---有多组属性的值，改变多组属性的值
+        */
+
+        $(function(){
+            $("button").click(function(){
+                // console.log($("div").css("width")); 返回该属性的值
+                // $("div").css("width","300px"); 改变该属性的值
+                $("div").css({
+                    "width":"300px",
+                    "height":"300px",
+                    "background":"pink"
+                });//有多组属性值，改变多组属性值
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+</body>
+</html>
