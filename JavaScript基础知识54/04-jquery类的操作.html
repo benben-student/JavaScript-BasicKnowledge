@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+            border:1px solid #000;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                $("div").addClass("box");
+            });
+            $("button").eq(1).click(function(){
+                $("div").removeClass("box");
+            });
+            $("button").eq(2).click(function(){
+                $("div").toggleClass("box");
+            });
+
+            // hasClass("box") 判断是否有这个类
+            $("button").eq(3).click(function(){
+                // 判断
+                if($("div").hasClass("box")){
+                    alert("有这个类");
+                }else{
+                    alert("没有这个类");
+                }
+            })
+        })
+
+        /* 
+        addClass("box") 添加类
+        removeClass("box")移除类
+        toggleClass("box") 切换类
+        hasClass("box") 判断是否有这个类
+        */
+    </script>
+</head>
+<body>
+    <button>添加类</button>
+    <button>移除类</button>
+    <button>切换类</button>
+    <button>是否有这个类</button>
+    <div></div>
+</body>
+</html>

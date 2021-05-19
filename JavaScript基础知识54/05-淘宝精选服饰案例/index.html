@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            display: block;/*解决图片下面的风险问题*/
+        }
+        a{
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .box{
+            width: 298px;
+            height: 250px;
+            border:1px solid pink;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #left,
+        #right,
+        #middle{
+            float: left;
+        }
+        #left li,
+        #right li{
+            float: left;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            width: 48px;
+            background-color: #fcf2f1;
+            border-bottom: 1px solid pink;
+        }
+        #left,
+        #right{
+            width: 48px;
+        }
+        #middle{
+            width: 200px;
+            border-left: 1px solid pink;
+            border-right: 1px solid pink;
+        }
+        #left a,
+        #right a{
+            display: block;
+            height: 27px;
+        }
+        #left a:hover,
+        #right a:hover{
+            background: url("images/abg.gif") repeat-x;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            // 核心思想：利用我们的索引值--实现一一对对应
+            // $("#left li").mouseover(function(){
+            //     // alert($(this).index());
+            //     var num = $(this).index();
+            //     $("#middle li").eq(num).show().siblings().hide();
+            // });
+            // $("#right li").mouseover(function(){
+            //     num = $(this).index();
+            //     // alert(num);
+            //     $("#middle li").eq(num + 9).show().siblings().hide();
+            // })
+
+            // 扩展写法 each() 遍历循环，有了他就再也不用for，跟for是一样的
+            $("#left li,#right li").each(function(index,ele){
+                // index 返回的是索引号 ---他等价于 ----- $(this).index()
+                // ele 返回的是某个元素---element
+                // console.log(index); 测试
+                $(this).mouseover(function(){
+                    $("#middle li").eq(index).show().siblings().hide();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul id="left">
+            <li><a href="#">女靴</a></li>
+            <li><a href="#">雪地靴</a></li>
+            <li><a href="#">冬裙</a></li>
+            <li><a href="#">呢大衣</a></li>
+            <li><a href="#">毛衣</a></li>
+            <li><a href="#">棉服</a></li>
+            <li><a href="#">女裤</a></li>
+            <li><a href="#">羽绒服</a></li>
+            <li><a href="#">牛仔裤</a></li>
+        </ul>
+        <ul id="middle">
+            <li>
+                <a href="#"><img src="images/女靴.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/雪地靴.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/冬裙.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/呢大衣.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/毛衣.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/棉服.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/女裤.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/羽绒服.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/牛仔裤.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/女包.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/男包.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/登山鞋.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/皮带.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/围巾.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/皮衣.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/男毛衣.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/男棉服.jpg" width="200" height="250" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/男靴.jpg" width="200" height="250" /></a>
+            </li>
+        </ul>
+        <ul id="right">
+            <li><a href="#">女包</a></li>
+            <li><a href="#">男包</a></li>
+            <li><a href="#">登山鞋</a></li>
+            <li><a href="#">皮带</a></li>
+            <li><a href="#">围巾</a></li>
+            <li><a href="#">皮衣</a></li>
+            <li><a href="#">男毛衣</a></li>
+            <li><a href="#">男棉服</a></li>
+            <li><a href="#">男靴</a></li>
+        </ul>
+    </div>
+</body>
+</html>

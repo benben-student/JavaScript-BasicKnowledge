@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、Jquery操作css
+            1、css("width") css里面只有一个属性--返回该属性的值
+            2、css("width","300px") css里面只有一对属性值，--修改该属性值
+            3、css({"width":"300px","height":"300px"}) css里面有多组属性的值--改变多组的属性值
+
+        第二、jquery的操作类
+            1、添加类 addClass("cls")    
+            2、移除类 removeClass("cls")  
+            3、判断是否有这个类 hasClass("cls")
+            4、切换类：toggleClass()---这个我们今天就会讲解
+
+        第三、jquery选择器
+            基本选择器
+            $("div") 标签选择器
+            $("#id") id选择器
+            $(".test") 类选择器
+            $("*") 通配符选择器
+            $(".demo,.test") 并集选择器
+            $("li p") 后代选择器
+
+            总结：跟我们的css是一样的
+
+            层级选择器
+
+            > 子代选择器 获取儿子
+            + 紧邻选择器 ,选择one下面的第一个邻居
+            ~ 兄弟姐妹选择器，选择one下面的所有的邻居
+
+            过滤选择器
+            :first 选择满足条件的第一个元素
+            :last 选择满足条件的最后一个元素
+            :even 偶数 选择是奇数元素，因为下标从0开始
+            :odd 奇数 选择是偶数元素，因为下标从0开始
+            :eq(index) 选择第n个元素，下标是从0开始的
+
+            筛选选择器 都是方法都带（）
+            一般常见的第N个 父 子 兄
+            .eq(1) 选择第二个元素 ，因为下标从开始
+            .parent() 选择父亲
+            .children() 选择孩子
+            .siblings() 最常用的  排他思想 除了他自己都选择
+
+            扩展：jquery的链式操作
+
+         */
+    </script>
+</body>
+</html>
