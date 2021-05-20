@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            border:1px solid #000;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // 需求：点击按钮，盒子变宽，等1秒然后变高
+        // delay(1000) 延迟 单位是毫秒
+        $(function(){
+            $("button").click(function(){
+                // $("div").animate({
+                //     "width":"500px"
+                // },1000).animate({
+                //     "height":"500px"
+                // },1000)
+
+                $("div").animate({
+                    "width":"500px"
+                },1000).delay(1000).animate({
+                    "height":"500px"
+                },1000);
+            })
+        })
+    </script>
+</head>
+<body>
+  <button>走你</button>
+  <div></div>
+</body>
+</html>

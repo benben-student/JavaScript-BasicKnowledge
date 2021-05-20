@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 0;
+            /* 解决图片下面的缝隙 */
+        }
+        .box{
+            width: 790px;
+            height: 361px;
+            margin: 100px auto;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .shuang,
+        .dan{
+            width: 158px;
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){//练习我们的循环遍历each方法
+            $(".box .jd").each(function(index,ele){//index 索引值，ele-元素
+               $(this).hover(function(){
+                    $(".box .jd").stop().fadeTo(500,0.5);//所有的jd都变淡
+                    $(this).stop().fadeTo(500,1);//自己变亮
+                    $(this).children("img").stop().animate({
+                        "marginLeft":"-15px"
+                    },500)
+               },function(){
+                    $(".box .jd").stop().fadeTo(500,1);//所有的jd都变亮
+                    $(this).children("img").stop().animate({
+                        "marginLeft":"0"
+                    },500);
+               }) 
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="shuang">
+            <a href="#" class="jd"><img src="images/01.jpg" alt=""></a>
+            <a href="#" class="jd"><img src="images/02.jpg" alt=""></a>
+        </div>
+        <div class="dan">
+            <a href="#" class="jd"><img src="images/03.jpg" alt=""></a>
+        </div>
+        <div class="shuang">
+            <a href="#" class="jd"><img src="images/04.jpg" alt=""></a>
+            <a href="#" class="jd"><img src="images/05.jpg" alt=""></a>
+        </div>
+        <div class="dan">
+            <a href="#" class="jd"><img src="images/06.jpg" alt=""></a>
+        </div>
+        <div class="shuang">
+            <a href="#" class="jd"><img src="images/07.jpg" alt=""></a>
+            <a href="#" class="jd"><img src="images/08.jpg" alt=""></a>
+        </div>
+    </div>
+</body>
+</html>
