@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 1020px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        .box ul li{
+            float: left;
+            width: 200px;
+            height: 400px;
+            border:1px solid gold;
+            background: url(images/1.jpg) no-repeat;
+            margin-left: -1px;/*大招：解决边框问题*/
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // 核心思想：鼠标经过谁谁变宽，其他的兄弟变窄
+         $(function(){
+            //  jquery遍历循环背景图--大招
+            var speed = 500;//设置时间，下面直接用这个变量
+            $(".box li").each(function(index,ele){//index--索引 ele--元素
+                var num = index + 1;// 这样就保证了我们的索引值和图片名称对应
+                // 大招： 把字符串去掉 "+变量+"
+                $(ele).css({"background":"url(images/"+num+".jpg) no-repeat"})
+            });
+            // 鼠标经过效果
+            $(".box li").hover(function(){//鼠标经过谁谁变宽，其他的兄弟变窄
+                $(this).stop().animate({
+                    "width":"600px"
+                },speed).siblings().stop().animate({
+                    "width":"100px"
+                },speed);
+            },function(){
+                $(".box li").stop().animate({
+                    "width":"200px"
+                },speed);
+            })
+         })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

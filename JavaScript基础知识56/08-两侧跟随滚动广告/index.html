@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .left,.right{
+            position: absolute;
+            top: 50px;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // 第一个需求：点击谁谁就关闭这个广告
+        $(function(){
+            $(".left,.right").click(function(){
+                $(this).hide();//点击谁谁就关闭
+            });
+
+            // 第二个需求：滚动图片跟随效果
+            $(window).scroll(function(){
+                // 获取被卷上去的距离
+                var val = $(window).scrollTop();//一定要在里面写，我们需要无时无刻获取被卷上去上面的值
+                $(".left,.right").stop().animate({
+                    "top":val + 50
+                },800);
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="1.gif" alt="" class="left">
+    <img src="2.gif" alt="" class="right">
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+</body>
+</html>

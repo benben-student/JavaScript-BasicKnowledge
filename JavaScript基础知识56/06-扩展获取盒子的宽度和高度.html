@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border:6px solid #000;
+            padding: 10px;
+            margin: 15px;
+            background-color: hotpink;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // height() 、innerHeight()、outerHeight() 获取盒子的高度(宽度同理)
+        $(function(){
+            $("button").click(function(){
+                // console.log($("div").height());//返回的就是实际高度
+                // console.log($("div").innerHeight());返回的是实际的高度 + 内边距
+                // console.log($("div").outerHeight());返回实际的高度 + 内边距 + 边框
+                console.log($("div").outerHeight(true));//返回的是实际的高度 + 内边距 + 边框 + 外边距
+            })
+        })
+
+        // 宽度同理：width() 、innerWidth()、outerWidth() 获取盒子的高度
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+</body>
+</html>

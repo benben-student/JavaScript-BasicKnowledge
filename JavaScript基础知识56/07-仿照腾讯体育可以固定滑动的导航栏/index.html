@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .top{
+            width: 100%;
+            height: 168px;
+            background: url(images/top.png) no-repeat center top;
+        }
+        .nav{
+            width: 100%;
+            height: 84px;
+            background: url(images/nav.png) no-repeat center top;
+        }
+        .main{
+            width: 100%;
+            height: 1370px;
+            background: url(images/main.png) no-repeat center top;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                var gao = $(".top").height();//获取到头部的实际的高度
+                // console.log("测试有没有滚动鼠标");
+                // 核心思想:判断我们是否滚动到一定距离，如果滚动到了一定距离就上导航变成固定定位fixed,反之就是静态定位static
+                // 第一件事：首先获取我们滚动距离
+                var tou = $(window).scrollTop();//获取页面被卷上去的距离
+                // console.log(tou);拿到值就可以判断了
+                if(tou >= gao){
+                    // console.log("到了");像老师一样学会测试
+                   $(".nav").css({
+                       "position":"fixed",
+                       "top":"0"
+                   });
+                   $(".main").css({
+                       "marginTop":"84px"
+                   })
+                }else{
+                    $(".nav").css({
+                        "position":"static"
+                    });
+                    $(".main").css({
+                        "marginTop":"0"
+                    });
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="nav"></div>
+    <div class="main"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            color: gray;
+            outline: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("input").focus(function(){//获取焦点
+                //判断
+                if($("input").val() == "请输入..."){
+                    $(this).val("")//清空里面数据信息
+                    $(this).css({
+                        "color":"black"
+                    })
+                }
+            }).blur(function(){
+                // 判断
+                if($("input").val() == ""){//判断等于空
+                    $(this).val("请输入...");//把请输入... 放进来
+                    $(this).css({
+                        "color":"gray"
+                    })
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    搜索:<input type="text" value="请输入...">
+</body>
+</html>
