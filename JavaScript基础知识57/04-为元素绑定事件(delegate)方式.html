@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        p{
+            width: 150px;
+            height: 50px;
+            border: 1px solid pink;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // 需求：给div父盒子一个委托事件，让子盒子p执行
+        /* 
+        语法格式：
+        第一个参数：选择器
+        第二个参数：事件类型
+        第三个参数：匿名函数，要做什么事情
+        */
+       $(function(){
+           $("#btn").click(function(){
+            //为父元素绑定事件，就是把子元素的事件委托给了父级元素
+            $("#dv").delegate("p","click",function(){//delegate语法格式
+                alert("我是通过delegate实现的事件")
+            })
+           })
+       })
+    </script>
+</head>
+<body>
+    <input type="button" value="为div绑定事件" id="btn">
+    <div id="dv">
+        <p>我是段落标签</p>
+    </div>
+</body>
+</html>
