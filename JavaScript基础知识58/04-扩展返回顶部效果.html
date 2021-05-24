@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            width: 36px;
+            height: 65px;
+            background: url(Top.jpg) no-repeat;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            display: none;/*一开始就隐藏*/
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                var top = $(document).scrollTop();
+                // console.log(top) 测试
+                if(top == 0){
+                    $("span").fadeOut();
+                }else{
+                    $("span").fadeIn();
+                }
+            });
+            // 点击效果
+            $("span").click(function(){
+                $("body,html").stop().animate({"scrollTop":0},1000);//回到页面顶部
+            })
+        })
+    </script>
+</head>
+<body>
+    <span></span>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+    <p>文字内容</p>
+</body>
+</html>

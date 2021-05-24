@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+        #dv3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("#dv1").click(function(){
+                console.log("第一个div被点击了");
+                // console.log($(this).attr("id"));通过获取属性来获取id的
+            });
+            $("#dv2").click(function(){
+                console.log("第二个div被点击了");
+                // console.log($(this).attr("id"));
+            });
+            $("#dv3").click(function(e){//event 简写 e
+                console.log("第三个div被点击了");
+                //console.log($(this).attr("id"));
+                // e.stopPropagation();//原生js的写法 阻止冒泡，jquery也可以用
+                return false;//jquery自己的阻止冒泡
+                
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+</body>
+</html>

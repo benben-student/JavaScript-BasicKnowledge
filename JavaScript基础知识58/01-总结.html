@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、jquery的书写步骤
+        1、先引入包
+        2、写入口函数 $(function(){语法}) 或者 $(document).ready(function(){语法})
+        3、jquery事件一律不带on ，直接$("元素")
+        核心：写的少，做的多 write less do more  事半功倍
+
+        第二、jquery的基本效果
+        1、把隐藏的显示 show()
+        2、把显示的隐藏 hide()
+        3、切换显示和隐藏 toggle()
+        4、上滑 slideUp()
+        5、下滑 slideDown()
+        6、切换滑动 slideToggle()
+
+        第三、jquery对象转换为dom对象
+        1、[0] 或者 .get(0)
+
+        第四、dom对象转换为jquery对象 $()
+
+        第五、jquery操作dom
+        1、html() 操作html等价于我们js的innerHTML
+        2、text() 操作文本等价于我们js innerText
+        3、val()  操作表单值的等价于我们js value
+
+        第六、jquery的this 自身、自己 $(this) 记得不能给this加双引号
+
+        第七、jquery操作css
+        1、css("width")  css里面只有一个属性--返回该属性的值
+        2、css("width","300px") css里面有一对属性值，--修改该属性的值
+        3、css({"width":"300px","height":"300px"}) css里面有多组属性的值，--改变多组属性的值
+
+        第八、jquery操作类
+        1、添加类 addClass("cls")
+        2、移除类 removeClass("cls")
+        3、切换类 toggleClass("cls")
+        4、判断是否有这个类 hasClass("cls")
+
+        第九、jquery选择器
+          1、基本选择器
+           $("div") 标签选择器
+           $("#id") id选择器
+           $(".test") 类选择器
+           $("*") 通配符选择器
+           $(".demo,.test") 并集选择器
+           $("li p") 后代选择器
+
+           2、层级选择器
+             > 子代选择器，获取儿子
+             + 紧邻选择器，选择one下面的第一个邻居
+             ~ 兄弟姐妹选择器 ，选择one下面的所有的邻居
+
+            3、过滤选择器
+               :first 选择满足条件的第一个元素
+               :last 选择满足条件的最后一个元素
+               :even 偶数 选择的是奇数，因为下标从0开始
+               :odd 奇数 选择的偶数，因为下标从0开始
+               :eq(index) 选择第n个元素，下标是0开始的
+
+            4、筛选选择器--都是方法都带()
+            一般常见 第N个 父 子 兄
+            .eq(1) 选择第二个元素，因为下标从0开始
+            .parent() 选择器父亲 
+            .children() 选择器孩子  
+            .siblings() 最常用 典型的排他思想 ，除了自己都选择
+
+            第十、jquery链式操作
+
+            第十一,下拉菜单 6种写法 ，用到链式操作，排队机制 stop() 
+            第十二、mousemove 和 mouseleave、还有hover
+
+            第十三、淘宝tab栏 获取当前索引值 $(this).index()
+
+            第十四、淘宝的精选服装案例 each() 循环遍历  index  返回的索引值--等价于$(this).index() ele--元素
+
+            第十五、jquery的淡入淡出
+                1、淡入 fadeIn(1000) 代表1s
+                2、淡出 fadeOut(1000) 代表1s
+                3、切换的淡入淡出 fadeToggle(1000) 代表1s
+                4、透明度 fadeTo(2000,0.5) 第一个参数是时间，单位是毫秒 ，第二个参数是透明的，取值范围0-1
+            第十六、唱戏效果fadeTo
+
+            第十七、jquery的动画
+                语法格式 animate({"属性":"值"},时间) 时间单位是毫秒
+                扩展延迟 delay(1000) 表示延迟了1秒
+
+            第十八、京东突出效果each和find --查找
+
+            第十九、360浏览器的滑动效果---遍历精灵图
+            第二十、手风琴效果-- 遍历了背景图 
+
+            第二十一、固定导航---滚屏事件 $(window).scroll()  
+
+            第二十二、获取网页坐标 x坐标和y坐标 
+                event.pageX--获取网页中x坐标   
+                event.pageY--获取网页中Y坐标
+
+            第二十三、鼠标跟随 
+                cursor:pointer  小手样式     
+                cursor:default  默认的小白     
+                cursor:text  鼠标变成光标样式  
+                cursor:move  放大镜里面的样式
+
+            第二十四、获取盒子的宽度和高度
+            height() 获取盒子的实际的高度，不包含边框，不包含内边距，不包含外边距
+            innerHeight() 获取盒子的实际的高度 + 内边距 不包含边框，不包含外边距
+            outerHeight() 获取盒子的实际的高度 + 内边距 + 边框，不包含外边距
+            outerHeight(true) 获取盒子的实际的高度 + 内边距 + 边框 + 外边距
+
+            总结一句：宽度高高度同理  width()、innerWidth()、outerWidth() 和 outerWidth(true)
+
+            第二十五、两侧跟随广告，搜索案例
+             获取焦点 focus
+             失去焦点 blur
+
+            第二十六、绑定事件和解绑事件（这个面试的机率非常大）
+
+             1、bind  语法: 对象.bind("事件",function(){})
+             注意：如果是相同事件用对象的方式，就是我们的键值对方式，会覆盖，只能执行最后一个
+             2、delegate 语法: 父级对象.delegate("子级元素","事件",function(){})
+             核心思想：为父级绑定事件，(就是把子级元素委托给父级元素来绑定) 
+             3、on 语法: 父级对象.on("事件类型","子元素"，function(){}--或者说回调函数)
+
+             4、bind的解绑unbind()
+             unbind() 括号里面什么都不写，此时该元素的所有事件都被解绑--全部解绑
+             unbind("click mouseleave") 解绑了点击和鼠标移入,每个事件中间用空格
+             
+             5、delegate 解绑 undelegate()
+             undelegate("click") 表示只解绑click点击事件
+
+             6、on 的解绑 off()
+             $("#dv").off("click") 把父级元素和子级元素的点击事件都解绑 
+             $("#dv").off("click mouseenter") 把父级元素和子级元素的点击事件和鼠标移入，都解绑
+             $("#dv").off("click","p") 解绑子级元素的点击事件，记得中间逗号 ,
+             $("#dv").off("click mouseenter","p") 解绑p元素的点击事件和移入事件
+         */
+    </script>
+</body>
+</html>

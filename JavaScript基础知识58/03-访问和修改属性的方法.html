@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            // 我们的attr 是更改属性的，语法格式跟css一样(css是改变的是样式)
+            $("img").mouseover(function(){
+                $(this).attr({
+                    "src":"li.jpg",
+                    "title":"我是李宇春小姐姐"
+                });
+            }).mouseout(function(){
+                $(this).attr("src","yao.jpg");
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="yao.jpg" alt="">
+</body>
+</html>
