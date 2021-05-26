@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        #box{
+            width: 670px;
+            height: 240px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #box ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #box ol li{
+            float: left;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: gray;
+            margin: 0 5px;
+            text-align: center;
+            color: #fff;
+            line-height: 22px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #box ol li.current{
+            background-color: #E4393c;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            var $key = 0;//有些人习惯给jq 定义变量的加$,此时这个变量用来控制播放下一张
+            $("#box ol li").mousemove(function(){
+                $(this).addClass('current').siblings().removeClass('current');
+                // fast --快速的  slow---慢的
+                $("#box ul li").eq($(this).index()).stop().fadeIn("fast").siblings().stop().fadeOut("fast");//图片跟着数字切换了
+                // 当鼠标移入的时候，从新获取索引值
+                $key = $(this).index();
+            });
+
+            // 开始添加定时器
+            var timer = setInterval(autoplay,1500)
+            // 封装autoplay函数
+            function autoplay(){
+                $key++;//因为一开始是第一张，我们要从第二张开始播放，所以先自加
+                // 判断，要不然一直会往下走
+                if($key > 5){
+                    $key = 0;//此时表示第一张
+                }
+                // console.log($key);学会老师的测试方法
+                $("#box ol li").eq($key).addClass("current").siblings().removeClass('current');//有序列表自动走了
+                $("#box ul li").eq($key).stop().fadeIn('fast').siblings().stop().fadeOut('fast');
+            }
+
+            // 清除定时器开始
+            $("#box").hover(function(){
+                // 鼠标经过清除定时器
+                clearInterval(timer);
+            },function(){
+                // 个人经验值 开启定时器之前先清除定时器---设表先关
+                clearInterval(timer);
+                timer = setInterval(autoplay,1500);//开启定时器
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="01.jpg" alt=""></li>
+            <li><img src="02.jpg" alt=""></li>
+            <li><img src="03.jpg" alt=""></li>
+            <li><img src="04.jpg" alt=""></li>
+            <li><img src="05.jpg" alt=""></li>
+            <li><img src="06.jpg" alt=""></li>
+        </ul>
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ol>
+    </div>
+</body>
+</html>

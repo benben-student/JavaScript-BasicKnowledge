@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        #box{
+            width: 752px;
+            margin: 100px auto;
+            border:1px solid #ccc;
+            padding: 10px 0 0 10px;
+            overflow: hidden;
+        }
+        #box ul li{
+            float: left;
+            width: 178px;
+            height: 125px;
+            margin: 0 10px 10px 0;
+            position: relative;/*父相子绝*/
+            overflow: hidden;
+        }
+        #box ul li div{
+            /*这个div控制透明的盒子*/
+            width: 178px;
+            height: 25px;
+            position: absolute;
+            left: 0;
+            bottom: -25px;
+            background-color: #000;
+        }
+        #box ul li p{
+            width: 178px;
+            height: 25px;
+            line-height: 25px;
+            position: absolute;
+            background-color: #000;
+            left: 0;
+            bottom:-25px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background: url("images/bg.png") no-repeat 10px 0;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            var speed = 500;//设置个时间，下面直接用
+           
+            // 循环遍历精灵图 each
+            $("#box p").each(function(index,ele){//index--索引，ele--元素
+                // 在循环里面创建节点
+                var jie = $("<div></div>");//首选创建了一个节点
+                var num = -index * 25;//这样我们就获取到精灵图的坐标，每次相隔是25
+                // 大招--- 把字符串0删除 "+变量+" 
+                $(ele).css("background-position","10px "+num+"px");
+                // $(ele).before($("<div></div>"));
+                $(ele).before(jie);wo
+
+                // 下面就是鼠标经过和离开了
+                $("#box ul li").hover(function(){
+                    $(this).children("p,div").stop().animate({
+                        "bottom":"0"
+                    },speed);
+                },function(){
+                    $(this).children("p,div").stop().animate({
+                        "bottom":"-25px"
+                    },speed);
+                });
+                // 创建完节点之后，添加透明度
+                $("#box div").fadeTo(0,0.5);//盒子半透明--加薪
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <img src="images/01.JPG" alt="">
+                <!-- <div></div> 注释或者删掉 -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/02.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/03.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/04.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/05.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/06.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/07.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+            <li>
+                <img src="images/08.JPG" alt="">
+                <!-- <div></div> -->
+                <p>百度一下,你就知道</p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

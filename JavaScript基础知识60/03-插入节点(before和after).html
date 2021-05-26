@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        .demo{
+            background-color: #f40;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        插入节点之盒子前后
+        在某个盒子之前 before()
+        在某个盒子之后 after()
+        */
+       $(function(){
+           var DIV = $("<div>创建节点</div>");//创建节点
+            // a.before(b) 把b放到a前面
+            // $(".demo").before(DIV);
+            $(".demo").after(DIV);//把节点放到盒子后面
+       })
+    </script>
+</head>
+<body>
+    <div class="demo">我是盒子</div>
+    <div class="demo">我是盒子</div>
+    <div class="demo">我是盒子</div>
+    <div class="demo">我是盒子</div>
+    <div class="demo">我是盒子</div>
+</body>
+</html>

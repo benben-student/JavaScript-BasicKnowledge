@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        a{
+            text-decoration: none;
+        }
+        #box{
+            width: 900px;
+            height: 350px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box ul{
+            position: absolute;
+            width: 9999px;
+            left: 0;
+            top: 0;
+        }
+        #box ul li{
+            float: left;
+        }
+        #box ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #box ol li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            color: #999;
+            background-color: #333;
+            border:1px solid #fff;
+            text-align: center;
+            line-height: 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        #box ol li.current{
+            color: #f40;
+            border:1px solid #f40;
+        }
+        #left,#right{
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            top: 50%;
+            margin-top: -40px;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+        }
+        #left{
+            left: 0;
+        }
+        #right{
+            right: 0;
+        }
+
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/taobao.js"></script>
+</head>
+<body>
+    <div id="box">
+        <a href="javascript:;" id="left">&lt;</a>
+        <a href="javascript:;" id="right">&gt;</a>
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+        </ul>
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>
