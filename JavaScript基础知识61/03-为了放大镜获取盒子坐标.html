@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            // 核心思想：获取页面中的x坐标减去 ，盒子距离上面的和左面的距离 offset().top、offset().left
+            var x = 0;
+            var y = 0;
+            $("body,html").mousemove(function(event){
+                x = event.pageX;//获取页面中的x坐标
+                y = event.pageY;//获取页面中的y坐标
+                var X = x - $(".box").offset().left;
+                var Y = y - $(".box").offset().top;
+                $(".box").html(X + " " + Y);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

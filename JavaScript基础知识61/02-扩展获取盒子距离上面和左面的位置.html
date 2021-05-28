@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 150px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        获取盒子距离页面顶部的距离和左侧的距离
+        $("元素").offset()有两个重要属性
+        $("元素").offset().top---获取盒子距离页面顶部的距离
+        $("元素").offset().left---获取盒子距离页面左侧的距离
+        */
+       $(function(){
+           alert($("#box").offset().top);
+       })
+    </script>
+</head>
+<body>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <p>我是文字内容</p>
+    <div id="box"></div>
+</body>
+</html>

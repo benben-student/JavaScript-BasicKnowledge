@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数的语法格式  => 箭头函数
+        /* 
+        总结规律: 先去掉function关键字,如果只有一个形参可以省略小括号，小括号和大括号之间有一个箭头 =>;函数体就一行代码--- {} 和 return 可以同时省略。
+        */
+       //普通函数
+    //    function a(b){
+    //        return b + 1
+    //    }
+
+    //    //变成箭头函数
+    //    var a = b  => {
+    //        return b + 1;
+    //    }
+    // //继续简化
+    // var a = b => b + 1; 
+    // 总结：去掉function关键字，小括号和{}之间有一个 =>,如果只有一个可以省略小括号，如果函数体里面只有一行代码 {} 和return可以同时省略
+
+    // 面试题:
+    // function a(b){
+    //     return function(c){
+    //         return b + c;
+    //     }
+    // }
+
+    //箭头函数
+    // 第一层
+    // var a = b =>{
+    //     return function(c){
+    //         return b + c;
+    //     }
+    // }
+
+    // 第二层
+    // var a = b => {
+    //     return c =>{
+    //         return b + c;
+    //     }
+    // }
+
+    // 第三层
+    var a = b => c => b + c;//最终版本箭头函数,这两个箭头函数叫做高阶函数（两个箭头以上包含两个都叫做高阶函数）--可以说是大于等于两个箭头函数
+    console.log(a(1)(2));
+
+    // 和普通区别：箭头函数本身是没有this的,往上级找
+    // 总结：看外面是否有函数，如果有函数就找这个函数的this，如果没有就找window
+    </script>
+</body>
+</html>

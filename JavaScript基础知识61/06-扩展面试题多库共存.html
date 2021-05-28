@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        /* 
+        jquery的顶级对象是$(如果有人直接把这个$这个当做变量来用，下面jquery就不能用了)
+        */
+    //    var $ = 10;
+    //    console.log($);
+        
+    // //第一种解决方案:直接把$ 换成 jQuery
+    // jQuery(function(){
+    //     jQuery("#btn").click(function(){
+    //         console.log("大家继续给力，我们要扩展");
+    //     })
+    // })
+
+    //解决第二种方案： 
+    var xy = $.noConflict();//相当于把$权利让给了 xy
+    var $ = 10;
+    console.log($);
+    xy(function(){
+        xy("#btn").click(function(){
+            console.log("大家今天继续给力，后面不要请假");
+        });
+    })
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+        }
+        img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        window.onload = function(){
+            var Column = 0;
+            fun();//当打开页面先执行一次函数
+            $(window).resize(function(){
+                fun();//调整屏幕大小的时候、或者窗口大小时候调用函数
+            })
+           function fun(){
+                // $(window).width()---获取窗口的宽度
+            // 核心思想： 获取屏幕的或者说窗口宽度 / 图片的宽度即可---就能算出列数
+            Column = parseInt($(window).width()/202);
+            // alert($("img").length)
+            for(var i = 0; i < $("img").length; i++){
+                // $("img").eq(i).css("left",i%3*192);//让盒子的索引值 % 3 * 192 可以得到每个盒子的left值
+
+                // 需要一个累加器
+                var num = 0;
+                for(var j = i - Column; j >= 0; j = j- Column){//记得这个大招--算法
+                    num = num + $("img").eq(j).height() + 10;
+                }
+                $("img").eq(i).stop().animate({"left": i % Column * 202,"top": num}, 1500);
+            }
+           }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="images/P_000.jpg" alt="" />
+		<img src="images/P_001.jpg" alt="" />
+		<img src="images/P_002.jpg" alt="" />
+		<img src="images/P_003.jpg" alt="" />
+		<img src="images/P_004.jpg" alt="" />
+		<img src="images/P_005.jpg" alt="" />
+		<img src="images/P_006.jpg" alt="" />
+		<img src="images/P_007.jpg" alt="" />
+		<img src="images/P_008.jpg" alt="" />
+		<img src="images/P_009.jpg" alt="" />
+		<img src="images/P_010.jpg" alt="" />
+		<img src="images/P_011.jpg" alt="" />
+		<img src="images/P_012.jpg" alt="" />
+		<img src="images/P_013.jpg" alt="" />
+		<img src="images/P_014.jpg" alt="" />
+		<img src="images/P_015.jpg" alt="" />
+		<img src="images/P_016.jpg" alt="" />
+		<img src="images/P_017.jpg" alt="" />
+		<img src="images/P_018.jpg" alt="" />
+		<img src="images/P_019.jpg" alt="" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">测试箭头函数的this----1指向</button>
+    <button id="btn2">测试箭头函数的this----2指向</button>
+    <script>
+        // 和普通区别：箭头函数本身是没有this的,往上级找
+        // 总结：看外面是否有函数，如果有函数就找这个函数的this，如果没有就找window
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        
+        // btn1.onclick = function(){//一般箭头函数常用的地方就是匿名函数
+        //     console.log(this);//看点点前面是谁this就指向谁
+        // }
+        // //箭头函数
+        // btn2.onclick = () =>{
+        //     console.log(this);
+        // }
+
+        // 测试题
+        var obj = {
+            name:"箭头函数",
+            getName:function(){
+                btn2.onclick = () =>{
+                    console.log(this);
+                }
+            }
+        }
+        obj.getName();
+
+    </script>
+</body>
+</html>
