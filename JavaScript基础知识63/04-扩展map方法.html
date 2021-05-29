@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [10,20,30,40,50,60,70,80];
+        var newArr = arr.map(function(ele,index){
+            // console.log(ele,index);
+            // return 2;
+            return ele *= 3;//表示每一项都 * 3
+        })
+        console.log(newArr);//应用常用：一般更新数组
+        /* 
+        映射--map(函数) 回调函数return 返回什么 这一项就是什么，没有return 返回的的是undefined
+        （有三个参数： 第一个参数是每个元素的值，第二个参数是元素的索引，第三个参数是原数组 arr）
+        */
+    </script>
+</body>
+</html>

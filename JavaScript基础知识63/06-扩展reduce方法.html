@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        reduce 有四个参数，返回的是叠加后的结果
+        第一个参数 上一个 prev 代表数组的第一项
+        第二个参数 下一个 next 代表数组的第二项
+        第三个参数 索引 index  代表数组的索引
+        第四个参数 原数组 arr  代表的原数组
+        总结：第二循环的时候 prev是 undefined，next是数组的第三项，后面以此类推
+        因为没有加return，如果加了return返回值就不会是undefined
+        */
+    //    var arr = [1,2,3,4,5];
+    //    var result = arr.reduce(function(prev,next,index,arr){
+    //      console.log(prev,next);
+    //      return 100;//加了返回值 prev第二次就不会是undefined（注意:本次的返回值会作为下一次prev）
+    //    });
+    //    console.log(result);
+
+    // 一般我们求和用reduce
+    var arr1 = [1,2,3,4,5];
+    var result = arr1.reduce(function(prev,next,index,arr){
+        // console.log(prev,next);
+        return prev + next;
+    });
+    console.log(result);
+
+    // 需求：还可以把两个数组合并一个数组--典型的二维数组
+    var flat = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ].reduce(function(prev,next){
+        return prev.concat(next)
+    });
+    console.log(flat);//这就是把二维数组合并成一维数组----- 叫做数组的扁平化
+    // reduceRight 跟 reduce 一样，只是顺序从右侧开始
+    </script>
+</body>
+</html>

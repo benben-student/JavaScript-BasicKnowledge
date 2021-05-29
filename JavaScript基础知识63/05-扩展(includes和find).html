@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6的 includes() 判断数组有没有某一项，返回的是布尔类型，有就返回true，反之返回false
+
+        var arr = [1,2,3,4,5,6];
+        var result = arr.includes(5);
+        console.log(result);//true 有就返回true，没有就返回false
+
+        // ES6 find() 方法 返回找到的那一项,回调函数中如果返回true就表示找到了，找到后停止循环，如果找不到返回的是undefined。一般找到具体的那一项我们用find方法--查找
+        var arr1 = [1,2,3,4,5,6,7,66,88];
+        var result1 = arr1.find(function(ele,index){
+            return ele >5;
+        })
+        console.log(result1);
+
+        // findIndex 先遍历数组，回调函数返回true，停止查找、返回的是当前项的索引
+        var  arr2 = ["吃饭饭",2,3,4,5,6,"睡觉觉","打豆豆"];
+        var i = arr2.findIndex(function(item){
+            return typeof item === "number";
+        });
+        console.log(i);// 1 因为我们找到一个就返回了
+    </script>
+</body>
+</html>

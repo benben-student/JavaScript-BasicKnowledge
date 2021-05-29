@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [10,20,30,40,50,60,70,80];
+        var newArray = arr.filter(function(ele){//ele-每个元素(后面两个参数用不到可以省略)
+            return ele > 40;
+        });
+        console.log(newArray);
+        /* 
+        总结：
+        过滤filter(函数) 返回的是满足条件的每个元素，组成一个新数组---做过滤用的（有三个参数：
+        第一个参数是每个元素 ele、第二个参数是元素的索引index，第三个参数是原数组--后面两个参数用不到我们是可以省略的）---应用场景：一般删除某些不符合条件的用filter
+        */
+    //需求:用filter筛选不等于0的，组成一个新数组
+    var array = [10,20,0,30,0,40,50,60,0,100];
+    var newArray1 = array.filter(function(ele){
+        return ele != 0;
+    });
+    console.log(newArray1);//[10, 20, 30, 40, 50, 60, 100]
+
+    </script>
+</body>
+</html>

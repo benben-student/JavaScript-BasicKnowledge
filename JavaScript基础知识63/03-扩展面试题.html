@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // forEach(函数)方法----遍历数组用的---相当于我们的for循环（但是forEach 不支持return、有三个参数：第一个参数元素，或者说数组的值 ele、第二个参数索引 index，第三个参数数组本身，不需要可以省略）
+        var arr1 = [10,20,30,40,50];
+        arr1.forEach(function(ele,index){
+            console.log(ele + "========" + index);
+        });
+        // 面试官来了，问forEach和for有什么区别---（第一、forEach不支持return）
+        // for(var i = 0; i < arr1.length; i++){
+        //     console.log(i);
+        // }
+        // 工作里面：以前for循环可以看到一步一步的实现---叫做编程式，forEach叫声明式，不考虑内部是怎么运行的，也不支持return。
+        // for in  do do-while
+        // for in 有什么特点：循环遍历会把 key 变成字符串类型的,还会把数组的私有的和公有的都遍历循环。
+        // for(var key in arr1){
+        //     console.log(typeof key);//返回的是 string 字符串
+        // }
+
+        // 扩展 for of 格式语法： 值 of 数组 这个是ES6的 及支持return ，又不会吧key变成字符串 for of
+        // 记得: 值 of 数组 ------ 不能遍历对象的，只能遍历数组
+        for(var val of arr1){
+            console.log(val);
+        }
+    </script>
+</body>
+</html>
