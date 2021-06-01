@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、冒泡和阻止冒泡
+            1、event.stopPropagation()
+            2、return false
+        第二、操作属性attr
+        我们的操作属性attr 语法格式跟css一样（我们css是改变样式，attr是改变属性）
+        
+        第三、各种项目
+            1、返回顶部
+            2、京东的轮播图
+            3、小米的呼吸轮播图
+            4、淘宝无缝滚动轮播图
+
+         第四、节点 --插入盒子前后
+            在某个盒子之前before()
+            在某个盒子之后after()
+        第五、插入盒子里面
+         在内容后面追加 append()
+         在内容前面追加 prepend()
+         a.appendTo(b)--- 把a加在b里面--后面追加
+         a.prependTo(b)--- 把a加在b里面--前面追加
+         
+         第六、删除节点
+         1、remove()---全部删除
+         2、empty()---删除元素里面的元素
+
+         第七、360导航节点操作
+
+         第八、放大镜效果
+
+         第九、jquery控制音频
+            1、关闭 pause()
+            2、开启 play()
+            注意：记得转换  [0] 或者 get(0)
+
+         第十、多库共存
+         1、直接把$换成 jQuery
+         2、通过 $.noConflict() 相当于把$ 让权出去
+         
+         第十一、瀑布流
+         获取窗口的宽度 $(window).width()
+         调整屏幕大小
+         $(window).resize(function(){})
+
+         第十二、扩展 every（）和 some()
+         every() 有三个参数，返回值是布尔类型
+         1、第一个参数是元素的值
+         2、第二参数是元素的索引
+         3、第三个参数是原数组
+         如果这个数组中都复合条件返回true，如果有一下不满足返回false
+
+         总结：
+         every() 找false，找到false后立即停止，返回false，最后都满足了才返回true
+         some() 找true，找到false会继续查找，找到true，会停止，返回true，找不到就是false
+
+         第十三、箭头函数
+         总结：
+         1、先去掉function关键字，如果只有一个形参可以省略小括号
+         2、小括号和大括号之间用 =>
+         3、函数体里面只有一行代码  return 和 {} 可以同时省略
+
+         特点：箭头函数没有this，找上一级this。看外面是否有函数（如果有函数找到这个函数的this，如果没有就是直接找window）
+
+         第十四、for和forEach区别
+         forEach --声明式，不考虑内部是如何运行
+         for---编程式，每一步操作我们都是可以看到
+         forEach特点：不支持return，有三个参数，第一个参数元素的值ele，第二个参数索引index，第三个参数原数组arr
+
+         第十五、for in循环和for of
+         for in 循环--特点，会把key变成字符串，也会把私有属性遍历出来
+         引出 for of 语法 值val of 数组； 特点：只能遍历数组，不能遍历对象
+
+         第十六、map() 映射  一般更新数组，也有三个参数，第一个参数是元素的值，第二个参数是索引index，第三个参数原数组 arr
+
+         第十七、includes() 判断数组中有没有这一项，如果有返回true，没有返回false
+          第十八、find()和findIndex()
+          总结：find() 找到true就停止，找不到返回undefined，一般用找具体某一项
+          findIndex() 返回当前的索引，找到就返回true，立马停止查找
+
+        第十八、reduce（有四个参数）
+          1、第一个参数 prev 代表前一个
+          2、第二个参数 next 代表下一个
+          3、第三个参数 index 代表索引
+          4、第四个参数 arr  代表原数组  
+
+          特点：第二次循环的时候 prev是undefined，next是第三项， 后面以此类推
+          求和的公式： return prev + next,还讲解了一个数组扁平化
+          reduce和reduceRight 有一点区别就是reduceRight从右侧到左侧
+
+          第十九、es6的定义变量
+          1、let 和 const 不支持变量提升，也不会给window添加属性
+          2、var 是可以重复声明的，但是let 和 const 不可以重复声明
+          3、let 只能声明一次，可以重复定义的
+          扩展 let const的区别？
+           let 定义变量可以不赋值
+           const一旦定义变量，就必须赋值
+           const 声明常量，不能重复声明，也不能重复定义
+
+           第二十、数组的解构赋值
+           filter---->过滤  老师的案例非常的详细
+        */
+    </script>
+</body>
+</html>

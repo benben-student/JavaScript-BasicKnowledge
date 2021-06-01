@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、如果变量名和属性名是一样的可以省略
+        // let {name:name,age:age} = {name :"zs",age:18};继续简化
+        // let {name,age} = {name:"zs",age:18};//简化版本
+        // console.log(name,age);
+
+        // 2、对象里面设置默认值，只有后面解构的值是undefined的时候，或者没有的时候才会走默认值
+        // let {name,age = 100} = {name:"lw",age:undefined};
+        // console.log(name,age);
+
+        // 测试题
+        let {
+            name,
+            age = 100,
+            list:[a1,a2,a3]
+        } = {
+            name:"wc",
+            age:undefined,
+            list:["node","vue","react"]
+        };
+        console.log(name,age,a1,a2,a3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、数组的解构赋值
+        let arr = [1,2,3,4,5];
+        // let x = arr[0];
+        // let y = arr[1];
+        // let z = arr[2];
+        // let m = arr[3];
+        // let n = arr[4];
+        // 引出解构赋值--大招
+        // let [x,y,z,m,n] = arr;//ES6里面提供的解构赋值
+        // console.log(x,y,z,m,n);
+        // 2、如果后面的数值值不够，默认的是undefined(2,3跟我们前面学习的函数的形参和实参原理一样)
+        // let [x,y,z,m,n] = [1,2,3];
+        // console.log(x,y,z,m,n);
+        // 3、如果后面的数组值超过了，后面的数据就不接收了，丢掉即可
+        // let [x,y,z,m,n] = [1,2,3,4,5,6,7,8,9];
+        // console.log(x,y,z,m,n);
+
+        // 4、设置默认值，只有后面的解构值是undefined的时候，或者没有写的时候才会走默认值
+        // let [x1,x2 = 10] = [1,undefined];
+        // console.log(x1,x2);
+        // 5、省略赋值，就是把前面的空出来就可以了
+        // let [,,m2] = [1,2,3];
+        // console.log(m2);
+
+        // 6、不定参数的赋值,将后面的所有项放到一个数组中赋值给y3 = [3,4,5,6,7,8,9] 这个...是扩展运算符，这个用法我们后面会详细讲解。
+        // let [y1,y2,...y3] = [1,2,3,4,5,6,7,8,9];
+        // console.log(y3);
+
+        // 测试题
+        // 7、变量交换 以前写法,这个就是对于我们数字
+        // let x = 12;
+        // let  y = 15;
+        // x = x + y;
+        // y = x - y;
+        // x = x - y;
+        // console.log(x,y);
+        // 变量交换,数组的解构赋值写法
+        let x = 12;
+        let y = 15;
+        [x,y] = [y,x];
+        console.log(x,y);
+    </script>
+</body>
+</html>

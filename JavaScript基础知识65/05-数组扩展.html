@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // console.log(Array(1,2,3));
+        // console.log(Array(7));//7个empty
+        console.log(Array.of(7));//Array.of跟Array是一样的，唯一不同的是，参数是一个数字的时候,返回的是一个只有一项的数组。
+        // Array.from(数组/类数组)---返回的是一个数组，（类数组就是具备length属性）
+        console.log(Array.from([1,2,3,4,5]));
+        console.log(Array.from("123"));
+        // 扩展一个大招----获取id为list可以直接写的
+        console.log(list.getElementsByTagName("li"));
+        console.log(Array.from(list.getElementsByTagName("li")));//把类数组变成数组了
+        // console.dir(Array.prototype);
+        // copyWithin 从原数组中读取内容，替换数组中指定位置的内容
+        // 语法格式:参数(替换的目标其实位置target,查找的起始位置begin,查找的结束位置end)
+        let arry1 = [1,2,3,4,5,6,7,8];
+        console.log(arry1.copyWithin(4,2,4));//[1, 2, 3, 4, 3, 4, 7, 8]
+        console.log(arry1.copyWithin(3,2));//[1, 2, 3, 3, 4, 3, 4, 7]
+
+        // 总结：一般从索引n开始到索引m结束；大白话：顾头不顾尾巴，包含n不包含m
+
+    </script>
+</body>
+</html>

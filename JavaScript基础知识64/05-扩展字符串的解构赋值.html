@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串解构赋值--- 类似于数组，工作里面很多人把字符串叫做类数组--因为他有长度length
+        // let [a,b,c,d,e] = "hello";
+        // console.log(a,b,c,d,e);
+
+        // 测试题:
+        // let [a,b,c,d,e,length] = "hello";
+        // console.log(length); undefined 字符串是拿不到这个长度
+
+        // 用对象的方式就可以拿到了
+        let {
+            length
+        } = "hello world"
+        console.log(length);
+    </script>
+</body>
+</html>

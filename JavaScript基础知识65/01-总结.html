@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、数组的解构赋值、对象的解构赋值、字符串的解构赋值
+        1、数组 let [x,y,z,m,n] = [1,2,3,4,5]
+        2、如果后面数组不够 let [x,y,z,m,n] = [1,2] 默认的是undefined
+        3、如果后面的数组多余 let [x,y,z,m,n] = [1,2,3,4,5,6,7,8];忽略了，或者多余的就不要了
+        4、设置默认值 let [x1,x2 = 10] = [1] 只有后面是undefined或者不写才会走默认值
+        5、省略赋值 let[,,x] = [1,2,3] 就是把前面的用逗号空出来
+        6、不定参数 let[x1,x2,...x3] = [1,2,3,4,5,6,7,8,9] ...是扩展运算符 x3 = [3,4,5,6,7,8,9]
+
+        第二、字符串的解构赋值，有长度 length 类似于数组---类数组---伪数组
+        let[a,b,c,d,e] = "hello" 他是拿不到length长度的
+        对象可以拿到长度
+
+        第三、块级作用域 {} 一个大括号就是一个块级作用域
+            1、用var声明的是没有块级作用域的
+            2、let 声明的具有块级作用域 (let 和 const 外面是拿不到的，都是使用的)
+
+        第四、对象解构赋值
+            let{name,age} = {name:"zs",age:18}
+            对象里面可以设置默认值
+            let{name,age= 100} = {name:"lw",age:undefined} 只有后面是undefined或者不写才会走默认值
+
+        第五、字符串的扩展
+        includes("指定的字符串",开始查找的位置) 判断字符串中是否有指定的字符，如果有返回true，反之返回false
+
+        startsWith() 判断字符串是否以特定的字符串开始
+        endsWith() 判断字符串是否以特定的字符串结束
+
+        第六、扩展 ES7 padStart 和 padEnd 前面开始补全，后面开始补全，
+        作用：补全我们字符串指定的长度
+        参数1 : 长度 length
+        参数2 : 指定的字符
+         */
+    </script>
+</body>
+</html>

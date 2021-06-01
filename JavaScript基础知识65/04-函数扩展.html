@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数默认值的问题
+        // function fun(x,y){
+        //     x = x || "中职通教育";
+        //     y = y || "ES6";
+        //     console.log(x,y);
+        // }
+        // fun(1);
+
+        // 面试题来了
+        // function fun(x,y){
+        //     x = x || "中职通教育";
+        //     y = y || "ES6";
+        //     console.log(x,y);
+        // }
+        // fun(0);
+        // 如何解决这个问题，ES6是可以解决这个问题
+        // function fun(x = "中职通教育",y = "ES6"){//通过ES6写法来解决我们以上问题
+        //     console.log(x,y);
+        // }
+        // fun(0);
+
+        // 继续扩展
+        // 参数也是可以使用解构赋值 
+        // 举个例子---小心
+        // function fun1({name = "中职通教育",age = 66}) {
+        //     // 报错了， 相当于{name = "中职通教育",age = 66} = undefined
+        //     console.log(name,age);
+        // }
+        // fun1()
+
+        // function fun1({
+        //     name = "中职通教育",
+        //     age = 66
+        // }  = {}) {//让他等于一个空对象就解决了，相当于我们前面解构赋值
+        //     console.log(name,age);
+        // }
+        // fun1()
+
+        // 扩展一个题目
+        // function fun1({
+        //     name,
+        //     age
+        // } ={
+        //     name:"中职通",
+        //     age:18
+        // }) {
+        //     console.log(name,age);
+        // }
+        // fun1({});//undefined，undefined，
+
+        // 继续 length 属性 如果形参没有默认值 length 即使当前的形参的个数
+        // function fun(x,y) {
+            
+        // }
+        // fun(1,2);
+        // console.log(fun.length);
+
+        // 特点：length属性，如果形参有默认值 length会 失真
+        // function fun(x = 10,y = 20){
+
+        // }
+        // fun(1,2);
+        // console.log(fun.length);
+
+        // arguments 伪数组 或者 类数组 可以拿到用户传递的参数的个数
+        function fun2(...arg){//通过解构赋值变成一个数组，全部给了arg
+            console.log(arguments);
+            console.log(arg);
+        }
+        fun2(1,2,3,4,5,6);
+    </script>
+</body>
+</html>

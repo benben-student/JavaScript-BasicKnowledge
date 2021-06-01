@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // {} 一个大括号 {} 就是一个块级作用域
+        // {
+        //     var num = 20;
+        // }
+        // console.log(num); 用var声明的外面是可以拿到的
+        // let 声明的就具有了块级作用域，外面就是访问不到（let 和const 声明的变量是私有）
+        // {
+        //     let num = 20;
+        // }
+        // console.log(num);
+    </script>
+</head>
+<body>
+    <!-- let 块级作用域应用场景 -->
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // let list = document.getElementById("list").getElementsByTagName("li");//集合，伪数组
+        // for(var i = 0; i < list.length; i++){
+        //     list[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // console.log(i); 这个我们之前的问题，拿到的i是5了
+
+        // 第一、用let 来解决这个问题，把i变成私有的
+        // let list = document.getElementById("list").getElementsByTagName("li");//集合，
+        // for(let i = 0; i < list.length; i++){
+        //     list[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // console.log(i);用了let 外面就拿不到这个i了
+        
+        // 扩展另外一个解决方法，通过自定义属性
+        let list = document.getElementById("list").getElementsByTagName("li");//集合，
+        for(var i = 0; i < list.length; i++){
+            list[i].index = i;//通过我们自定义属性
+            list[i].onclick = function(){
+                console.log(this.index);
+            }
+        }
+    </script>
+</body>
+</html>

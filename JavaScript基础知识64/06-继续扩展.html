@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 扩展字符串方法
+        /* 
+        includes() 判断字符串当中是否包含了指定的字符，如果有返回true，否则返回false
+        语法格式： includes("指定的字符",开始查找的位置)
+        */
+    //    console.log("hello world".includes("world"));//true
+    //    console.log("hello world".includes("world",6));//true
+    //    console.log("hello world".includes("world",7));//false
+
+    //    继续扩展
+    /* 
+    startsWith()判断字符串是否以特定的字符串开始
+    endsWidth()判断字符串是否以特定的字符串结束
+    */
+//    console.log("=================");
+//    let url = "admin/index.php";
+//    console.log(url.startsWith("admin"));//true
+//    console.log(url.startsWith("i",3));//true  开始查找的位置是可选项
+//    console.log(url.endsWith("php"));//true
+
+    //测试题
+    // endsWidth("字符串",num); 这个num表示指定从前num个查看
+    // console.log(url.endsWith("php",3));//false
+
+    // 扩展两个方法 ES7的  padStart 和 padEnd 按照指定的字符补全字符串的指定长度
+    /* 
+     参数1:长度length
+     参数2：指定的字符
+     语法格式：
+     padStart(length,"指定的字符串")
+    */
+   let str1 = "ab";
+   console.log(str1.padStart(5,"ghk"));//ghkab
+   console.log(str1.padEnd(5,"ghk"));//abghk
+    </script>
+</body>
+</html>
