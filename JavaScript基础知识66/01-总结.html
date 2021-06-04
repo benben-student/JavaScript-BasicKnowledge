@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、扩展--打断点
+        第二、ES6的模板字符串 `` 好处简单可以直接 ${变量}
+        第三、函数扩展
+        function fun(x,y){
+            x = x || "六一快乐!";
+            y = y || "开心的happy" 
+            console.log(x,y)
+        }
+        fun(1)
+
+        function fun(x,y){
+            x = x || "六一快乐!";
+            y = y || "开心的happy" 
+            console.log(x,y)
+        }
+        fun(0)引出问题
+        ES6可以解决这个问题
+        function fun({x =六一快乐!,y ="开心的happy"}){ 
+            console.log(x,y)
+        }
+        fun(0)
+
+        第四、length 和 arguments
+        length 如果形参没有默认值 length 就是当前的形参的个数
+        如果有形参有默认值 length就会失真了 变成 0
+
+        function fun(x = 10, y = 20){
+
+        }
+        fun(1,2);
+        console.log(fun.length);// 0
+
+        arguments:伪数组、类数组--获取到用户传递的参数，可以解构赋值变成数组
+        function fun2(...arg){
+            console.log(arguments)
+            console.log(arg)
+        }
+        fun2(1,2,3,4,5,6)
+
+        第五、数组的扩展
+        Array(7) //7个empty
+        引出了 Array.of() 唯一的不同点是，参数是一个数字的时候，返回的是一个数组，只有一项的数组
+        Array.from(数组、类数组)--返回的是一个数组(记住这个方法，后面我会扩展封装一个数组去重)
+
+        第六、copyWithin  读取 替换
+        语法格式：参数(替换的目标位置target,查找的起始位置，查找的结束位置)
+        包含n，不包含m
+         */ 
+
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p =new Promise((resolve,reject) =>{
+            resolve("成功的结果");
+            // reject("失败的结果")
+            // 老师带着你们模拟底层伪代码
+            
+        });
+         // 语法格式：then方法接收两个参数(第一个参数是一个函数，第二参数也是一个函数)
+        p.then((value) =>{
+            // 当promise的状态是fulfilled时，执行
+            console.log("成功的时候调用",value);
+        },(err) =>{
+            // 当promise的状态是rejected时执行
+            console.log("失败的时候调用",err);
+        })
+        console.dir(p)
+    </script>
+</body>
+</html>

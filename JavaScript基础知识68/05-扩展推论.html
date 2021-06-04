@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p =new Promise((resolve,reject) =>{
+            resolve("成功的结果");
+            // reject("失败的结果")
+            
+        });
+         // 语法格式：then方法接收两个参数(第一个参数是一个函数，第二参数也是一个函数)
+        let t = p.then((value) =>{
+            console.log("成功的时候调用",value);
+        },(err) =>{
+            console.log("失败的时候调用",err);
+        })
+        console.dir(t)
+        /* 
+        既然我们promise对象可以调用原型上的then，我们测试发现t也是一个新的promise对象，也可以用原型上的then方法，所以promise支持链式操作
+        链式操作，是我们的代码具有扁平化--简单
+        语法格式：new Promise((resolve,reject) =>{}).then().then()
+        */
+    </script>
+</body>
+</html>

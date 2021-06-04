@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        catch中的函数在什么时候被执行,有两种情况
+        1、当promise的状态改成rejected,catch会被执行
+        */
+       let p = new Promise((resolve,reject) =>{
+            //reject();//第一种情况
+            // console.log(a);//第二种情况
+            throw new Error("出错了");//手动抛出错误，catch也会捕获到
+       });
+
+       p.catch((err) =>{
+           console.log("失败",err);
+       });
+    /* 
+    总结：catch方法
+    1、当promise的状态改成rejected,catch会被执行
+    2、当promise的执行体里面代码错误时候，catch也会被执行
+    3、当promise的执行体里面手动抛出异常，也会执行catch
+    then方法作为重点来记忆
+    */
+    </script>
+</body>
+</html>

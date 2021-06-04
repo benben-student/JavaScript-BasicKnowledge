@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Set 类似数组 只有value 没有键key---跟我们对象不一样，我们对象是键值对
+        // 通过构造函数的方式创建Set实例  new
+        // 参数是一个数组（或者说是类数组，书本上还有说类数组是有 iterable 接口）
+        // 了解即可、哪些有iterable 接口 ？ 数组、arguments、元素集合、Set、字符串这些都有
+        console.log(new Set([1,2,3,4,5]));
+        console.log(new Set("12345"));
+        // arguments也是可以的
+        function fn(){
+            console.log(new Set(arguments));
+        }
+        fn(1,2,3,4,5);
+
+        // 会默认去重，如果有重复的项，会自动去掉
+        console.log(new Set([1,2,3,2,3,1,2,4,5]));
+        // 扩展原型方法 add、clear、delete、has、forEach、keys、values、entries
+        // add() 添加，如果之前没有加上，有则不加，返回增加后的实例
+        let set1 = new Set([1,2,"六一快乐",null,true]);
+        console.log(set1.add(10));//没有就添加
+        // 可以实现链式操作 add 注意 add() 里面参数一次只能一个，多了也是只加一个
+        console.log(set1.add(10).add(20));
+
+        // delete() 删除、返回值 true/false 如果有这一项删除成功返回true，如果没有此项删除失败返回false
+        console.log(set1.delete(1));//true
+
+        // clear() 清空 返回值是undefined
+        console.log(set1.clear());//清空set1里面所有的额数据
+        console.log(set1);//里面就没有数据了
+
+        console.log("===================");
+
+        // has() 判断有没有此项，返回值true/false
+        let set2 = new Set([1,2,"六一快乐",null,true]);
+        console.log(set2.has(1));//true
+
+        console.log("===================");
+        //forEach、keys、values、entries---- 循环遍历
+        set2.forEach((item,index,input) =>{//使用箭头函数
+            // Set实例只有value 没有key
+            // item,index 都是当前项 value
+            // input : 当前Set 实例
+            console.log(item,index,input);
+        })
+    </script>
+</body>
+</html>

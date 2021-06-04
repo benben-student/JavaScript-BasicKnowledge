@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve,reject) =>{
+            // resolve("成功了");
+            reject("失败了")
+        }).then((value) =>{
+            // 成功的时候被执行
+            console.log(value);
+        }).catch((err) =>{
+            // 失败的时候被调用
+            console.log(err);
+        }).finally(() =>{//不管你代码有没有错误都要执行我们的finally方法
+            console.log("承诺的成功与失败都会执行我们这里面代码");
+        })
+
+        // 给大家扩展了then和catch和finally配合使用，我们重点放在then方法上面
+    </script>
+</body>
+</html>

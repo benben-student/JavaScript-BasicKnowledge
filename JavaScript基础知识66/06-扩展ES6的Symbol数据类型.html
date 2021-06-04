@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6 中新增加的Symbol 是一个新的基本数据类型、简单数据类型、值类型
+        // 使用 Symbol 函数执行得到一个Symbol 数据类型，跟字符串类似，使用Symbol函数得到一个数据，每一个都是完全不相同的。
+        let sym1 = Symbol();
+        console.log(typeof sym1);
+        // Symbol() 可以接收一个参数
+        let sym2 = Symbol("foo");
+        let sym3 = Symbol("foo");
+        console.log(sym2 == sym3);//false 即使传递的参数是一样的，值也是一样的
+
+        // 1、Symbol诞生的作用：一般当做对象的属性(对象的属性如果重名了会覆盖，而我们的Symbol绝对不会覆盖的) 任意的要给 Symbol()得到的值都是不同的
+        let obj = {
+            [sym1]:"中职通"
+        };
+        obj[sym2] = "六一快乐";
+        console.log(obj);
+
+         // 2、Symbol 值是不可以转换为数字的，也是不可以进行字符串拼接的
+        // Number(Symbol(1)) 报错
+
+        // 3、Symbol是可以转换为布尔的
+        console.log(!Symbol("1"));//false
+       
+        // 4、Symbol 是可以调用toString方法 变成一个字符串
+        console.log(Symbol("zs").toString());
+
+        // 5、Symbol.for() 如果有相同参数的Symbol的值，找到这个值返回，如果没有就会创建一个新的Symbol
+        let demo1 = Symbol.for("haha");
+        let demo2 = Symbol.for("haha");
+        console.log(demo1 == demo2);//true 使用 Symbol for 如果参数相同 值就相同
+
+        // 6、Symbol.keyFor(demo1) 找到使用Symbol.for 创建的值，如果使用是Symbol创建的找不出来，结果是undefined
+        console.log(Symbol.keyFor(demo1));//haha
+        console.log(Symbol.keyFor(sym1));//undefined
+    </script>
+</body>
+</html>

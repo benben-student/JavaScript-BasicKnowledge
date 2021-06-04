@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组的空位：数组的某个索引位置没有任何值  注意：undefined 不是空位
+        let arr = [, , , , , ,];//一个逗号都代表一个空位
+        console.log(arr.length);//6 个逗号 就是6个空位
+
+        // 测试题：in方法判断数组索引位置有没有值，如果有就会返回true，如果没有就会返回false
+        // console.log(1 in arr);//false
+
+        let arr2 = [, undefined, , , , ,];// true就表示有值，就算你是undefined 也算是有值的
+        console.log(1 in arr2);//true
+
+        // 继续扩展
+        // ES5中数组方法对空位处理不一致，一般直接跳过空位
+        let arr3 = [1,2,,,,3];
+        arr3.filter(function(item){
+            console.log(item);//1,2，3 直接把空位提哦啊过
+        })
+
+        console.log("====================");
+        // ES6中find方法不会跳过空位，会空位处理成undefined
+        arr3.find(function(item){
+            console.log(item);
+        })
+        console.log("====================");
+        // 再来 ES6 for of 也会把空位处理undefined
+        for(let item of arr3){
+            console.log(item);
+        }
+        console.log("====================");
+        // for in ES5的循环 也是会把空位跳过
+        for(let key in arr3){
+            console.log(arr3[key]);
+        }
+    </script>
+</body>
+
+</html>

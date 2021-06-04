@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 总结：所有的数组上的方法，从索引n开始到索引m结束，包前不包后
+        let ary = [1,2,3,4,5,6,7,8];
+        // fill 按照指定的字符串填充数组，将数组的每一项都变成指定的字符串。
+        console.log(ary.fill("中职通"));
+        let ary2 = [1,2,3,4,5,6,7,8];
+        // console.log(ary2.fill("中职通",3));//从指定的位置开始替换
+        console.log(ary2.fill("中职通",3,5));//从指定的位置开始替换到某个位置结束
+
+        // 面试题：得到一个有7个1的数组 Array(7)得到7个空位然后fill填充1就实现了
+        console.log(Array(7).fill(1));
+    </script>
+</body>
+</html>

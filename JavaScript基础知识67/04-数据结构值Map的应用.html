@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 一个对象的key 必须是字符串，如果你写的不是字符串转换为字符串
+        let obj = {
+            name: "zs",
+            age: 18,
+            1: "1"
+        }
+        console.log(obj);
+
+        // 构造函数方式创建一个Map实例，注意：Map数组里面的每一项都要是数组，有value和key
+        // 语法格式 new Map([key,value],[key,value]...)
+        // 总结：参数是一个数组，数组里面的每一项也是一个数组，有key和value
+        let map1 = new Map([
+            [1, "哈哈"],
+            [2, "嘿嘿"],
+            [true, "给力"]
+        ]);
+        console.log(map1);
+        // 总结：而我们的Map可以实现key是任意数据类型。
+
+        // 总结，我们发现Map()原型上的方法比Set()多了两个方法 一个get()和set(),其他的跟Set() 同理
+        // get() 获取 根据key 获取value
+        console.log(map1.get(1));//哈哈--根据key获取对应的值
+        console.log(map1.get(true));
+
+        // set(key,value) 设置传递2个参数，如果之前有过 就是修改，没有增加
+        console.log(map1.set(1, 2));// 有则改，无则加
+        console.log(map1.set(3, "优秀"));// 有则改，无则加
+
+        // has() 判断是有对应的value值，有就返回true，反之返回false
+        console.log(map1.has(1));
+
+        // delete() 删除key 返回值 true、false
+        // console.log(map1.delete(1));//true
+        // console.log(map1);//第一个被我们删除了
+
+        // clear() 清空 没有参数 返回undefined 
+        // console.log(map1.clear());//就直接清空了，返回值undefined
+        // console.log(map1);
+
+        // 遍历的方法 forEach
+        let map2 = new Map([
+            [1, "哈哈"],
+            [2, "嘿嘿"],
+            [true, "给力"]
+        ]);
+        console.log("=========");
+        map2.forEach((value,key,input) =>{
+            console.log(key);//key
+            console.log(value);//value值
+            console.log(input);//map的实例
+        });
+        console.log("=========");
+
+        // keys() 遍历所有的 key
+        for(let key of map2.keys()){
+            console.log(key);
+        }
+
+        // values() 遍历所有的value
+        console.log("=========");
+        for(let val of map2.values()){
+            console.log(val);
+        }
+        console.log("=========");
+        // entries() 遍历所有的key 和 value
+        for(let [key,val] of map2.entries()){
+            console.log(key,val);
+        }
+
+
+    </script>
+</body>
+
+</html>

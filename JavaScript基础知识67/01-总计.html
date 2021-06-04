@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、数组的扩展
+        fill() 按照指定的字符来填充数组，将数组的每一项都变成指定的字符
+        面试题 :得到一个有7个1的数组 Array(7)得到7个空位然后fill填充1就实现了
+        第二、空位 [,,,,,,,,] 一个逗号代表一个空位
+        总结：es5中对空位直接跳过，es6中对空位处理成undefined
+        第三、扩展运算符 ... 作用：将非数组变成真正的数组
+        let str = "123";
+        console.log([...str])
+        可以合并数组
+        let arr1 = [1,2,3,4,5,6]
+        let arr2 = [10,20,30,40,50,60]
+        console.log([...arr1,...arr2])
+        还可以求最大值
+        console.log(Math.max(...ary))
+        console.log(Math.max.apply(null,ary))
+        还可以通过eval()
+        第四、对象的简写
+        let name = "zs",age = 18;
+        let obj = {
+            name,
+            age
+        }
+        // 如果属性是函数也可以简写
+        let obj = {
+            fn(){}
+        }
+
+        第五、Symbol 每一个都是不相同
+        可以传递参数
+        一般当对象的属性的时候（因为Symbol绝对是不会覆盖的）
+        Symbol 是不可以转换数字的
+        Symbol 是可以转换布尔的
+        Symbol 是可以调用toString()
+
+        Symbol.for() 如果之前创建了，直接返回，没有创建他会直接创建
+        Symbol.keyFor()  找到通过Symbol.for()创建的对象，如果是Symbol创建是找不到的，返回的是undefined
+        第六、数据结构，Set 类似于数组 只有value值 没有key键
+        通过构造函数 new Set()
+        应用场景：数组去重
+
+        原型的方法：我们相信的讲解了，能记住最好了，留给面试官
+        add() 添加 如果之前没有就添加，如果只有了不加了，返回时增加之后的实例
+        delete() 删除 如果删除这一项返回 true， 如果没有删除返回false
+        clear() 清空 注意：里面是没有参数的，默认返回的是undefined
+
+        讲解了原型上的方法 forEach（）
+
+        */
+    </script>
+</body>
+</html>

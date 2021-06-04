@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 扩展运算符 ... 的作用(将非数组变成数组)
+        // 1、可以将类数组具有length属性都变成数组
+        let str = "123";
+        console.log([...str]);
+        // 可以变成数组
+        // console.log(list.getElementsByTagName("li"));
+        console.log([...list.getElementsByTagName("li")]);
+        // 将arguments类数组 变成数组
+        function fun(){
+            console.log([...arguments]);
+        }
+        fun(1,2,3,4,5)
+
+        // 继续扩展
+        // 将两个数组合并，想到concat
+        let arr1 = [1,2,3,4,5];
+        let arr2 = [10,20,30,40,50];
+        console.log(arr1.concat(arr2));
+        // 可以通过扩展运算符 ... 合并数组
+        console.log([...arr1,...arr2]);//强大 666
+
+        // 求数组最大值
+        let ary = [1,10,30,50,8,6,100,666];
+        console.log(Math.max(1,10,30,50,8,6,100,666));
+        // 大招来了
+        console.log(Math.max(...ary));//666 赞
+        console.log(Math.max.apply(null,ary));//不需要改变this 给null占个位
+        // 给力啊，老师多扩展一个
+        console.log(eval("Math.max("+ary+")"));
+    </script>
+</body>
+</html>

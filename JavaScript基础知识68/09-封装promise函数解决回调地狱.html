@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 传统的回调函数
+        // function f1(fn){
+        //     setTimeout(function(){
+        //         console.log("定时器开始");
+        //         fn();
+        //         console.log("定时器结束");
+        //     },1000)
+        // }
+        // f1(function(){
+        //     console.log("1秒钟之后执行这个函数");
+        // })
+
+        // 回调函数
+        // function fun(fn){
+        //     setTimeout(() =>{
+        //         fn()
+        //     },1000)
+        // }
+        // 总结：此时就形成了回调地狱了
+        // fun(() =>{
+        //     console.log(1);
+        //     fun(() =>{
+        //         console.log(2);
+        //         fun(() =>{
+        //             console.log(3);
+        //             fun(() =>{
+        //                 console.log(4);
+        //                 fun(() =>{
+        //                     console.log(5);
+        //                 })
+        //             })
+        //         })
+        //     })
+        // })
+
+        // 封装promise来解决回调地狱
+        function fun2(){
+            return new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    resolve();
+                },1000)
+            })
+        }
+
+        fun2().then(() =>{
+            console.log(10);
+            return fun2();
+        }).then(() =>{
+            console.log(20);
+            return fun2();
+        }).then(() =>{
+            console.log(30);
+            return fun2();
+        }).then(() =>{
+            console.log(40);
+            return fun2();
+        }).then(() =>{
+            console.log(50);
+            return fun2();
+        });
+        // 总结：这样维护起来就方便很多了
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        概念：
+        Promise 是处理异步编程的解决方法,我们之前学的定时器异步处理方式都是通过传统的回调函数---ES6提供一个Promise 非常强大，主要是用来解决我们的回调地狱，我们后面会带着大家写一个回调地狱。
+        Promise 简单来说就是一个容器，通常放一个异步操作，其实就是一个对象，通过构造函数实现 new Promise
+
+        Promise特点：
+            1、Promise 有三种状态: pending(进行中)、fulfilled(已成功) 和 rejected(已失败)，有些人给 Promise起一个英文的名字 "承诺"
+            2、一旦状态改变了，就不会再变了，只有两种情况：从pending变成fulfilled 和 pending变成rejected
+
+        第一、语法格式 Promise基本使用
+        Promise 是一个构造函数，那么我们可以通过new关键字实例化对象
+        语法 ： new Promise((resolve,reject) =>{}) 
+        Promise 接收一个函数作为参数,在函数中接收两个参数resolve(成功函数) reject(失败函数)
+        */
+       let p = new Promise((resolve,reject) =>{
+
+       });
+       console.dir(p);
+       /* 总结：
+       Promise实例有两个属性 state状态 和 result 结果
+       第一种状态：pending(准备、待解决、进行中)
+       第二种状态: fulfilled(已完成、成功)
+       第三种状态: rejected(已拒绝、失败)
+       */
+       
+    </script>
+</body>
+</html>

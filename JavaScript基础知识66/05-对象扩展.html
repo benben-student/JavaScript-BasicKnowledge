@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的扩展、键值对相同可以简写
+        let name = "中职通",
+        age = 18;
+        // let school = {
+        //     name:name,
+        //     age:age
+        // }
+        let school = {
+            name,
+            age
+        }
+        console.log(school);
+
+        // 继续扩展
+        // 如果属性是函数也可以简写
+        let obj = {
+            // fn:function(){
+            //     console.log("我是函数");
+            // }
+            fn(){//这个写法以后会常见
+
+            }
+        }
+        console.log(obj);
+
+    </script>
+</body>
+</html>

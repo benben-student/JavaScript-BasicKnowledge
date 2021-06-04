@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装promise来解决回调地狱
+        function fun2(num){
+            return new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    resolve(num);
+                },1000)
+            })
+        }
+
+        // fun2().then(() =>{
+        //     console.log(10);
+        //     return fun2();
+        // }).then(() =>{
+        //     console.log(20);
+        //     return fun2();
+        // }).then(() =>{
+        //     console.log(30);
+        //     return fun2();
+        // }).then(() =>{
+        //     console.log(40);
+        //     return fun2();
+        // }).then(() =>{
+        //     console.log(50);
+        //     return fun2();
+        // });
+     
+        async function q2(){
+            let res1 = await fun2(10)//传递一个实参，上面用形参来接收，给我们 resolve使用
+            console.log(res1);
+            let res2 = await fun2(20);
+            console.log(res2);
+            let res3 = await fun2(30);
+            console.log(res3);
+            let res4 = await fun2(40);
+            console.log(res4);
+            let res5 = await fun2(50);
+            console.log(res5);
+        }
+        q2();
+        
+    </script>
+</body>
+</html>

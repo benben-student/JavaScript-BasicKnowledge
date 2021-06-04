@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let p =new Promise((resolve,reject) =>{
+            
+        // }).then((value) =>{
+        //     console.log("成功");
+        // },(err) =>{
+        //     console.log("失败");
+        // });
+        // 总结：扩展如果promise状态不改变，不会执行then里面的方法
+        let p =new Promise((resolve,reject) =>{
+            resolve();
+        });
+
+        let t = p.then((value) =>{
+            console.log("成功");
+            return 123; //总结：如果加了return值 给下面的第二个then就可以接收我们传递数据
+            // 如果没有错误，会将t实例的状态改成fulfilled
+            // console.log(a);//如果代码出现了错误，会将t实例的状态改成 rejected
+        },(err) =>{
+            console.log("失败");
+        });
+
+         t.then((value) =>{
+             console.log("成功2",value);
+         },(err) =>{
+             console.log("失败2",err);
+         })
+       
+    </script>
+</body>
+</html>

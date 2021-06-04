@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun1(){
+            return new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    resolve("12345")
+                },1000)
+            });
+        }
+
+        // 伪代码，直接then写法
+        // function q2(){
+        //     fun1().then((res) =>{
+        //         console.log(res);
+        //         return fun1()
+        //     }).then((res) =>{
+        //         console.log(res);
+        //     })
+        // }
+        // q2();
+
+        // async + await 是promise + then 的语法糖
+        // 语法格式如下：
+        async function q1(){
+            var res = await fun1();//await后面跟的是promise对象
+            console.log(res);
+        }
+        q1();
+        // 优势：这样就避免了then后面调用then
+    </script>
+</body>
+</html>

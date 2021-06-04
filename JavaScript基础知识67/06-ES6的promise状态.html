@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Promise状态改变
+        // 通过调用resolve()和reject()改变当前的promise对象状态
+        let p = new Promise((resolve,reject) =>{
+            // resolve();//调用函数，使当前的promise对象的状态改成 fulfilled 成功
+            // reject();//调用函数，使当前的promise对象的状态改成 rejected 失败
+            resolve();
+            // reject(); 总结：状态要么改成fulfilled 要么状态改成 rejected
+        });
+        console.dir(p);
+        // 总结：规律 看谁在前面就先调用谁，一旦状态改变了，就不会再变了
+    </script>
+</body>
+</html>
