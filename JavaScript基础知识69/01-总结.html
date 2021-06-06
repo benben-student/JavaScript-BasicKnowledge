@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        第一、promise 的then 方法，有两个参数(两个参数都是函数)
+        第二、then返回的一个新的promise对象,既然是对象那么我们就可以使用原型上的then方法---链式操作
+        第三、注意：如果第一个then 方法里面加了return 123 会把我们的状态变成fulfilled
+              如果代码出错了，会将我们的状态变为rejected
+        第四、catch函数在什么时候执行
+            1、promise的状态为rejected的时候会执行
+            2、手动抛出异常
+            3、promise执行体里面的代码出现了错误
+        第五、promise的then 和 catch 和 finally组合应用，不管代码有无错误都会执行我们的finally方法
+        第六、我们封装promise解决回调地狱、终极版的async + await
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            // 获取
+            $("#ipt01").val(localStorage.getItem("name"));
+            $("#ipt02").val(localStorage.getItem("pws"));
+            // 点击按钮保存密码和账号
+            $("button").eq(0).click(function(){
+                localStorage.setItem("name",$("#ipt01").val());
+                localStorage.setItem("pws",$("#ipt02").val());
+            });
+
+            // 点击清除
+            $("button").eq(1).click(function(){
+                localStorage.removeItem("name");
+                localStorage.removeItem("pws");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="ipt01"><br /><br />
+    <input type="password" name="" id="ipt02"><br /><br />
+    <button>记住本地账号密码</button>&nbsp;<button>清除本地存储</button>
+</body>
+</html>

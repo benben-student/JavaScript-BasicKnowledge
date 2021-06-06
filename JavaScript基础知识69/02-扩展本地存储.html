@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 语法格式:
+        localStorage 是H5中的新增加的对象，通过他我们可以往浏览器里面存储数据
+        localStorage.setItem(属性,值) 存储数据
+        localStorage.getItem(属性)  获取数据
+        localStorage.removeItem(属性)  删除之前存储在浏览器中的数据
+        */
+       localStorage.setItem("name","zhangsan");//设置数据
+       localStorage.removeItem("name"); //删除数据
+       alert(localStorage.getItem("name"));//获取数据
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        由于要浏览器的安全性限制，不允许访问。协议不同http协议、域名不同www.baidu.com 、端口号不同 默认的端口号是80 浏览器就会认为是跨域。除非后台允许你跨域才可以。
+        什么是跨域：引出同源和不同源
+        同源：同源策略是浏览器一种安全策略，所谓同源是指，域名，协议、端口号完全相同
+        不同源则--跨域
+        */
+
+        // 举个例子
+        /* 
+        例如：http://www.example.com:80 下面会出现跨域的情况
+
+            1)http://api.www.example.com 域名不同  典型的跨域了--不同源
+            2)https://www.example.com 协议不同  典型的跨域了--不同源
+            3)http://www.example.com:8080 端口号不同  典型的跨域了--不同源
+        */
+
+        /* 
+        工作里面解决的第一个方案：CORS ----通过设置后台服务器的CORS ,让服务器运行跨域
+        其实就是设置请求头 Access-Control-Allow-Origin: *  ---了解即可
+
+
+        解决方案二、通过jsonp 来设置 ---什么是jsonp:非正式传输协议，这种传输方式可以作为跨域手段---有些人大白话可以理解就是img标签  src
+        */
+    </script>
+    <!-- 这就是一个跨域请求 -->
+    <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 
+        总结：从图片到script的标签的src属性发起请求不再受到跨域的显示，这种数据的交换形式我们称之为JSONP----本质就是通过script标签的src来实现的。
+     -->
+</body>
+</html>
