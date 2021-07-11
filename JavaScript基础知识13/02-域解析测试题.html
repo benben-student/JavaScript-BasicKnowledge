@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>永远24K纯帅</title>
     <script>
-        //大厂面试题
-        // console.log(a, b, c); // undefined undefined undefined
-        // var a = 10,b = 20,c = 30;
-        // function f(a) {//小心啊，仔细看,用到我们前面学习的内容
-        //     console.log(a, b, c); //10 undefined  30
-        //     var b = a = c = 100;
-        //     console.log(a, b, c); //100 100 100
-        // }
-        // f(10, 20);
-        // console.log(a, b, c); // 10 20 100
+      //大厂面试题
+      // console.log(a, b, c); // undefined undefined undefined
+      // var a = 10,b = 20,c = 30;
+      // function f(a) {//小心啊，仔细看,用到我们前面学习的内容
+      //     console.log(a, b, c); //10 undefined  30
+      //     var b = a = c = 100;
+      //     console.log(a, b, c); //100 100 100
+      // }
+      // f(10, 20);
+      // console.log(a, b, c); // 10 20 100
 
-        // 伪代码
-        var a;
+      // 伪代码
+      var a;
+      var b;
+      var c;
+      console.log(a, b, c); // undefined undefined undefined
+      (a = 10), (b = 20), (c = 30);
+      function f(a) {
+        //形参就是变量 小心啊，仔细看,用到我们前面学习的内容
         var b;
-        var c;
-        console.log(a, b, c); // undefined undefined undefined
-        a = 10,
-        b = 20,
-        c = 30;
-        function f(a) {//形参就是变量 小心啊，仔细看,用到我们前面学习的内容
-            var b;
-            console.log(a, b, c); //10 undefined  30
-            b = a = c = 100;
-            console.log(a, b, c); //100 100 100
-        }
-        f(10, 20);
-        console.log(a, b, c); // 10 20 100
+        console.log(a, b, c); //10 undefined  30
+        b = a = c = 100;
+        console.log(a, b, c); //100 100 100
+      }
+      f(10, 20);
+      console.log(a, b, c); // 10 20 100
     </script>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>
